@@ -1,4 +1,7 @@
 name = "borela"
 compatibility_date = "2026-05-14"
+main = "worker.js"
 
-assets = { directory = "out" }
+[assets]
+directory = "out"
+binding = "ASSETS"
