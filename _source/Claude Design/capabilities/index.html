@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Capabilities — Machines, materials, tolerances &amp; measurement | Borela</title>
+<meta name="description" content="40 CNC lathes. 6 machining centers. ±0.01 mm typical tolerance. VDA 6.3 audited. The capacity OEMs across Europe rely on — machines, materials, and measurement under one roof." />
+
+<link rel="alternate" hreflang="en" href="https://borela.eu/capabilities/" />
+<link rel="alternate" hreflang="de" href="https://borela.eu/de/leistungen/" />
+<link rel="alternate" hreflang="hu" href="https://borela.eu/hu/kapacitasok/" />
+<link rel="alternate" hreflang="x-default" href="https://borela.eu/capabilities/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ============ JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Capabilities — Borela Bt.",
+  "url": "https://borela.eu/capabilities/",
+  "description": "Machines, materials, tolerances, measurement and certifications — the full Borela capabilities envelope."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://borela.eu/"},
+    {"@type":"ListItem","position":2,"name":"Capabilities","item":"https://borela.eu/capabilities/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Precision CNC contract machining",
+  "provider": {
+    "@type": "Organization",
+    "name": "Borela Bt.",
+    "url": "https://borela.eu/"
+  },
+  "areaServed": "EU",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Borela capabilities",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Machine park","url":"https://borela.eu/capabilities/machine-park/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Materials","url":"https://borela.eu/capabilities/materials/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tolerances","url":"https://borela.eu/capabilities/tolerances/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Measurement room","url":"https://borela.eu/capabilities/measurement-room/"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Certifications","url":"https://borela.eu/capabilities/certifications/"}}
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Can you handle our production volume?","acceptedAnswer":{"@type":"Answer","text":"Our sweet spot is 500 to 100,000 pieces per order, with repeat production relationships often spanning multiple years. Above 100,000 pieces we evaluate case by case — we have run larger runs, but our 40-machine fleet is configured for high-mix mid-volume work, not pure mass production."}},
+    {"@type":"Question","name":"Do you machine the specific material we use?","acceptedAnswer":{"@type":"Answer","text":"We routinely machine carbon and alloy steels, stainless, aluminum, brass, bronze, steel and aluminum castings, and engineering plastics including POM, PA, PEEK. If your grade is unusual, send the drawing — we have likely run it before. Material traceability and 3.1 certificates are standard."}},
+    {"@type":"Question","name":"What tolerances can you actually hold on a production run?","acceptedAnswer":{"@type":"Answer","text":"Typical ±0.01 mm on CNC turned and milled parts, measured across the full series, not just the first article. We hold ±0.005 mm on selected machines for controlled features. Tolerances below ±0.005 mm require grinding — we coordinate this with our grinding partner so you still receive finished parts from one supplier."}},
+    {"@type":"Question","name":"Are you certified for Tier 1 / Tier 2 automotive supply?","acceptedAnswer":{"@type":"Answer","text":"Yes. ISO 9001 since 1996, ISO 14001 since 2005, audited to VDA 6.3 in 2016, and passed the Knorr-Bremse Product Safety Audit in 2007 — maintained since. Audit reports available under NDA as part of supplier qualification."}},
+    {"@type":"Question","name":"Do you offer first article inspection (FAI) and SPC reports?","acceptedAnswer":{"@type":"Answer","text":"FAI reports with full dimensional and material documentation are standard on every new part number. SPC reports for series production are available on request and are routine for automotive customers."}}
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #f3efe7;
+    --bg-2: #ebe6dc;
+    --ink: #11110f;
+    --ink-2: #2a2926;
+    --muted: #6b6862;
+    --line: #d8d2c5;
+    --line-soft: #e3ddd0;
+    --accent: #1a48c2;
+    --accent-hover: #143a9e;
+    --black: #0e0e0c;
+    --white: #ffffff;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Focus ring ---------- */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Skip link ---------- */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 8px; }
+
+  /* ---------- Tokens ---------- */
+  .label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn--primary { background: var(--accent); color: #fff; }
+  .btn--primary:hover { background: var(--accent-hover); }
+  .btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn--ghost:hover { background: var(--ink); color: #fff; }
+
+  /* ---------- Header (shared) ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 104px;
+    padding: 0 32px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; flex-shrink: 0; }
+  .brand__logo { height: 70px; width: auto; display: block; }
+  .nav {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 2px solid transparent;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .nav-link:hover { border-bottom-color: var(--accent); }
+  .nav-link.is-active { border-bottom-color: var(--accent); color: var(--accent); }
+  .header-cta { flex-shrink: 0; }
+  .hamburger {
+    display: none;
+    background: none; border: none;
+    width: 36px; height: 36px; padding: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 5px;
+  }
+  .hamburger span { width: 22px; height: 1.5px; background: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 80px 0 64px;
+  }
+  .hero__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 36px;
+    display: flex;
+    gap: 10px;
+  }
+  .breadcrumbs a { color: var(--muted); }
+  .breadcrumbs a:hover { color: var(--ink); }
+  .breadcrumbs .sep { color: var(--line); }
+  .breadcrumbs .current { color: var(--ink); }
+
+  .hero h1 {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    margin: 0 0 28px;
+    text-transform: uppercase;
+    text-wrap: balance;
+    max-width: 18ch;
+  }
+  .hero__sub {
+    font-size: 16.5px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 620px;
+    margin: 0 0 36px;
+  }
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* ---------- Hero stat band ---------- */
+  .stat-band {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stat-band__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .stat-band__cell {
+    padding: 36px 22px 32px;
+    position: relative;
+    text-align: left;
+  }
+  .stat-band__cell + .stat-band__cell::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 24px;
+    bottom: 24px;
+    width: 1px;
+    background: var(--line);
+  }
+  .stat-band__value {
+    font-size: clamp(28px, 3.4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat-band__value .sub {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0;
+    margin-left: 4px;
+    vertical-align: baseline;
+  }
+  .stat-band__label {
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ---------- Section base ---------- */
+  .section {
+    padding: 96px 0 104px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section--tight { padding: 88px 0 96px; }
+  .section__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .section__head {
+    margin-bottom: 44px;
+    max-width: 760px;
+  }
+  .section__title {
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    text-wrap: balance;
+    line-height: 1.1;
+  }
+  .section__lead {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    margin: 0;
+    max-width: 70ch;
+  }
+  .section__body {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    margin: 0 0 40px;
+    max-width: 70ch;
+  }
+  .section__body strong { color: var(--ink); }
+  .section__foot {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--ink);
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .link-arrow svg { width: 14px; height: 14px; }
+  .link-arrow:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ---------- §01 Capabilities overview cards (3+2) ---------- */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .cap-card {
+    grid-column: span 2;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 30px 30px 26px;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+    transition: border-color .15s ease, padding-left .15s ease;
+    position: relative;
+  }
+  .cap-card:nth-child(4),
+  .cap-card:nth-child(5) {
+    grid-column: span 3;
+  }
+  .cap-card::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .18s ease;
+  }
+  .cap-card:hover { border-color: var(--ink); padding-left: 34px; }
+  .cap-card:hover::before { transform: scaleY(1); }
+  .cap-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+  }
+  .cap-card__icon { width: 32px; height: 32px; color: var(--ink); }
+  .cap-card__num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+  .cap-card__name {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  .cap-card__desc {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin: 0 0 22px;
+  }
+  .cap-card__metric {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-top: auto;
+  }
+  .cap-card__link {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--ink);
+    align-self: flex-start;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .cap-card__link svg { width: 14px; height: 14px; }
+  .cap-card:hover .cap-card__link { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ---------- §02 Machine park stacked rows ---------- */
+  .machine-rows {
+    border-top: 1px solid var(--line);
+  }
+  .machine-row {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr 1.3fr;
+    align-items: baseline;
+    gap: 32px;
+    padding: 26px 4px 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .machine-row__cat {
+    font-size: 15.5px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .machine-row__count {
+    font-size: clamp(40px, 4.2vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .machine-row__spec {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    line-height: 1.5;
+    text-align: right;
+  }
+
+  /* ---------- §03 Materials cards (3+2) ---------- */
+  .mat-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .mat-card {
+    grid-column: span 2;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 28px 28px 26px;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    transition: border-color .15s ease;
+  }
+  .mat-card:nth-child(4),
+  .mat-card:nth-child(5) {
+    grid-column: span 3;
+  }
+  .mat-card:hover { border-color: var(--ink); }
+  .mat-card__num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+  .mat-card__name {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .mat-card__desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin: 0 0 22px;
+  }
+  .mat-card__grades {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-transform: uppercase;
+    line-height: 1.6;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    margin-top: auto;
+  }
+  .mat-card__apps {
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  .mat-card__apps::before {
+    content: "→ ";
+    color: var(--accent);
+  }
+
+  /* ---------- §04 Tolerances matrix (emotional anchor) ---------- */
+  .tol-matrix {
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+  }
+  .tol-matrix__headcap {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding: 18px 16px 18px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .tol-matrix__head {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tol-matrix__head--in {
+    background: var(--ink);
+    color: #fff;
+  }
+  .tol-matrix__head--in .dot { background: #fff; }
+  .tol-matrix__head--ext {
+    background: var(--bg-2);
+    color: var(--ink-2);
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+  }
+  .tol-matrix__head--ext .dot { background: var(--muted); }
+  .tol-matrix__head .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .tol-matrix__cap {
+    padding: 22px 16px 22px 4px;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .tol-cell {
+    padding: 22px 20px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    min-height: 78px;
+  }
+  .tol-cell--in {
+    background: var(--ink);
+    color: #fff;
+  }
+  .tol-cell--in .tol-val {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    color: #fff;
+    text-transform: none;
+  }
+  .tol-cell--in .tol-val small {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+  .tol-cell--ext {
+    background:
+      repeating-linear-gradient(135deg, transparent 0 9px, rgba(17,17,15,0.04) 9px 10px),
+      var(--bg-2);
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    color: var(--ink-2);
+  }
+  .tol-cell--ext .tol-val {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+  .tol-cell--empty {
+    color: var(--line);
+    font-family: var(--mono);
+    font-size: 18px;
+    justify-content: center;
+  }
+  .tol-cell--in.tol-cell--empty { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.25); }
+  .tol-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px dashed var(--muted);
+    align-self: flex-start;
+  }
+  .tol-cell--ext .tol-inner { display: flex; flex-direction: column; }
+
+  /* Pull-quote slab */
+  .tol-quote {
+    margin-top: 56px;
+    background: var(--black);
+    color: #fff;
+    padding: 64px 48px;
+    border: 1px solid var(--black);
+    position: relative;
+  }
+  .tol-quote__kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .tol-quote__kicker::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .tol-quote__text {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin: 0;
+    text-wrap: balance;
+    max-width: 22ch;
+  }
+  .tol-quote__text em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  /* ---------- §05 Measurement room ---------- */
+  .meas-wrap {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .meas-photo {
+    position: relative;
+    min-height: 460px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.25)),
+      repeating-linear-gradient(135deg, #4a4a48 0 14px, #58585a 14px 28px);
+    border: 1px solid var(--line);
+  }
+  .meas-photo__tag {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 0 24px;
+  }
+  .meas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .meas-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 24px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    transition: border-color .15s ease;
+  }
+  .meas-card:hover { border-color: var(--ink); }
+  .meas-card__icon { width: 28px; height: 28px; color: var(--ink); margin-bottom: 18px; }
+  .meas-card__name {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+  .meas-card__fn {
+    font-size: 13.5px;
+    color: var(--ink-2);
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+  .meas-card__metric {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  /* ---------- §06 Certifications ---------- */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .cert {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 22px;
+    align-items: start;
+    padding: 28px 30px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    transition: border-color .15s ease;
+  }
+  .cert:hover { border-color: var(--ink); }
+  .cert__icon { width: 44px; height: 44px; color: var(--ink); }
+  .cert__name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .cert__year {
+    margin-top: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .cert__desc {
+    margin: 12px 0 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .cert-footnote {
+    margin-top: 28px;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.55;
+  }
+
+  /* ---------- §07 By the numbers (dark) ---------- */
+  .panel-black {
+    background: var(--black);
+    color: #fff;
+    padding: 96px 0 104px;
+  }
+  .panel-black__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .panel-black .label { color: rgba(255,255,255,0.5); }
+  .panel-black .section__title { color: #fff; max-width: 18ch; }
+
+  .num-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 44px;
+    margin-top: 16px;
+  }
+  .num-cell {
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+  }
+  .num-cell__value {
+    font-size: clamp(44px, 5.4vw, 72px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    color: #fff;
+  }
+  .num-cell__value .sep {
+    font-weight: 500;
+    margin: 0 2px;
+    color: rgba(255,255,255,0.55);
+  }
+  .num-cell__value .unit {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    margin-left: 4px;
+    vertical-align: top;
+    position: relative;
+    top: 14px;
+  }
+  .num-cell__label {
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ---------- §08 FAQ ---------- */
+  .faq-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item details summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 24px 4px;
+    display: grid;
+    grid-template-columns: 32px 1fr 24px;
+    align-items: center;
+    gap: 20px;
+  }
+  .faq-item details summary::-webkit-details-marker { display: none; }
+  .faq-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+  .faq-q {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .faq-toggle {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    justify-self: end;
+  }
+  .faq-toggle::before,
+  .faq-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    background: var(--ink);
+    transform: translate(-50%, -50%);
+    transition: transform .2s ease, background-color .2s ease;
+  }
+  .faq-toggle::before { width: 14px; height: 1.5px; }
+  .faq-toggle::after { width: 1.5px; height: 14px; }
+  .faq-item details[open] .faq-toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+  .faq-item details[open] .faq-toggle::before { background: var(--accent); }
+  .faq-item details[open] .faq-q { color: var(--accent); }
+  .faq-a {
+    padding: 0 4px 28px 60px;
+    max-width: 880px;
+  }
+  .faq-a p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ---------- §09 Closing CTA ---------- */
+  .cta-final {
+    background: var(--bg);
+    padding: 120px 0 128px;
+    text-align: center;
+  }
+  .cta-final__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .cta-final h2 {
+    font-size: clamp(30px, 3.6vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  .cta-final p {
+    color: var(--ink-2);
+    font-size: 15.5px;
+    margin: 0 0 40px;
+  }
+  .cta-final__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer { padding: 60px 0 28px; border-top: 1px solid var(--line); background: var(--bg); }
+  .footer__inner { padding: 0 32px; max-width: 1320px; margin: 0 auto; }
+  .footer__brand {
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    margin-bottom: 28px;
+  }
+  .footer__brand::after { content: "."; color: var(--accent); }
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+  .footer__links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+  .footer__links a:hover { color: var(--accent); }
+  .footer__legal {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1180px) {
+    .nav { gap: 18px; }
+    .nav-link { font-size: 11px; letter-spacing: 0.1em; }
+  }
+  @media (max-width: 1024px) {
+    .nav, .header-cta { display: none; }
+    .hamburger { display: flex; }
+    .site-header__inner { justify-content: space-between; height: 88px; }
+    .brand__logo { height: 54px; }
+    .cap-grid, .mat-grid { grid-template-columns: repeat(2, 1fr); }
+    .cap-card, .mat-card,
+    .cap-card:nth-child(4), .cap-card:nth-child(5),
+    .mat-card:nth-child(4), .mat-card:nth-child(5) { grid-column: span 1; }
+    .meas-wrap { grid-template-columns: 1fr; }
+    .meas-photo { min-height: 320px; }
+    .stat-band__inner { grid-template-columns: repeat(3, 1fr); }
+    .stat-band__cell:nth-child(4) { border-top: 1px solid var(--line); }
+    .stat-band__cell:nth-child(4)::before,
+    .stat-band__cell:nth-child(n+4)::before {
+      top: -1px; bottom: auto; height: 0; background: transparent;
+    }
+    .num-grid { grid-template-columns: repeat(2, 1fr); }
+    .tol-matrix { grid-template-columns: 1fr; }
+    .tol-matrix__headcap { display: none; }
+    .tol-matrix__head,
+    .tol-matrix__head--ext { border-left: none; border-right: none; }
+    .tol-matrix__cap {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding: 22px 4px 8px;
+      border-bottom: none;
+    }
+    .tol-cell--in, .tol-cell--ext { border-left: none; border-right: none; }
+  }
+  @media (max-width: 720px) {
+    .cap-grid, .mat-grid, .certs-grid, .meas-grid { grid-template-columns: 1fr; }
+    .stat-band__inner { grid-template-columns: repeat(2, 1fr); }
+    .num-grid { grid-template-columns: 1fr; }
+    .machine-row {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 22px 4px;
+    }
+    .machine-row__spec { text-align: left; }
+    .hero { padding: 56px 0 48px; }
+    .section { padding: 64px 0 72px; }
+    .panel-black { padding: 64px 0 72px; }
+    .tol-quote { padding: 44px 28px; }
+    .faq-a { padding-left: 4px; }
+    .site-header__inner { padding: 0 18px; }
+    .cta-final { padding: 80px 0 88px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../Borela.html" aria-label="Borela home">
+      <img src="../assets/borela-logo.svg" alt="Borela — Precision CNC / Est. 1953" class="brand__logo" />
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="../services/index.html">Services</a>
+      <a class="nav-link" href="../industries/index.html">Industries</a>
+      <a class="nav-link is-active" href="#" aria-current="page">Capabilities</a>
+      <a class="nav-link" href="../Borela.html#references">References</a>
+      <a class="nav-link" href="../Borela.html#about">About</a>
+      <a class="nav-link" href="../Borela.html#careers">Careers</a>
+      <a class="nav-link" href="../Borela.html#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="/rfq/" class="btn btn--primary">REQUEST A QUOTE</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <div class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../Borela.html">Home</a>
+        <span class="sep">/</span>
+        <span class="current">Capabilities</span>
+      </div>
+      <div class="label">§ 01 — CAPABILITIES</div>
+      <h1 id="hero-title">What we can build for you — machines, materials &amp; measurements</h1>
+      <p class="hero__sub">40 CNC lathes. 6 machining centers. A measurement room built around a 3D CMM. Five material families, hundreds of grades, ±0.01 mm typical tolerance. Audited to VDA 6.3. This is the capacity OEMs across Europe rely on.</p>
+      <div class="hero__cta">
+        <a href="/rfq/" class="btn btn--primary">REQUEST A QUOTE</a>
+        <a href="/contact/" class="btn btn--ghost">TALK TO ENGINEERING</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HERO STAT BAND ============ -->
+  <section class="stat-band" aria-label="Capacity at a glance">
+    <div class="stat-band__inner">
+      <div class="stat-band__cell">
+        <div class="stat-band__value">40</div>
+        <div class="stat-band__label">CNC lathes</div>
+      </div>
+      <div class="stat-band__cell">
+        <div class="stat-band__value">6</div>
+        <div class="stat-band__label">Machining centers</div>
+      </div>
+      <div class="stat-band__cell">
+        <div class="stat-band__value">±0.01<span class="sub">mm</span></div>
+        <div class="stat-band__label">Typical tolerance</div>
+      </div>
+      <div class="stat-band__cell">
+        <div class="stat-band__value">5,000<span class="sub">m²</span></div>
+        <div class="stat-band__label">Production area</div>
+      </div>
+      <div class="stat-band__cell">
+        <div class="stat-band__value">4</div>
+        <div class="stat-band__label">Key certifications</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 02 OVERVIEW ============ -->
+  <section class="section" id="overview" aria-labelledby="overview-title">
+    <div class="section__inner">
+      <div class="label">§ 02 — OVERVIEW</div>
+      <div class="section__head">
+        <h2 class="section__title" id="overview-title">Five capabilities, one supplier</h2>
+        <p class="section__lead">Everything below is what a buyer typically needs to qualify a supplier — machines, materials, tolerances, measurement, certifications. Click any card for the full detail.</p>
+      </div>
+
+      <div class="cap-grid">
+
+        <a class="cap-card" href="/capabilities/machine-park/">
+          <div class="cap-card__head">
+            <svg class="cap-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <rect x="3" y="20" width="20" height="6"/>
+              <path d="M9 20v-4h6l3-4h6"/>
+              <circle cx="26" cy="12" r="2.5"/>
+              <path d="M13 26v3"/>
+            </svg>
+            <span class="cap-card__num">01</span>
+          </div>
+          <h3 class="cap-card__name">Machine park</h3>
+          <p class="cap-card__desc">40 CNC lathes &amp; 6 machining centers configured for series production from 500 to 100,000 pieces.</p>
+          <div class="cap-card__metric">Ø 1–90 mm bar capacity</div>
+          <span class="cap-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a class="cap-card" href="/capabilities/materials/">
+          <div class="cap-card__head">
+            <svg class="cap-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <rect x="4" y="10" width="10" height="16"/>
+              <rect x="14" y="6" width="10" height="20"/>
+              <path d="M4 14h10M4 18h10M4 22h10M14 10h10M14 14h10M14 18h10M14 22h10"/>
+            </svg>
+            <span class="cap-card__num">02</span>
+          </div>
+          <h3 class="cap-card__name">Materials</h3>
+          <p class="cap-card__desc">Carbon and alloy steels, stainless, aluminum, brass, bronze, cast parts and engineering plastics.</p>
+          <div class="cap-card__metric">5 material families</div>
+          <span class="cap-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a class="cap-card" href="/capabilities/tolerances/">
+          <div class="cap-card__head">
+            <svg class="cap-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M4 22h24"/>
+              <path d="M4 18v4M10 16v6M16 14v8M22 16v6M28 18v4"/>
+              <path d="M14 6l2 4 2-4"/>
+              <path d="M16 10v4"/>
+            </svg>
+            <span class="cap-card__num">03</span>
+          </div>
+          <h3 class="cap-card__name">Tolerances</h3>
+          <p class="cap-card__desc">Typical ±0.01 mm on turned and milled parts. Tighter tolerances coordinated with grinding partners.</p>
+          <div class="cap-card__metric">±0.01 mm typical</div>
+          <span class="cap-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a class="cap-card" href="/capabilities/measurement-room/">
+          <div class="cap-card__head">
+            <svg class="cap-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M4 26V6h24v20"/>
+              <path d="M16 6v20"/>
+              <path d="M4 14h12M4 20h12M16 12h12M16 18h12"/>
+              <circle cx="22" cy="24" r="2"/>
+            </svg>
+            <span class="cap-card__num">04</span>
+          </div>
+          <h3 class="cap-card__name">Measurement room</h3>
+          <p class="cap-card__desc">3D CMM, contour meter, micro-hardness tester. Every series shipped with documented FAI.</p>
+          <div class="cap-card__metric">In-house CMM</div>
+          <span class="cap-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a class="cap-card" href="/capabilities/certifications/">
+          <div class="cap-card__head">
+            <svg class="cap-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M16 4 5 7v9c0 6 5 11 11 13 6-2 11-7 11-13V7z"/>
+              <path d="M11 16l3 3 7-7"/>
+            </svg>
+            <span class="cap-card__num">05</span>
+          </div>
+          <h3 class="cap-card__name">Certifications</h3>
+          <p class="cap-card__desc">ISO 9001 since 1996, ISO 14001 since 2005, VDA 6.3 audited, Knorr-Bremse PSA passed.</p>
+          <div class="cap-card__metric">4 certifications</div>
+          <span class="cap-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 03 MACHINE PARK ============ -->
+  <section class="section" id="machine-park" aria-labelledby="mp-title">
+    <div class="section__inner">
+      <div class="label">§ 03 — MACHINE PARK</div>
+      <div class="section__head">
+        <h2 class="section__title" id="mp-title">40 CNC lathes. 6 machining centers. One fleet built for series.</h2>
+      </div>
+      <p class="section__body">Our production runs on 40 CNC lathes across three diameter classes — 15 up to Ø45 mm, 14 between Ø46–55 mm, and 11 above Ø56 mm — plus 6 machining centers, three horizontal and three vertical. The fleet includes Goodway GLS-3300 YS (Ø90 mm, high-speed), Citizen-Miyano BNE 51 MSY (Ø51 mm, twin-spindle Y-axis), Index C65, and Citizen Cincom L32A-1M8. Every machine is tooled for series production from 500 to 100,000 pieces.</p>
+
+      <div class="machine-rows" role="list" aria-label="Machine park summary">
+        <div class="machine-row" role="listitem">
+          <div class="machine-row__cat">CNC turning, Ø ≤ 45 mm</div>
+          <div class="machine-row__count">15</div>
+          <div class="machine-row__spec">Bar feeders · sub-spindle on select</div>
+        </div>
+        <div class="machine-row" role="listitem">
+          <div class="machine-row__cat">CNC turning, Ø 46–55 mm</div>
+          <div class="machine-row__count">14</div>
+          <div class="machine-row__spec">Y-axis on most · twin-spindle</div>
+        </div>
+        <div class="machine-row" role="listitem">
+          <div class="machine-row__cat">CNC turning, Ø 56+ mm</div>
+          <div class="machine-row__count">11</div>
+          <div class="machine-row__spec">Up to Ø 90 mm bar capacity</div>
+        </div>
+        <div class="machine-row" role="listitem">
+          <div class="machine-row__cat">Horizontal machining centers</div>
+          <div class="machine-row__count">3</div>
+          <div class="machine-row__spec">Table 500×500 mm · 40-tool magazine · 20,000 rpm</div>
+        </div>
+        <div class="machine-row" role="listitem">
+          <div class="machine-row__cat">Vertical machining centers</div>
+          <div class="machine-row__count">3</div>
+          <div class="machine-row__spec">Table 800×450 mm · 24 tools · 30,000 rpm</div>
+        </div>
+        <div class="machine-row" role="listitem">
+          <div class="machine-row__cat">Long-turn (Swiss-type)</div>
+          <div class="machine-row__count">1</div>
+          <div class="machine-row__spec">Citizen Cincom L32A-1M8 · Ø 32 mm</div>
+        </div>
+      </div>
+
+      <div class="section__foot">
+        <a class="link-arrow" href="/capabilities/machine-park/">
+          See the full machine list
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 04 MATERIALS ============ -->
+  <section class="section" id="materials" aria-labelledby="mat-title">
+    <div class="section__inner">
+      <div class="label">§ 04 — MATERIALS</div>
+      <div class="section__head">
+        <h2 class="section__title" id="mat-title">Five material families. Hundreds of grades. Full traceability.</h2>
+      </div>
+      <p class="section__body">We machine across five material families — every grade we process comes with certified traceability and is verified against the customer's drawing specification. If your part calls for a grade not listed here, ask: we have likely run it for another customer.</p>
+
+      <div class="mat-grid">
+
+        <article class="mat-card">
+          <div class="mat-card__num">01</div>
+          <h3 class="mat-card__name">Carbon &amp; alloy steels</h3>
+          <p class="mat-card__desc">High-strength structural and case-hardenable grades for safety-critical components.</p>
+          <div class="mat-card__grades">C45 · 16MnCr5 · 42CrMo4 · 100Cr6</div>
+          <div class="mat-card__apps">Brake components, shafts, pins</div>
+        </article>
+
+        <article class="mat-card">
+          <div class="mat-card__num">02</div>
+          <h3 class="mat-card__name">Stainless steels</h3>
+          <p class="mat-card__desc">Corrosion-resistant austenitic and machinable grades for sealing and hygienic applications.</p>
+          <div class="mat-card__grades">1.4301 · 1.4305 · 1.4404 · 1.4571</div>
+          <div class="mat-card__apps">Sealing components, food-grade parts</div>
+        </article>
+
+        <article class="mat-card">
+          <div class="mat-card__num">03</div>
+          <h3 class="mat-card__name">Aluminum</h3>
+          <p class="mat-card__desc">Lightweight wrought alloys for structural housings and machined enclosures.</p>
+          <div class="mat-card__grades">EN AW-6082 · 6060 · 7075 · 2007</div>
+          <div class="mat-card__apps">Housings, lightweight structural parts</div>
+        </article>
+
+        <article class="mat-card">
+          <div class="mat-card__num">04</div>
+          <h3 class="mat-card__name">Brass &amp; bronze</h3>
+          <p class="mat-card__desc">Free-machining copper alloys for bearings, fittings and electrically conductive parts.</p>
+          <div class="mat-card__grades">CuZn39Pb3 · CuSn8 · CuSn12</div>
+          <div class="mat-card__apps">Bushings, slide bearings, hydraulic fittings</div>
+        </article>
+
+        <article class="mat-card">
+          <div class="mat-card__num">05</div>
+          <h3 class="mat-card__name">Cast &amp; plastics</h3>
+          <p class="mat-card__desc">Steel and aluminum castings finished to drawing; engineering plastics turned and milled.</p>
+          <div class="mat-card__grades">Steel &amp; aluminum castings · POM · PA · PEEK</div>
+          <div class="mat-card__apps">Complex geometries, low-friction parts</div>
+        </article>
+
+      </div>
+
+      <div class="section__foot">
+        <a class="link-arrow" href="/capabilities/materials/">
+          See full material list &amp; traceability process
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 05 TOLERANCES (emotional anchor) ============ -->
+  <section class="section" id="tolerances" aria-labelledby="tol-title">
+    <div class="section__inner">
+      <div class="label">§ 05 — TOLERANCES</div>
+      <div class="section__head">
+        <h2 class="section__title" id="tol-title">Honest about what we hold. Honest about what we coordinate.</h2>
+      </div>
+      <p class="section__body">Most customer drawings sit comfortably inside our standard window. Where they don't, we say so up front — and we have grinding and EDM partners on retainer for the dimensions that need them. <strong>You don't need to disqualify a project because of a single tight feature: send the drawing, and we will tell you within 48 business hours which features we hold ourselves, and which we coordinate.</strong></p>
+
+      <div class="tol-matrix" role="table" aria-label="In-house versus coordinated capabilities">
+        <div class="tol-matrix__headcap" role="columnheader">Capability</div>
+        <div class="tol-matrix__head tol-matrix__head--in" role="columnheader">
+          <span class="dot" aria-hidden="true"></span>
+          What we hold in-house
+        </div>
+        <div class="tol-matrix__head tol-matrix__head--ext" role="columnheader">
+          <span class="dot" aria-hidden="true"></span>
+          When we coordinate externally
+        </div>
+
+        <div class="tol-matrix__cap" role="rowheader">Turning, general tolerance</div>
+        <div class="tol-cell tol-cell--in" role="cell">
+          <div class="tol-val">±0.01 mm <small>Typical, full series</small></div>
+        </div>
+        <div class="tol-cell tol-cell--ext tol-cell--empty" role="cell" aria-label="Not applicable">—</div>
+
+        <div class="tol-matrix__cap" role="rowheader">Turning, best-case (selected machines)</div>
+        <div class="tol-cell tol-cell--in" role="cell">
+          <div class="tol-val">±0.005 mm <small>Controlled features</small></div>
+        </div>
+        <div class="tol-cell tol-cell--ext tol-cell--empty" role="cell" aria-label="Not applicable">—</div>
+
+        <div class="tol-matrix__cap" role="rowheader">Milling, general tolerance</div>
+        <div class="tol-cell tol-cell--in" role="cell">
+          <div class="tol-val">±0.01 mm <small>Typical, 3- &amp; 4-axis</small></div>
+        </div>
+        <div class="tol-cell tol-cell--ext tol-cell--empty" role="cell" aria-label="Not applicable">—</div>
+
+        <div class="tol-matrix__cap" role="rowheader">Surface roughness, turned</div>
+        <div class="tol-cell tol-cell--in" role="cell">
+          <div class="tol-val">Ra 0.8 typical <small>Ra 0.4 on selected machines</small></div>
+        </div>
+        <div class="tol-cell tol-cell--ext" role="cell">
+          <div class="tol-inner">
+            <span class="tol-val">Ra &lt; 0.4 via grinding partner</span>
+            <span class="tol-badge">Via partner</span>
+          </div>
+        </div>
+
+        <div class="tol-matrix__cap" role="rowheader">Grinding (≤ ±0.001 mm)</div>
+        <div class="tol-cell tol-cell--in tol-cell--empty" role="cell" aria-label="Not applicable">—</div>
+        <div class="tol-cell tol-cell--ext" role="cell">
+          <div class="tol-inner">
+            <span class="tol-val">Coordinated with grinding partner</span>
+            <span class="tol-badge">Via partner</span>
+          </div>
+        </div>
+
+        <div class="tol-matrix__cap" role="rowheader">Heat treatment</div>
+        <div class="tol-cell tol-cell--in tol-cell--empty" role="cell" aria-label="Not applicable">—</div>
+        <div class="tol-cell tol-cell--ext" role="cell">
+          <div class="tol-inner">
+            <span class="tol-val">Coordinated with heat treatment partner</span>
+            <span class="tol-badge">Via partner</span>
+          </div>
+        </div>
+
+        <div class="tol-matrix__cap" role="rowheader">EDM features</div>
+        <div class="tol-cell tol-cell--in tol-cell--empty" role="cell" aria-label="Not applicable">—</div>
+        <div class="tol-cell tol-cell--ext" role="cell">
+          <div class="tol-inner">
+            <span class="tol-val">Coordinated on request</span>
+            <span class="tol-badge">Via partner</span>
+          </div>
+        </div>
+      </div>
+
+      <figure class="tol-quote">
+        <div class="tol-quote__kicker">The Borela promise</div>
+        <p class="tol-quote__text">One drawing, one supplier, one contract — <em>even when grinding or heat treatment is on the print.</em></p>
+      </figure>
+
+      <div class="section__foot">
+        <a class="link-arrow" href="/capabilities/tolerances/">
+          Read our tolerance philosophy
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 06 MEASUREMENT ROOM ============ -->
+  <section class="section" id="measurement-room" aria-labelledby="meas-title">
+    <div class="section__inner">
+      <div class="label">§ 06 — MEASUREMENT</div>
+      <div class="section__head">
+        <h2 class="section__title" id="meas-title">Every series ships with proof.</h2>
+      </div>
+      <p class="section__body">Every series leaves the shop with documented dimensional evidence. The measurement room operates independently of the production floor and houses our 3D coordinate measuring machine, contour profilometer, micro-hardness tester, and roundness gauge. First Article Inspection reports are standard on every new part number; statistical process control reports are available on request for series production.</p>
+
+      <div class="meas-wrap">
+        <div class="meas-photo" role="img" aria-label="Measurement room photo placeholder">
+          <span class="meas-photo__tag">MEASUREMENT ROOM PHOTO — TO BE SUPPLIED</span>
+        </div>
+
+        <div class="meas-grid">
+          <article class="meas-card">
+            <svg class="meas-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M4 28V8h24v20"/>
+              <path d="M4 8l4-4h16l4 4"/>
+              <path d="M10 14h12M10 18h12M10 22h8"/>
+              <circle cx="22" cy="24" r="1.5" fill="currentColor"/>
+            </svg>
+            <h3 class="meas-card__name">3D Coordinate Measuring Machine (CMM)</h3>
+            <p class="meas-card__fn">Dimensional verification, FAI reporting.</p>
+            <div class="meas-card__metric">Climate-controlled · traceable calibration</div>
+          </article>
+
+          <article class="meas-card">
+            <svg class="meas-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M3 22c3 0 3-6 6-6s3 4 6 4 3-8 6-8 3 6 6 6 2-2 2-2"/>
+              <path d="M3 26h26"/>
+            </svg>
+            <h3 class="meas-card__name">Contour profilometer</h3>
+            <p class="meas-card__fn">Profile and form verification.</p>
+            <div class="meas-card__metric">Per-feature reporting</div>
+          </article>
+
+          <article class="meas-card">
+            <svg class="meas-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M16 4v8"/>
+              <path d="M12 12h8l-2 6h-4z"/>
+              <path d="M14 18l2 8 2-8"/>
+              <path d="M6 28h20"/>
+            </svg>
+            <h3 class="meas-card__name">Micro-hardness tester</h3>
+            <p class="meas-card__fn">Post-heat-treatment hardness verification.</p>
+            <div class="meas-card__metric">HV scale · surface and core</div>
+          </article>
+
+          <article class="meas-card">
+            <svg class="meas-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <circle cx="16" cy="16" r="11"/>
+              <circle cx="16" cy="16" r="6"/>
+              <circle cx="16" cy="16" r="1.5" fill="currentColor"/>
+              <path d="M16 3v3M16 26v3M3 16h3M26 16h3"/>
+            </svg>
+            <h3 class="meas-card__name">Roundness gauge</h3>
+            <p class="meas-card__fn">Cylindrical and circular geometry.</p>
+            <div class="meas-card__metric">Sub-micron resolution</div>
+          </article>
+        </div>
+      </div>
+
+      <div class="section__foot">
+        <a class="link-arrow" href="/capabilities/measurement-room/">
+          See our measurement workflow
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 07 CERTIFICATIONS ============ -->
+  <section class="section" id="certifications" aria-labelledby="certs-title">
+    <div class="section__inner">
+      <div class="label">§ 07 — CERTIFICATIONS</div>
+      <div class="section__head">
+        <h2 class="section__title" id="certs-title">Audited, certified, repeated.</h2>
+      </div>
+
+      <div class="certs-grid">
+        <article class="cert">
+          <svg class="cert__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M20 4 6 9v11c0 7 6 13 14 16 8-3 14-9 14-16V9z"/>
+            <path d="M14 20l4 4 8-9"/>
+          </svg>
+          <div>
+            <div class="cert__name">ISO 9001</div>
+            <div class="cert__year">Since 1996</div>
+            <p class="cert__desc">Quality management system audited every three years.</p>
+          </div>
+        </article>
+
+        <article class="cert">
+          <svg class="cert__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M20 4 6 9v11c0 7 6 13 14 16 8-3 14-9 14-16V9z"/>
+            <path d="M14 18c2 0 2 4 6 4s4-4 6-4"/>
+            <path d="M14 24c2 0 2 4 6 4s4-4 6-4"/>
+          </svg>
+          <div>
+            <div class="cert__name">ISO 14001</div>
+            <div class="cert__year">Since 2005</div>
+            <p class="cert__desc">Environmental management system covering both production sites.</p>
+          </div>
+        </article>
+
+        <article class="cert">
+          <svg class="cert__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M20 4 6 9v11c0 7 6 13 14 16 8-3 14-9 14-16V9z"/>
+            <path d="M13 16h14M13 21h14M13 26h9"/>
+          </svg>
+          <div>
+            <div class="cert__name">VDA 6.3 audit</div>
+            <div class="cert__year">Since 2016</div>
+            <p class="cert__desc">Automotive process audit — required by Tier 1 OEMs.</p>
+          </div>
+        </article>
+
+        <article class="cert">
+          <svg class="cert__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M20 4 6 9v11c0 7 6 13 14 16 8-3 14-9 14-16V9z"/>
+            <path d="M20 12v8M20 26v.5"/>
+            <circle cx="20" cy="20" r="9"/>
+          </svg>
+          <div>
+            <div class="cert__name">Knorr-Bremse Product Safety Audit</div>
+            <div class="cert__year">Since 2007</div>
+            <p class="cert__desc">Brake system supplier qualification — passed and maintained.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="cert-footnote"><em>All certificates are available on request as part of the supplier qualification process. Audit reports can be shared under NDA.</em></p>
+
+      <div class="section__foot">
+        <a class="link-arrow" href="/capabilities/certifications/">
+          Request certification documents
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 08 BY THE NUMBERS (DARK) ============ -->
+  <section class="panel-black" id="by-the-numbers" aria-labelledby="num-title">
+    <div class="panel-black__inner">
+      <div class="label">§ 08 — BY THE NUMBERS</div>
+      <div class="section__head">
+        <h2 class="section__title" id="num-title">Capacity by the numbers</h2>
+      </div>
+
+      <div class="num-grid">
+        <div class="num-cell">
+          <div class="num-cell__value">40</div>
+          <div class="num-cell__label">CNC lathes</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">6</div>
+          <div class="num-cell__label">Machining centers</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">5,000<span class="unit">m²</span></div>
+          <div class="num-cell__label">Total production area</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">3</div>
+          <div class="num-cell__label">Production sites</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">50<span class="sep">+</span></div>
+          <div class="num-cell__label">Employees</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">500<span class="sep">–</span>100K</div>
+          <div class="num-cell__label">Series size range</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">±0.01<span class="unit">mm</span></div>
+          <div class="num-cell__label">Typical tolerance</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">5</div>
+          <div class="num-cell__label">Material families</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">4</div>
+          <div class="num-cell__label">Key certifications</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 09 FAQ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="section__inner">
+      <div class="label">§ 09 — FAQ</div>
+      <div class="section__head">
+        <h2 class="section__title" id="faq-title">What buyers ask before sending a drawing</h2>
+      </div>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">01</span>
+              <span class="faq-q">Can you handle our production volume?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Our sweet spot is 500 to 100,000 pieces per order, with repeat production relationships often spanning multiple years. Above 100,000 pieces we evaluate case by case — we have run larger runs, but our 40-machine fleet is configured for high-mix mid-volume work, not pure mass production.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">02</span>
+              <span class="faq-q">Do you machine the specific material we use?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>We routinely machine carbon and alloy steels, stainless, aluminum, brass, bronze, steel and aluminum castings, and engineering plastics including POM, PA, PEEK. If your grade is unusual, send the drawing — we have likely run it before. Material traceability and 3.1 certificates are standard.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">03</span>
+              <span class="faq-q">What tolerances can you actually hold on a production run?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Typical ±0.01 mm on CNC turned and milled parts, measured across the full series, not just the first article. We hold ±0.005 mm on selected machines for controlled features. Tolerances below ±0.005 mm require grinding — we coordinate this with our grinding partner so you still receive finished parts from one supplier.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">04</span>
+              <span class="faq-q">Are you certified for Tier 1 / Tier 2 automotive supply?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Yes. ISO 9001 since 1996, ISO 14001 since 2005, audited to VDA 6.3 in 2016, and passed the Knorr-Bremse Product Safety Audit in 2007 — maintained since. Audit reports available under NDA as part of supplier qualification.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">05</span>
+              <span class="faq-q">Do you offer first article inspection (FAI) and SPC reports?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>FAI reports with full dimensional and material documentation are standard on every new part number. SPC reports for series production are available on request and are routine for automotive customers.</p>
+            </div>
+          </details>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 10 CLOSING CTA ============ -->
+  <section class="cta-final" aria-labelledby="cta-title">
+    <div class="cta-final__inner">
+      <div class="label">§ 10 — GET STARTED</div>
+      <h2 id="cta-title">Have a drawing? We'll tell you in 48 hours which features we hold, which we coordinate, and what the part will cost in series.</h2>
+      <p>Upload STEP, IGES, or PDF. NDA on request before you send.</p>
+      <div class="cta-final__buttons">
+        <a href="/rfq/" class="btn btn--primary">REQUEST A QUOTE</a>
+        <a href="/contact/" class="btn btn--ghost">TALK TO ENGINEERING</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">BORELA BT</div>
+    <div class="footer__links">
+      <a href="../services/index.html">SERVICES</a>
+      <a href="../industries/index.html">INDUSTRIES</a>
+      <a href="#overview">CAPABILITIES</a>
+      <a href="../Borela.html#case">CASE STUDIES</a>
+      <a href="#faq">FAQ</a>
+      <a href="#privacy">PRIVACY POLICY</a>
+    </div>
+    <div class="footer__legal">© 2026 BORELA BT. ISO 9001:2015 CERTIFIED. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+</body>
+</html>

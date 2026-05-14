@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Borela — Family-Owned Precision Machining | Hungary</title>
+<meta name="description" content="Borela is a family-owned Hungarian precision machining company — engineering heritage since 1953, 50 people, 3 sites, serving Knorr-Bremse, Mercedes-Benz and Hilti." />
+
+<link rel="alternate" hreflang="en" href="https://borela.eu/about/" />
+<link rel="alternate" hreflang="de" href="https://borela.eu/de/ueber-uns/" />
+<link rel="alternate" hreflang="hu" href="https://borela.eu/hu/rolunk/" />
+<link rel="alternate" hreflang="x-default" href="https://borela.eu/about/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ============ JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Borela",
+  "url": "https://borela.eu/about/",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Borela Bt.",
+    "foundingDate": "1990",
+    "description": "Family-owned Hungarian precision CNC machining company with engineering heritage since 1953.",
+    "url": "https://borela.eu/",
+    "numberOfEmployees": "50",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Garai u. 6",
+      "postalCode": "6070",
+      "addressLocality": "Izsák",
+      "addressCountry": "HU"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://borela.eu/"},
+    {"@type":"ListItem","position":2,"name":"About","item":"https://borela.eu/about/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How long has Borela been operating?","acceptedAnswer":{"@type":"Answer","text":"Borela's engineering heritage goes back to a machine workshop founded in 1953. The company has held ISO 9001 certification since 1996 and has served automotive and engineering OEMs across Europe for decades."}},
+    {"@type":"Question","name":"Is Borela a family business?","acceptedAnswer":{"@type":"Answer","text":"Yes. Borela is family-owned and engineering-led — the same family and the same engineering culture have run the company throughout its history."}},
+    {"@type":"Question","name":"Where is Borela located?","acceptedAnswer":{"@type":"Answer","text":"Borela operates three sites in central Hungary: headquarters in Izsák, the primary machining and pressing plant in Jakabszállás (3,000 m²), and a secondary machining plant in Fülöpszállás (2,000 m²)."}},
+    {"@type":"Question","name":"How many people work at Borela?","acceptedAnswer":{"@type":"Answer","text":"Around 50 people across three sites, operating 40 CNC lathes and 6 machining centers."}}
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #f3efe7;
+    --bg-2: #ebe6dc;
+    --ink: #11110f;
+    --ink-2: #2a2926;
+    --muted: #6b6862;
+    --line: #d8d2c5;
+    --line-soft: #e3ddd0;
+    --accent: #1a48c2;
+    --accent-hover: #143a9e;
+    --black: #0e0e0c;
+    --white: #ffffff;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- Skip link ---------- */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 8px; }
+
+  /* ---------- Tokens ---------- */
+  .label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn--primary { background: var(--accent); color: #fff; }
+  .btn--primary:hover { background: var(--accent-hover); }
+  .btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn--ghost:hover { background: var(--ink); color: #fff; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 104px;
+    padding: 0 32px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; flex-shrink: 0; }
+  .brand__logo { height: 70px; width: auto; display: block; }
+  .nav {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 2px solid transparent;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .nav-link:hover { border-bottom-color: var(--accent); }
+  .nav-link.is-active { border-bottom-color: var(--accent); color: var(--accent); }
+  .header-cta { flex-shrink: 0; }
+  .hamburger {
+    display: none;
+    background: none; border: none;
+    width: 36px; height: 36px; padding: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 5px;
+  }
+  .hamburger span { width: 22px; height: 1.5px; background: var(--ink); }
+
+  /* ---------- Hero with diagonal-stripe background ---------- */
+  .hero {
+    position: relative;
+    padding: 0;
+    min-height: 560px;
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(243,239,231,0.92), rgba(243,239,231,0.78) 60%, rgba(243,239,231,0.92)),
+      repeating-linear-gradient(135deg, #c8c2b3 0 14px, #d4cebe 14px 28px);
+  }
+  .hero__bg-caption {
+    position: absolute;
+    right: 32px;
+    bottom: 24px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+    text-align: right;
+    max-width: 340px;
+    line-height: 1.5;
+  }
+  .hero__bg-caption::before { content: "↳ "; color: var(--accent); }
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 88px 32px 120px;
+    width: 100%;
+  }
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 40px;
+    display: flex;
+    gap: 10px;
+  }
+  .breadcrumbs a { color: var(--muted); }
+  .breadcrumbs a:hover { color: var(--ink); }
+  .breadcrumbs .sep { color: var(--line); }
+  .breadcrumbs .current { color: var(--ink); }
+  .hero h1 {
+    font-size: clamp(40px, 5.8vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+    margin: 0 0 28px;
+    text-transform: uppercase;
+    text-wrap: balance;
+    max-width: 20ch;
+  }
+  .hero__body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 640px;
+    margin: 0 0 40px;
+  }
+
+  /* ---------- Section base ---------- */
+  .section {
+    padding: 96px 0 104px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section--bg2 { background: var(--bg-2); }
+  .section__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .section__head {
+    margin-bottom: 44px;
+    max-width: 880px;
+  }
+  .section__title {
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    text-wrap: balance;
+    line-height: 1.1;
+  }
+  .section__lead {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    margin: 0;
+    max-width: 70ch;
+  }
+  .section__foot {
+    margin-top: 36px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--ink);
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .link-arrow svg { width: 14px; height: 14px; }
+  .link-arrow:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ---------- §02 Who we are ---------- */
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .who-paragraphs p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    margin: 0 0 22px;
+    max-width: 56ch;
+  }
+  .who-paragraphs p:last-child { margin-bottom: 0; }
+  .who-pull {
+    position: relative;
+    padding: 28px 0 0 32px;
+    border-left: 2px solid var(--accent);
+    margin-top: 4px;
+  }
+  .who-pull__kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .who-pull p {
+    font-size: clamp(18px, 1.7vw, 22px);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  /* ---------- §03 Black numbers ---------- */
+  .panel-black {
+    background: var(--black);
+    color: #fff;
+    padding: 96px 0 104px;
+  }
+  .panel-black__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .panel-black .label { color: rgba(255,255,255,0.5); }
+
+  .num-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 44px;
+    margin-top: 8px;
+  }
+  .num-cell {
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+  }
+  .num-cell__value {
+    font-size: clamp(40px, 4.8vw, 64px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    color: #fff;
+  }
+  .num-cell__value .sep {
+    font-weight: 500;
+    margin: 0 2px;
+    color: rgba(255,255,255,0.55);
+  }
+  .num-cell__value .unit {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    margin-left: 4px;
+    vertical-align: top;
+    position: relative;
+    top: 12px;
+  }
+  .num-cell__label {
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ---------- §04 Timeline (new component) ---------- */
+  .timeline {
+    position: relative;
+    margin: 24px 0 0;
+    padding: 0 0 0 0;
+    list-style: none;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 9px;
+    width: 1px;
+    background: var(--ink);
+  }
+  .tl-item {
+    position: relative;
+    padding: 0 0 56px 56px;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item__dot {
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 19px;
+    height: 19px;
+    background: var(--bg);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .tl-item--today .tl-item__dot {
+    background: var(--accent);
+    border-color: var(--accent);
+    width: 21px;
+    height: 21px;
+    left: -1px;
+    top: 17px;
+    box-shadow: 0 0 0 6px var(--bg);
+  }
+  .tl-item__head {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .tl-item__year {
+    font-size: clamp(40px, 4.2vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+    text-transform: uppercase;
+    font-feature-settings: "tnum";
+  }
+  .tl-item--today .tl-item__year { color: var(--accent); }
+  .tl-item__title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+  .tl-item__desc {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 62ch;
+  }
+
+  /* ---------- §05 What defines us (numbered 2x2) ---------- */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .why-card {
+    padding: 40px 40px 42px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+  }
+  .why-card__num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .why-card__title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin: 0 0 14px;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  .why-card__desc {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 50ch;
+  }
+
+  /* ---------- §06 People (case-study style) ---------- */
+  .people-card {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 0;
+    border: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .people-card__photo {
+    position: relative;
+    min-height: 440px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.25)),
+      repeating-linear-gradient(135deg, #4a4a48 0 14px, #58585a 14px 28px);
+  }
+  .people-card__photo-tag {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 0 24px;
+  }
+  .people-card__body {
+    padding: 56px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .people-card__kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .people-card__title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    margin: 0 0 22px;
+    text-transform: uppercase;
+    text-wrap: balance;
+    line-height: 1.15;
+  }
+  .people-card__body p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15.5px;
+    line-height: 1.65;
+    max-width: 50ch;
+  }
+
+  /* ---------- §07 Locations (datasheet cards) ---------- */
+  .loc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .loc-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 260px;
+    transition: border-color .15s ease;
+    position: relative;
+  }
+  .loc-card:hover { border-color: var(--ink); }
+  .loc-card__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  .loc-card__icon { width: 28px; height: 28px; color: var(--ink); }
+  .loc-card__pin {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .loc-card__city {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0 0 6px;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .loc-card__role {
+    font-size: 14px;
+    color: var(--ink-2);
+    margin: 0 0 24px;
+    line-height: 1.4;
+  }
+  .loc-card__specs {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .loc-spec {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .loc-spec__key { color: var(--muted); white-space: nowrap; }
+  .loc-spec__dots {
+    flex: 1;
+    border-bottom: 1px dotted var(--line);
+    transform: translateY(-3px);
+    min-width: 16px;
+  }
+  .loc-spec__val { color: var(--ink); font-weight: 500; white-space: nowrap; text-align: right; }
+
+  /* ---------- §08 Certifications & awards ---------- */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .cert {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 28px 30px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    transition: border-color .15s ease;
+  }
+  .cert:hover { border-color: var(--ink); }
+  .cert__icon { width: 42px; height: 42px; color: var(--ink); }
+  .cert__name {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .cert__year {
+    margin-top: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .cert__desc {
+    margin: 12px 0 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .awards-strip {
+    margin-top: 32px;
+    padding: 18px 24px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .awards-strip__label {
+    color: var(--accent);
+    padding-right: 12px;
+    border-right: 1px solid var(--line);
+  }
+  .awards-strip__item + .awards-strip__item::before {
+    content: "·";
+    color: var(--accent);
+    margin: 0 12px 0 -8px;
+  }
+
+  /* ---------- §09 Trust band ---------- */
+  .trust-band {
+    padding: 80px 0 84px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-2);
+    text-align: center;
+  }
+  .trust-band__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .trust-band__line {
+    font-size: clamp(20px, 2.4vw, 28px);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 16px 0 28px;
+    text-wrap: balance;
+    max-width: 28ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .trust-band__line em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .trust-band__foot { display: flex; justify-content: center; }
+
+  /* ---------- §10 FAQ ---------- */
+  .faq-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item details summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 24px 4px;
+    display: grid;
+    grid-template-columns: 32px 1fr 24px;
+    align-items: center;
+    gap: 20px;
+  }
+  .faq-item details summary::-webkit-details-marker { display: none; }
+  .faq-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+  .faq-q {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .faq-toggle {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    justify-self: end;
+  }
+  .faq-toggle::before,
+  .faq-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    background: var(--ink);
+    transform: translate(-50%, -50%);
+    transition: transform .2s ease, background-color .2s ease;
+  }
+  .faq-toggle::before { width: 14px; height: 1.5px; }
+  .faq-toggle::after { width: 1.5px; height: 14px; }
+  .faq-item details[open] .faq-toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+  .faq-item details[open] .faq-toggle::before { background: var(--accent); }
+  .faq-item details[open] .faq-q { color: var(--accent); }
+  .faq-a {
+    padding: 0 4px 28px 60px;
+    max-width: 880px;
+  }
+  .faq-a p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ---------- Closing CTA ---------- */
+  .cta-final {
+    background: var(--bg);
+    padding: 120px 0 128px;
+    text-align: center;
+  }
+  .cta-final__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .cta-final h2 {
+    font-size: clamp(28px, 3.4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 36px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  .cta-final__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer { padding: 60px 0 28px; border-top: 1px solid var(--line); background: var(--bg); }
+  .footer__inner { padding: 0 32px; max-width: 1320px; margin: 0 auto; }
+  .footer__brand {
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    margin-bottom: 28px;
+  }
+  .footer__brand::after { content: "."; color: var(--accent); }
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+  .footer__links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+  .footer__links a:hover { color: var(--accent); }
+  .footer__legal {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1180px) {
+    .nav { gap: 18px; }
+    .nav-link { font-size: 11px; letter-spacing: 0.1em; }
+  }
+  @media (max-width: 1024px) {
+    .nav, .header-cta { display: none; }
+    .hamburger { display: flex; }
+    .site-header__inner { justify-content: space-between; height: 88px; }
+    .brand__logo { height: 54px; }
+    .who-grid { grid-template-columns: 1fr; gap: 32px; }
+    .who-pull { padding: 24px 0 0 24px; }
+    .num-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .loc-grid { grid-template-columns: 1fr; }
+    .people-card { grid-template-columns: 1fr; }
+    .people-card__photo { min-height: 280px; }
+    .people-card__body { padding: 36px 28px; }
+    .certs-grid { grid-template-columns: 1fr; }
+    .hero__bg-caption {
+      position: static;
+      max-width: 100%;
+      text-align: left;
+      padding: 12px 32px 24px;
+    }
+  }
+  @media (max-width: 720px) {
+    .hero { min-height: 0; }
+    .hero__inner { padding: 56px 24px 72px; }
+    .num-grid { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+    .section { padding: 64px 0 72px; }
+    .panel-black { padding: 64px 0 72px; }
+    .cta-final { padding: 80px 0 88px; }
+    .trust-band { padding: 56px 0 60px; }
+    .faq-a { padding-left: 4px; }
+    .site-header__inner { padding: 0 18px; }
+    .tl-item { padding-left: 44px; padding-bottom: 44px; }
+    .tl-item__head { gap: 14px; }
+    .tl-item__year { font-size: 32px; }
+    .tl-item__title { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../Borela.html" aria-label="Borela home">
+      <img src="../assets/borela-logo.svg" alt="Borela — Precision CNC / Est. 1953" class="brand__logo" />
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="../services/index.html">Services</a>
+      <a class="nav-link" href="../industries/index.html">Industries</a>
+      <a class="nav-link" href="../capabilities/index.html">Capabilities</a>
+      <a class="nav-link" href="../references/index.html">References</a>
+      <a class="nav-link is-active" href="#" aria-current="page">About</a>
+      <a class="nav-link" href="../Borela.html#careers">Careers</a>
+      <a class="nav-link" href="../Borela.html#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="/rfq/" class="btn btn--primary">REQUEST A QUOTE</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ § 01 HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../Borela.html">Home</a>
+        <span class="sep">/</span>
+        <span class="current">About</span>
+      </div>
+      <div class="label">§ 01 — ABOUT BORELA</div>
+      <h1 id="hero-title">Seven decades of precision — a Hungarian engineering family business</h1>
+      <p class="hero__body">From a single machine workshop founded in 1953 to a precision contract manufacturer trusted by European OEMs — Borela has stayed family-owned, engineering-led and grounded in central Hungary.</p>
+      <a href="#story" class="btn btn--ghost">SEE OUR TIMELINE</a>
+    </div>
+    <div class="hero__bg-caption">Photo: Jakabszállás production hall or archival workshop image</div>
+  </section>
+
+  <!-- ============ § 02 WHO WE ARE ============ -->
+  <section class="section" aria-labelledby="who-title">
+    <div class="section__inner">
+      <div class="label">§ 02 — WHO WE ARE</div>
+      <div class="section__head">
+        <h2 class="section__title" id="who-title">A family-owned precision shop in central Hungary</h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-paragraphs">
+          <p>Borela is a family-owned precision machining company in central Hungary. We turn and mill components for automotive, commercial-vehicle, power-tool, sealing and general-engineering OEMs across Europe.</p>
+          <p>What has not changed in seven decades is the way we work: the same family, the same engineering culture. For a buyer, that continuity means a supplier relationship that does not reset with every quarterly strategy.</p>
+          <p>Our location is part of the offer. Sitting in the heart of the EU — no customs border, short logistics — we deliver Western-European quality at Eastern-European cost.</p>
+        </div>
+        <figure class="who-pull">
+          <div class="who-pull__kicker">In one line</div>
+          <p>A family-owned Hungarian precision machining partner in the heart of the EU, delivering Western-European quality at Eastern-European cost — with 70+ years of engineering heritage and a track record serving Knorr-Bremse, Mercedes-Benz, Hilti, Freudenberg and Sulzer.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 03 BY THE NUMBERS (BLACK) ============ -->
+  <section class="panel-black" aria-labelledby="num-title">
+    <div class="panel-black__inner">
+      <div class="label">§ 03 — BY THE NUMBERS</div>
+      <div class="section__head">
+        <h2 class="section__title" id="num-title" style="color:#fff; max-width:22ch;">A 70-year company, in 8 numbers</h2>
+      </div>
+      <div class="num-grid">
+        <div class="num-cell">
+          <div class="num-cell__value">1953</div>
+          <div class="num-cell__label">Engineering heritage since</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">70<span class="sep">+</span></div>
+          <div class="num-cell__label">Years of know-how</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">50</div>
+          <div class="num-cell__label">People</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">3</div>
+          <div class="num-cell__label">Production &amp; HQ sites</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">40</div>
+          <div class="num-cell__label">CNC lathes</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">6</div>
+          <div class="num-cell__label">Machining centers</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">500<span class="sep">–</span>100K</div>
+          <div class="num-cell__label">Series size per order</div>
+        </div>
+        <div class="num-cell">
+          <div class="num-cell__value">±0.01<span class="unit">mm</span></div>
+          <div class="num-cell__label">Typical tolerance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 04 OUR STORY / TIMELINE ============ -->
+  <section class="section" id="story" aria-labelledby="story-title">
+    <div class="section__inner">
+      <div class="label">§ 04 — OUR STORY</div>
+      <div class="section__head">
+        <h2 class="section__title" id="story-title">Seven decades, one family, one workshop floor that never stopped growing</h2>
+      </div>
+
+      <ol class="timeline" aria-label="Borela milestones">
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">1953</span>
+            <h3 class="tl-item__title">The first workshop</h3>
+          </div>
+          <p class="tl-item__desc">Lajos Bognár founds his machine workshop. This is where Borela's 70+ years of engineering heritage begin.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">1990</span>
+            <h3 class="tl-item__title">Borela Bt. is founded</h3>
+          </div>
+          <p class="tl-item__desc">The family workshop continues as an independent company, based in Izsák.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">1996</span>
+            <h3 class="tl-item__title">ISO 9001</h3>
+          </div>
+          <p class="tl-item__desc">Borela's quality management system is certified — the foundation of its move into series production.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">2005</span>
+            <h3 class="tl-item__title">ISO 14001</h3>
+          </div>
+          <p class="tl-item__desc">Environmental management certification — increasingly expected by Western-European buyers.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">2007</span>
+            <h3 class="tl-item__title">Knorr-Bremse Product Safety Audit</h3>
+          </div>
+          <p class="tl-item__desc">Borela passes Knorr-Bremse's strict product safety audit — the entry point to brake-system supply.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">2008</span>
+            <h3 class="tl-item__title">The Fülöpszállás site</h3>
+          </div>
+          <p class="tl-item__desc">A second site is added to expand capacity.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">2009</span>
+            <h3 class="tl-item__title">Supplier of the Year</h3>
+          </div>
+          <p class="tl-item__desc">Borela is named Knorr-Bremse Supplier of the Year.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">2010</span>
+            <h3 class="tl-item__title">Entrepreneur of the Year</h3>
+          </div>
+          <p class="tl-item__desc">National entrepreneurial recognition.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">2016</span>
+            <h3 class="tl-item__title">VDA 6.3 audit</h3>
+          </div>
+          <p class="tl-item__desc">Borela's process audit meets the VDA 6.3 automotive standard.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">2019</span>
+            <h3 class="tl-item__title">Mercedes-Benz engineering project</h3>
+          </div>
+          <p class="tl-item__desc">An engineering collaboration begins with Mercedes-Benz Manufacturing Hungary.</p>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">2020s</span>
+            <h3 class="tl-item__title">New hall &amp; focused production</h3>
+          </div>
+          <p class="tl-item__desc">A new production hall opens in Jakabszállás. Borela moves heat treatment to a specialized partner so it can concentrate on its core machining expertise.</p>
+        </li>
+
+        <li class="tl-item tl-item--today">
+          <span class="tl-item__dot" aria-hidden="true"></span>
+          <div class="tl-item__head">
+            <span class="tl-item__year">Today</span>
+            <h3 class="tl-item__title">A precision partner trusted by European OEMs</h3>
+          </div>
+          <p class="tl-item__desc">50 people, 3 sites, 40 CNC lathes and 6 machining centers — a precision partner trusted by European OEMs.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ § 05 WHAT DEFINES US ============ -->
+  <section class="section section--bg2" aria-labelledby="def-title">
+    <div class="section__inner">
+      <div class="label">§ 05 — WHAT DEFINES US</div>
+      <div class="section__head">
+        <h2 class="section__title" id="def-title">Four things that have not changed in 70 years</h2>
+      </div>
+      <div class="why-grid">
+        <article class="why-card">
+          <div class="why-card__num">01</div>
+          <h3 class="why-card__title">Continuity</h3>
+          <p class="why-card__desc">The same family, the same engineering culture, decade after decade. For a buyer, that means a supplier relationship that does not depend on a quarterly strategy.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-card__num">02</div>
+          <h3 class="why-card__title">Engineering-led</h3>
+          <p class="why-card__desc">Decisions are made by engineers, not by sales. That is why we tell you plainly what we can and cannot do — for example, we coordinate grinding and heat treatment through trusted partners rather than overpromise.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-card__num">03</div>
+          <h3 class="why-card__title">Transparency</h3>
+          <p class="why-card__desc">Realistic tolerances, realistic lead times, realistic capabilities. Our ±0.01 mm typical tolerance is stated honestly — tighter work is arranged with a partner, not hidden.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-card__num">04</div>
+          <h3 class="why-card__title">Single point of contact</h3>
+          <p class="why-card__desc">We run the full project management, including coordination of outsourced heat treatment. You sign one contract and have one contact.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 06 THE PEOPLE ============ -->
+  <section class="section" aria-labelledby="people-title">
+    <div class="section__inner">
+      <div class="label">§ 06 — THE PEOPLE</div>
+      <div class="section__head">
+        <h2 class="section__title" id="people-title">Run by the family, built by engineers</h2>
+      </div>
+      <article class="people-card">
+        <div class="people-card__photo" role="img" aria-label="Workshop floor team photo placeholder">
+          <span class="people-card__photo-tag">TEAM ON THE WORKSHOP FLOOR — PHOTO TBC</span>
+        </div>
+        <div class="people-card__body">
+          <div class="people-card__kicker">The team</div>
+          <h3 class="people-card__title">Engineers running the machines they understand</h3>
+          <p>Borela is still run by the founding family, building on engineering experience earned on the workshop floor. Across generations, the people who run the company are the people who understand the machines.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ § 07 WHERE WE WORK ============ -->
+  <section class="section section--bg2" aria-labelledby="loc-title">
+    <div class="section__inner">
+      <div class="label">§ 07 — WHERE WE WORK</div>
+      <div class="section__head">
+        <h2 class="section__title" id="loc-title">Three sites in central Hungary</h2>
+      </div>
+
+      <div class="loc-grid">
+        <article class="loc-card">
+          <div class="loc-card__head">
+            <svg class="loc-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M4 28V12l12-8 12 8v16"/>
+              <path d="M12 28V18h8v10"/>
+            </svg>
+            <span class="loc-card__pin">01 · HQ</span>
+          </div>
+          <h3 class="loc-card__city">Izsák</h3>
+          <p class="loc-card__role">Headquarters</p>
+          <div class="loc-card__specs">
+            <div class="loc-spec">
+              <span class="loc-spec__key">Role</span>
+              <span class="loc-spec__dots"></span>
+              <span class="loc-spec__val">HQ</span>
+            </div>
+            <div class="loc-spec">
+              <span class="loc-spec__key">Address</span>
+              <span class="loc-spec__dots"></span>
+              <span class="loc-spec__val">Garai u. 6, 6070</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="loc-card">
+          <div class="loc-card__head">
+            <svg class="loc-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M3 28V14h10v14"/>
+              <path d="M13 28V8h16v20"/>
+              <path d="M17 14h2M23 14h2M17 19h2M23 19h2M17 24h2M23 24h2"/>
+            </svg>
+            <span class="loc-card__pin">02 · PLANT</span>
+          </div>
+          <h3 class="loc-card__city">Jakabszállás</h3>
+          <p class="loc-card__role">Primary machining &amp; pressing plant</p>
+          <div class="loc-card__specs">
+            <div class="loc-spec">
+              <span class="loc-spec__key">Floor</span>
+              <span class="loc-spec__dots"></span>
+              <span class="loc-spec__val">3,000 m²</span>
+            </div>
+            <div class="loc-spec">
+              <span class="loc-spec__key">Function</span>
+              <span class="loc-spec__dots"></span>
+              <span class="loc-spec__val">CNC + press</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="loc-card">
+          <div class="loc-card__head">
+            <svg class="loc-card__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M3 28V12h12v16"/>
+              <path d="M15 28V18h14v10"/>
+              <path d="M7 18h2M11 18h2M19 22h2M25 22h2"/>
+            </svg>
+            <span class="loc-card__pin">03 · PLANT</span>
+          </div>
+          <h3 class="loc-card__city">Fülöpszállás</h3>
+          <p class="loc-card__role">Secondary machining plant</p>
+          <div class="loc-card__specs">
+            <div class="loc-spec">
+              <span class="loc-spec__key">Floor</span>
+              <span class="loc-spec__dots"></span>
+              <span class="loc-spec__val">2,000 m²</span>
+            </div>
+            <div class="loc-spec">
+              <span class="loc-spec__key">Function</span>
+              <span class="loc-spec__dots"></span>
+              <span class="loc-spec__val">CNC · redundancy</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="section__foot">
+        <a class="link-arrow" href="/about/locations/">
+          See all locations &amp; maps
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 08 CREDENTIALS & RECOGNITION ============ -->
+  <section class="section" aria-labelledby="cred-title">
+    <div class="section__inner">
+      <div class="label">§ 08 — CREDENTIALS &amp; RECOGNITION</div>
+      <div class="section__head">
+        <h2 class="section__title" id="cred-title">Audited, certified, recognized</h2>
+      </div>
+
+      <div class="certs-grid">
+        <article class="cert">
+          <svg class="cert__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M20 4 6 9v11c0 7 6 13 14 16 8-3 14-9 14-16V9z"/>
+            <path d="M14 20l4 4 8-9"/>
+          </svg>
+          <div>
+            <div class="cert__name">ISO 9001</div>
+            <div class="cert__year">Since 1996</div>
+            <p class="cert__desc">Certified quality management system.</p>
+          </div>
+        </article>
+
+        <article class="cert">
+          <svg class="cert__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M20 4 6 9v11c0 7 6 13 14 16 8-3 14-9 14-16V9z"/>
+            <path d="M14 18c2 0 2 4 6 4s4-4 6-4"/>
+            <path d="M14 24c2 0 2 4 6 4s4-4 6-4"/>
+          </svg>
+          <div>
+            <div class="cert__name">ISO 14001</div>
+            <div class="cert__year">Since 2005</div>
+            <p class="cert__desc">Certified environmental management system.</p>
+          </div>
+        </article>
+
+        <article class="cert">
+          <svg class="cert__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M20 4 6 9v11c0 7 6 13 14 16 8-3 14-9 14-16V9z"/>
+            <path d="M13 16h14M13 21h14M13 26h9"/>
+          </svg>
+          <div>
+            <div class="cert__name">VDA 6.3 audit</div>
+            <div class="cert__year">2016</div>
+            <p class="cert__desc">Process audit to the automotive standard.</p>
+          </div>
+        </article>
+
+        <article class="cert">
+          <svg class="cert__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M20 4 6 9v11c0 7 6 13 14 16 8-3 14-9 14-16V9z"/>
+            <path d="M20 12v8M20 26v.5"/>
+            <circle cx="20" cy="20" r="9"/>
+          </svg>
+          <div>
+            <div class="cert__name">Knorr-Bremse Product Safety Audit</div>
+            <div class="cert__year">Passed 2007</div>
+            <p class="cert__desc">Entry to brake-system supply.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="awards-strip" role="list" aria-label="Awards">
+        <span class="awards-strip__label">Awards</span>
+        <span class="awards-strip__item" role="listitem">Knorr-Bremse Supplier of the Year 2009</span>
+        <span class="awards-strip__item" role="listitem">Entrepreneur of the Year 2010</span>
+      </div>
+
+      <div class="section__foot">
+        <a class="link-arrow" href="../capabilities/index.html#certifications">
+          Full certification details
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 09 WHO TRUSTS US ============ -->
+  <section class="trust-band" aria-labelledby="trust-title">
+    <div class="trust-band__inner">
+      <div class="label" style="margin-bottom: 0;">§ 09 — WHO TRUSTS US</div>
+      <h2 class="trust-band__line" id="trust-title">Borela supplies precision components to <em>Knorr-Bremse, Mercedes-Benz Manufacturing Hungary, Hilti, Freudenberg, Sulzer, Phoenix Mecano and Zarges.</em></h2>
+      <div class="trust-band__foot">
+        <a class="link-arrow" href="../references/index.html">
+          See references &amp; case studies
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 10 FAQ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="section__inner">
+      <div class="label">§ 10 — COMMON QUESTIONS</div>
+      <div class="section__head">
+        <h2 class="section__title" id="faq-title">Common questions about Borela</h2>
+      </div>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">01</span>
+              <span class="faq-q">How long has Borela been operating?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Borela's engineering heritage goes back to a machine workshop founded in 1953. The company has held ISO 9001 certification since 1996 and has served automotive and engineering OEMs across Europe for decades.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">02</span>
+              <span class="faq-q">Is Borela a family business?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Yes. Borela is family-owned and engineering-led — the same family and the same engineering culture have run the company throughout its history.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">03</span>
+              <span class="faq-q">Where is Borela located?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Borela operates three sites in central Hungary: headquarters in Izsák, the primary machining and pressing plant in Jakabszállás (3,000 m²), and a secondary machining plant in Fülöpszállás (2,000 m²).</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">04</span>
+              <span class="faq-q">How many people work at Borela?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Around 50 people across three sites, operating 40 CNC lathes and 6 machining centers.</p>
+            </div>
+          </details>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 11 CLOSING CTA ============ -->
+  <section class="cta-final" aria-labelledby="cta-title">
+    <div class="cta-final__inner">
+      <div class="label">§ 11 — GET STARTED</div>
+      <h2 id="cta-title">Working with a supplier you can rely on for years — that's the point. Send us your drawing.</h2>
+      <div class="cta-final__buttons">
+        <a href="/rfq/" class="btn btn--primary">REQUEST A QUOTE</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">BORELA BT</div>
+    <div class="footer__links">
+      <a href="../services/index.html">SERVICES</a>
+      <a href="../industries/index.html">INDUSTRIES</a>
+      <a href="../capabilities/index.html">CAPABILITIES</a>
+      <a href="../references/index.html">REFERENCES</a>
+      <a href="#story">OUR STORY</a>
+      <a href="#faq">FAQ</a>
+      <a href="#privacy">PRIVACY POLICY</a>
+    </div>
+    <div class="footer__legal">© 2026 BORELA BT. ISO 9001:2015 CERTIFIED. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+</body>
+</html>

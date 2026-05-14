@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Request a Quote — Precision CNC machining | Borela</title>
+<meta name="description" content="Upload your drawing and get a meaningful answer within two business days — reviewed by an engineer, not an auto-responder." />
+
+<link rel="canonical" href="https://borela.eu/rfq/" />
+<link rel="alternate" hreflang="en" href="https://borela.eu/rfq/" />
+<link rel="alternate" hreflang="de" href="https://borela.eu/de/angebot-anfragen/" />
+<link rel="alternate" hreflang="hu" href="https://borela.eu/hu/arajanlat/" />
+<link rel="alternate" hreflang="x-default" href="https://borela.eu/rfq/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ============ JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Request a Quote — Borela",
+  "url": "https://borela.eu/rfq/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://borela.eu/"},
+    {"@type":"ListItem","position":2,"name":"Request a Quote","item":"https://borela.eu/rfq/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How long does it take to get a quote?","acceptedAnswer":{"@type":"Answer","text":"We aim to reply within 2 business days with either a quote, a quote timeline, or specific questions about your drawing. Complex assemblies or parts needing heat treatment may take a few days longer — we'll always tell you upfront."}},
+    {"@type":"Question","name":"Do I have to upload a drawing to get a quote?","acceptedAnswer":{"@type":"Answer","text":"No. You can submit the request without files and we'll follow up — but a 2D drawing with tolerances and a material spec lets us give you a far more accurate answer, faster."}},
+    {"@type":"Question","name":"Can I get an NDA before sharing confidential files?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tick the NDA box in the form and we'll email you a mutual non-disclosure agreement first. We only ask for your drawings once it's signed."}},
+    {"@type":"Question","name":"What series sizes do you quote?","acceptedAnswer":{"@type":"Answer","text":"Our sweet spot is 500 to 100,000 pieces per order. We also quote prototypes as a preparatory stage before series — select \"Prototype / one-off\" in the batch size field."}}
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #f3efe7;
+    --bg-2: #ebe6dc;
+    --ink: #11110f;
+    --ink-2: #2a2926;
+    --muted: #6b6862;
+    --line: #d8d2c5;
+    --line-soft: #e3ddd0;
+    --accent: #1a48c2;
+    --accent-hover: #143a9e;
+    --black: #0e0e0c;
+    --white: #ffffff;
+    --error: #b8351c;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 8px; }
+
+  .label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn--primary { background: var(--accent); color: #fff; }
+  .btn--primary:hover { background: var(--accent-hover); }
+  .btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); position: relative; }
+  .btn--ghost:hover { background: var(--ink); color: #fff; }
+  .btn--ghost::before, .btn--ghost::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border: 1px solid currentColor;
+  }
+  .btn--ghost::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+  .btn--ghost::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+  .btn--dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .btn--dark:hover { background: var(--accent); border-color: var(--accent); }
+  .btn--full { width: 100%; padding: 18px 24px; }
+  .btn--active { background: var(--accent); color: #fff; position: relative; }
+  .btn--active::after {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: -1px;
+    transform: translateX(-50%);
+    width: 24px; height: 2px;
+    background: #fff;
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 104px;
+    padding: 0 32px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; flex-shrink: 0; }
+  .brand__logo { height: 70px; width: auto; display: block; }
+  .nav {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 2px solid transparent;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .nav-link:hover { border-bottom-color: var(--accent); }
+  .nav-link.is-active { border-bottom-color: var(--accent); color: var(--accent); }
+  .header-cta { flex-shrink: 0; }
+  .hamburger {
+    display: none;
+    background: none; border: none;
+    width: 36px; height: 36px; padding: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 5px;
+  }
+  .hamburger span { width: 22px; height: 1.5px; background: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 72px 0 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 36px;
+    display: flex;
+    gap: 10px;
+  }
+  .breadcrumbs a { color: var(--muted); }
+  .breadcrumbs a:hover { color: var(--ink); }
+  .breadcrumbs .sep { color: var(--line); }
+  .breadcrumbs .current { color: var(--ink); }
+  .hero h1 {
+    font-size: clamp(46px, 7.4vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    margin: 0 0 28px;
+    text-transform: uppercase;
+  }
+  .hero__sub {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 640px;
+    margin: 0 0 36px;
+  }
+
+  /* Hero trust strip */
+  .hero-trust {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 0;
+  }
+  .hero-trust__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 28px 18px 0;
+    margin-right: 28px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    border-right: 1px solid var(--line);
+  }
+  .hero-trust__item:last-child { border-right: 0; margin-right: 0; }
+  .hero-trust__item svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; }
+
+  /* ---------- Main two-column ---------- */
+  .rfq-main {
+    padding: 80px 0 96px;
+    border-bottom: 1px solid var(--line);
+  }
+  .rfq-main__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* ---------- Form ---------- */
+  .form-block {
+    margin-bottom: 48px;
+  }
+  .form-block:last-of-type { margin-bottom: 32px; }
+  .form-block__head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding-bottom: 14px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid var(--line);
+  }
+  .form-block__num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .form-block__title {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    line-height: 1.1;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .form-row { display: flex; flex-direction: column; gap: 6px; }
+  .form-row--full { grid-column: 1 / -1; }
+  .form-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .form-label .req { color: var(--accent); }
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 14px 16px;
+    transition: border-color .15s ease, background .15s ease;
+    appearance: none;
+    width: 100%;
+  }
+  .form-input:hover,
+  .form-select:hover,
+  .form-textarea:hover { border-color: var(--ink); }
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus { border-color: var(--accent); outline: none; box-shadow: inset 0 0 0 1px var(--accent); }
+  .form-input.is-error,
+  .form-select.is-error,
+  .form-textarea.is-error { border-color: var(--error); }
+  .form-input.is-filled,
+  .form-select.is-filled,
+  .form-textarea.is-filled { background: #fbfaf5; }
+  .form-textarea { min-height: 140px; resize: vertical; }
+  .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2311110f' stroke-width='1.6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px 8px;
+    padding-right: 36px;
+  }
+  .form-help {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .form-error {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--error);
+    margin: 0;
+    display: none;
+  }
+  .form-error::before { content: "⚠ "; }
+  .form-input.is-error + .form-error,
+  .form-select.is-error + .form-error,
+  .form-textarea.is-error + .form-error { display: block; }
+
+  /* Checkbox group */
+  .checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+    margin-top: 6px;
+  }
+  .checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    cursor: pointer;
+    font-size: 13.5px;
+    line-height: 1.4;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .checkbox-row:hover { border-color: var(--ink); }
+  .checkbox-row input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    flex-shrink: 0;
+    margin-top: 1px;
+    position: relative;
+    cursor: pointer;
+  }
+  .checkbox-row input[type="checkbox"]:checked { background: var(--ink); }
+  .checkbox-row input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 3px; top: 0;
+    width: 6px; height: 10px;
+    border-right: 2px solid var(--bg);
+    border-bottom: 2px solid var(--bg);
+    transform: rotate(45deg);
+  }
+  .checkbox-row:has(input:checked) {
+    border-color: var(--ink);
+    background: #fbfaf5;
+  }
+
+  /* Helper reveal (conditional) */
+  .form-reveal {
+    display: none;
+    margin-top: 12px;
+    padding: 14px 16px;
+    border-left: 2px solid var(--accent);
+    background: var(--bg-2);
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .form-reveal.is-shown { display: block; }
+  .form-reveal__kicker {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  /* File upload */
+  .dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 44px 24px;
+    border: 1.5px dashed var(--line);
+    background: var(--bg);
+    text-align: center;
+    transition: border-color .15s ease, background .15s ease;
+    cursor: pointer;
+  }
+  .dropzone:hover, .dropzone.is-dragging {
+    border-color: var(--accent);
+    background: #fbfaf5;
+  }
+  .dropzone__icon {
+    width: 36px; height: 36px;
+    color: var(--ink);
+  }
+  .dropzone__primary {
+    font-size: 14.5px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.45;
+    max-width: 38ch;
+  }
+  .dropzone__primary strong { font-weight: 700; }
+  .dropzone__meta {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .dropzone__browse {
+    margin-top: 4px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+  }
+
+  /* Uploaded file chip */
+  .upload-states { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .file-chip {
+    display: grid;
+    grid-template-columns: 28px 1fr auto auto;
+    gap: 14px;
+    align-items: center;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    font-size: 13px;
+  }
+  .file-chip__icon { width: 22px; height: 22px; color: var(--accent); }
+  .file-chip__name { font-weight: 600; color: var(--ink); }
+  .file-chip__meta {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .file-chip__progress {
+    grid-column: 1 / -1;
+    height: 3px;
+    background: var(--line);
+    margin-top: 8px;
+  }
+  .file-chip__progress span {
+    display: block;
+    height: 100%;
+    background: var(--accent);
+    transition: width .3s ease;
+  }
+  .file-chip__ok {
+    width: 18px; height: 18px;
+    color: var(--accent);
+  }
+  .file-chip__remove {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    width: 24px; height: 24px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .file-chip__remove:hover { color: var(--error); }
+  .file-chip__remove svg { width: 14px; height: 14px; }
+
+  /* Mobile-only upload helper */
+  .upload-mobile {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 16px;
+    border-left: 2px solid var(--muted);
+    background: var(--bg-2);
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .upload-mobile__kicker {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  @media (max-width: 720px) {
+    .upload-mobile { display: block; }
+  }
+
+  /* NDA checkbox */
+  .nda-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    cursor: pointer;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .nda-row input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    flex-shrink: 0;
+    margin-top: 1px;
+    position: relative;
+    cursor: pointer;
+  }
+  .nda-row input[type="checkbox"]:checked { background: var(--accent); border-color: var(--accent); }
+  .nda-row input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px; top: 1px;
+    width: 7px; height: 11px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+  }
+  .nda-row__text strong { font-weight: 700; color: var(--ink); }
+
+  /* Consent + submit */
+  .consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 24px 0 24px;
+    font-size: 13.5px;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .consent-row input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    cursor: pointer;
+  }
+  .consent-row input[type="checkbox"]:checked { background: var(--ink); }
+  .consent-row input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px; top: 1px;
+    width: 7px; height: 11px;
+    border-right: 2px solid var(--bg);
+    border-bottom: 2px solid var(--bg);
+    transform: rotate(45deg);
+  }
+  .consent-row a { color: var(--ink); border-bottom: 1px solid var(--line); }
+  .consent-row a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .submit-foot {
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ---------- Dark reassurance panel (right column) ---------- */
+  .panel {
+    background: var(--black);
+    color: #fff;
+    padding: 40px 36px 36px;
+    position: sticky;
+    top: 128px;
+  }
+  .panel .label { color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+  .panel__section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.18); }
+  .panel__section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+  .panel__title {
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    line-height: 1.15;
+    margin: 0 0 22px;
+    color: #fff;
+  }
+
+  /* Process list */
+  .process-list { list-style: none; margin: 0; padding: 0; }
+  .process-list li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    align-items: start;
+  }
+  .process-list li:last-child { border-bottom: 0; }
+  .process-list__num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  .process-list__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 4px;
+  }
+  .process-list__desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Big stat */
+  .panel-stat__value {
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .panel-stat__value .unit {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    margin-left: 8px;
+    vertical-align: top;
+    position: relative;
+    top: 14px;
+  }
+  .panel-stat__line {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 32ch;
+  }
+  .panel-stat__line strong { color: #fff; font-weight: 600; }
+
+  /* Safety items */
+  .safety { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+  .safety li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 14px;
+  }
+  .safety svg { width: 18px; height: 18px; color: var(--accent); margin-top: 2px; }
+  .safety__title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 3px;
+  }
+  .safety__desc {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Alt contact */
+  .alt-contact p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.55;
+    margin: 0 0 12px;
+  }
+  .alt-contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .alt-contact__details a {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: #fff;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 2px;
+    align-self: flex-start;
+  }
+  .alt-contact__details a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .alt-contact__lang {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  /* ---------- Helper strip ---------- */
+  .prepare-strip {
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--line);
+    padding: 40px 0;
+  }
+  .prepare-strip__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .prepare-strip__label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .prepare-strip__text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .prepare-strip__text strong { font-weight: 700; }
+  .prepare-strip__text .sep { color: var(--accent); margin: 0 8px; }
+
+  /* ---------- Trust strip ---------- */
+  .trust {
+    padding: 72px 0 80px;
+    border-bottom: 1px solid var(--line);
+  }
+  .trust__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .trust-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .trust-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 22px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .trust-card svg { width: 24px; height: 24px; color: var(--accent); flex-shrink: 0; }
+  .trust-card__name {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+  }
+  .trust__line {
+    font-size: 14.5px;
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+    max-width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .trust__line strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- FAQ ---------- */
+  .faq {
+    padding: 80px 0 96px;
+    border-bottom: 1px solid var(--line);
+  }
+  .faq__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .faq__title {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin: 0 0 36px;
+    line-height: 1.1;
+  }
+  .faq-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item details summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 24px 4px;
+    display: grid;
+    grid-template-columns: 32px 1fr 24px;
+    align-items: center;
+    gap: 20px;
+  }
+  .faq-item details summary::-webkit-details-marker { display: none; }
+  .faq-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+  .faq-q {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .faq-toggle {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    justify-self: end;
+  }
+  .faq-toggle::before,
+  .faq-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    background: var(--ink);
+    transform: translate(-50%, -50%);
+    transition: transform .2s ease, background-color .2s ease;
+  }
+  .faq-toggle::before { width: 14px; height: 1.5px; }
+  .faq-toggle::after { width: 1.5px; height: 14px; }
+  .faq-item details[open] .faq-toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+  .faq-item details[open] .faq-toggle::before { background: var(--accent); }
+  .faq-item details[open] .faq-q { color: var(--accent); }
+  .faq-a {
+    padding: 0 4px 28px 60px;
+    max-width: 880px;
+  }
+  .faq-a p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer { padding: 60px 0 28px; background: var(--bg); }
+  .footer__inner { padding: 0 32px; max-width: 1320px; margin: 0 auto; }
+  .footer__brand {
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    margin-bottom: 28px;
+  }
+  .footer__brand::after { content: "."; color: var(--accent); }
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .footer__links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+  .footer__links a:hover { color: var(--accent); }
+  .footer__legal-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+  .footer__legal-links a {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .footer__legal-links a:hover { color: var(--ink); }
+  .footer__copy {
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ---------- Submitted state ---------- */
+  .submitted {
+    display: none;
+    padding: 36px;
+    border: 1px solid var(--accent);
+    background: #fbfaf5;
+    text-align: center;
+  }
+  .submitted__icon {
+    width: 56px; height: 56px;
+    margin: 0 auto 18px;
+    color: var(--accent);
+  }
+  .submitted__title {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    margin: 0 0 12px;
+  }
+  .submitted__body {
+    font-size: 14.5px;
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin: 0 auto 16px;
+    max-width: 52ch;
+  }
+  .submitted__ref {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    padding: 8px 14px;
+    text-transform: uppercase;
+  }
+  .form-wrap.is-submitted .form-body { display: none; }
+  .form-wrap.is-submitted .submitted { display: block; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1180px) {
+    .nav { gap: 18px; }
+    .nav-link { font-size: 11px; letter-spacing: 0.1em; }
+  }
+  @media (max-width: 1024px) {
+    .nav, .header-cta { display: none; }
+    .hamburger { display: flex; }
+    .site-header__inner { justify-content: space-between; height: 88px; }
+    .brand__logo { height: 54px; }
+    .rfq-main__inner { grid-template-columns: 1fr; gap: 32px; }
+    .panel { position: static; top: auto; }
+    .prepare-strip__inner { grid-template-columns: 1fr; gap: 12px; }
+    .trust-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 720px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .checkbox-group { grid-template-columns: 1fr; }
+    .hero { padding: 48px 0 32px; }
+    .rfq-main { padding: 56px 0 64px; }
+    .trust { padding: 56px 0 64px; }
+    .faq { padding: 56px 0 72px; }
+    .site-header__inner { padding: 0 18px; }
+    .panel { padding: 32px 24px; }
+    .hero-trust__item { padding: 14px 16px 14px 0; margin-right: 16px; border-right: 0; border-bottom: 1px solid var(--line); width: 100%; }
+    .hero-trust__item:last-child { border-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../Borela.html" aria-label="Borela home">
+      <img src="../assets/borela-logo.svg" alt="Borela — Precision CNC / Est. 1953" class="brand__logo" />
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="../services/index.html">Services</a>
+      <a class="nav-link" href="../industries/index.html">Industries</a>
+      <a class="nav-link" href="../capabilities/index.html">Capabilities</a>
+      <a class="nav-link" href="../references/index.html">References</a>
+      <a class="nav-link" href="../about/index.html">About</a>
+      <a class="nav-link" href="../contact/index.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#" class="btn btn--active" aria-current="page">REQUEST A QUOTE</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <div class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../Borela.html">Home</a>
+        <span class="sep">/</span>
+        <span class="current">Request a Quote</span>
+      </div>
+      <div class="label">[ 09 — REQUEST A QUOTE ]</div>
+      <h1 id="hero-title">Request<br>A Quote</h1>
+      <p class="hero__sub">Upload your drawing and get a meaningful answer within two business days — reviewed by an engineer, not an auto-responder.</p>
+
+      <div class="hero-trust" role="list">
+        <div class="hero-trust__item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Reply within 2 business days
+        </div>
+        <div class="hero-trust__item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><path d="M9 12l2 2 4-5"/></svg>
+          NDA available before you upload
+        </div>
+        <div class="hero-trust__item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M8 14h8"/></svg>
+          ISO 9001 · VDA 6.3 audited
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MAIN: FORM + PANEL ============ -->
+  <section class="rfq-main">
+    <div class="rfq-main__inner">
+
+      <!-- LEFT: FORM -->
+      <div class="form-wrap" id="form-wrap">
+
+        <div class="form-body" role="group" aria-labelledby="form-title">
+          <h2 class="visually-hidden" id="form-title" style="position:absolute; left:-9999px;">RFQ form</h2>
+
+          <!-- BLOCK 1 -->
+          <div class="form-block">
+            <div class="form-block__head">
+              <span class="form-block__num">01</span>
+              <h3 class="form-block__title">Contact</h3>
+            </div>
+            <div class="form-grid">
+              <div class="form-row">
+                <label class="form-label" for="f-name">Full name <span class="req">*</span></label>
+                <input class="form-input" id="f-name" type="text" name="name" required autocomplete="name" />
+                <p class="form-error">Please enter your full name.</p>
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="f-company">Company name <span class="req">*</span></label>
+                <input class="form-input is-filled" id="f-company" type="text" name="company" required autocomplete="organization" value="Demo Engineering GmbH" />
+                <p class="form-error">Please enter your company name.</p>
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="f-country">Country <span class="req">*</span></label>
+                <select class="form-select" id="f-country" name="country" required>
+                  <option value="">Select…</option>
+                  <optgroup label="EU member states">
+                    <option>Austria</option>
+                    <option>Belgium</option>
+                    <option>Bulgaria</option>
+                    <option>Croatia</option>
+                    <option>Cyprus</option>
+                    <option>Czech Republic</option>
+                    <option>Denmark</option>
+                    <option>Estonia</option>
+                    <option>Finland</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                    <option>Greece</option>
+                    <option>Hungary</option>
+                    <option>Ireland</option>
+                    <option>Italy</option>
+                    <option>Latvia</option>
+                    <option>Lithuania</option>
+                    <option>Luxembourg</option>
+                    <option>Malta</option>
+                    <option>Netherlands</option>
+                    <option>Poland</option>
+                    <option>Portugal</option>
+                    <option>Romania</option>
+                    <option>Slovakia</option>
+                    <option>Slovenia</option>
+                    <option>Spain</option>
+                    <option>Sweden</option>
+                  </optgroup>
+                  <option value="other">Other</option>
+                </select>
+                <p class="form-error">Please select a country.</p>
+              </div>
+              <div class="form-row" id="country-other-row" style="display:none;">
+                <label class="form-label" for="f-country-other">Country (other)</label>
+                <input class="form-input" id="f-country-other" type="text" name="country_other" placeholder="Type country name" />
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="f-email">Business email <span class="req">*</span></label>
+                <input class="form-input is-error" id="f-email" type="email" name="email" required autocomplete="email" value="me@gmail.com" />
+                <p class="form-error">Please use your work email so we can verify your company.</p>
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="f-phone">Phone number</label>
+                <input class="form-input" id="f-phone" type="tel" name="phone" autocomplete="tel" />
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 2 -->
+          <div class="form-block">
+            <div class="form-block__head">
+              <span class="form-block__num">02</span>
+              <h3 class="form-block__title">Your project</h3>
+            </div>
+            <div class="form-grid">
+              <div class="form-row form-row--full">
+                <label class="form-label" for="f-part">Part name or project reference <span class="req">*</span></label>
+                <input class="form-input" id="f-part" type="text" name="part" required />
+                <p class="form-error">Please enter a part name or project reference.</p>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="f-industry">Industry</label>
+                <select class="form-select" id="f-industry" name="industry">
+                  <option value="">Select…</option>
+                  <option>Automotive</option>
+                  <option>Commercial vehicles &amp; braking systems</option>
+                  <option>Power tools</option>
+                  <option>Sealing technology</option>
+                  <option>General mechanical engineering</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="f-batch">Batch size per release <span class="req">*</span></label>
+                <select class="form-select" id="f-batch" name="batch" required>
+                  <option value="">Select…</option>
+                  <option>500–5,000</option>
+                  <option>5,000–25,000</option>
+                  <option>25,000–100,000</option>
+                  <option>&gt;100,000</option>
+                  <option>Prototype / one-off</option>
+                </select>
+                <p class="form-error">Please choose a batch size.</p>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="f-annual">Estimated annual volume</label>
+                <input class="form-input" id="f-annual" type="number" min="0" name="annual_volume" placeholder="e.g. 60,000" />
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="f-date">Target date for first delivery</label>
+                <input class="form-input" id="f-date" type="date" name="target_date" />
+              </div>
+
+              <div class="form-row form-row--full">
+                <span class="form-label">Services required <span class="req">*</span></span>
+                <div class="checkbox-group" id="services-group" role="group" aria-label="Services required">
+                  <label class="checkbox-row"><input type="checkbox" name="service" value="cnc-turning" /><span>CNC turning</span></label>
+                  <label class="checkbox-row"><input type="checkbox" name="service" value="cnc-milling" /><span>CNC milling</span></label>
+                  <label class="checkbox-row"><input type="checkbox" name="service" value="press-work" /><span>Press work</span></label>
+                  <label class="checkbox-row"><input type="checkbox" name="service" value="heat-treatment" id="svc-heat" /><span>Heat treatment <em style="font-style: normal; color: var(--muted);">(coordinated via partner)</em></span></label>
+                  <label class="checkbox-row"><input type="checkbox" name="service" value="assembly" /><span>Assembly</span></label>
+                  <label class="checkbox-row"><input type="checkbox" name="service" value="3d-measurement" /><span>3D measurement</span></label>
+                  <label class="checkbox-row"><input type="checkbox" name="service" value="welding-tig" /><span>Welding (TIG)</span></label>
+                </div>
+                <div class="form-reveal" id="heat-reveal">
+                  <div class="form-reveal__kicker">Heads-up</div>
+                  Heat treatment is coordinated via our certified partner — expect roughly 1–2 weeks of additional lead time. Tell us the process in the message field if you know it.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 3 -->
+          <div class="form-block">
+            <div class="form-block__head">
+              <span class="form-block__num">03</span>
+              <h3 class="form-block__title">Drawing &amp; technical files</h3>
+            </div>
+
+            <div class="form-reveal" id="nda-reveal">
+              <div class="form-reveal__kicker">NDA workflow</div>
+              We'll email you a mutual NDA first. You can submit this request now without files — we'll request the drawings once the NDA is signed. You may still attach non-confidential files below.
+            </div>
+
+            <label class="dropzone" id="dropzone" for="f-files">
+              <svg class="dropzone__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+                <path d="M6 26v4h24v-4"/>
+                <path d="M18 6v18"/>
+                <path d="M10 14l8-8 8 8"/>
+              </svg>
+              <div class="dropzone__primary"><strong>Drag &amp; drop your files here</strong>, or browse</div>
+              <div class="dropzone__meta">STEP · IGES · PDF · ZIP — up to 50 MB</div>
+              <span class="dropzone__browse">Browse files</span>
+              <input id="f-files" type="file" name="files" multiple accept=".step,.stp,.iges,.igs,.pdf,.zip" style="display:none;" />
+            </label>
+
+            <div class="upload-states" id="upload-states">
+              <!-- Demo: uploading state -->
+              <div class="file-chip">
+                <svg class="file-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4"/></svg>
+                <div>
+                  <div class="file-chip__name">housing-bracket-rev3.step</div>
+                  <div class="file-chip__meta">2.4 MB · Uploading… 64%</div>
+                </div>
+                <span></span>
+                <button class="file-chip__remove" type="button" aria-label="Cancel upload">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16"/></svg>
+                </button>
+                <div class="file-chip__progress"><span style="width:64%;"></span></div>
+              </div>
+
+              <!-- Demo: uploaded state -->
+              <div class="file-chip">
+                <svg class="file-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4"/></svg>
+                <div>
+                  <div class="file-chip__name">drawing-pn-AX-2204.pdf</div>
+                  <div class="file-chip__meta">1.1 MB · Uploaded</div>
+                </div>
+                <svg class="file-chip__ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M5 12l4 4 10-11"/></svg>
+                <button class="file-chip__remove" type="button" aria-label="Remove file">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="upload-mobile">
+              <div class="upload-mobile__kicker">Using a phone?</div>
+              Uploading CAD files works best from a desktop. You can submit this request now from your phone — we'll reply with a secure upload link, or you can email drawings to <a href="mailto:rfq@borela.eu" style="color:var(--ink); border-bottom:1px solid var(--ink);">rfq@borela.eu</a> after first contact.
+            </div>
+
+            <label class="nda-row" for="f-nda">
+              <input type="checkbox" id="f-nda" name="nda" />
+              <span class="nda-row__text"><strong>Please send me a mutual NDA before I upload any drawings.</strong> We'll email a mutual non-disclosure agreement first — no files need to leave your network before it's signed.</span>
+            </label>
+          </div>
+
+          <!-- BLOCK 4 -->
+          <div class="form-block">
+            <div class="form-block__head">
+              <span class="form-block__num">04</span>
+              <h3 class="form-block__title">Anything else</h3>
+            </div>
+            <div class="form-grid">
+              <div class="form-row form-row--full">
+                <label class="form-label" for="f-msg">Message / notes</label>
+                <textarea class="form-textarea" id="f-msg" name="message" placeholder="Surface treatment, special inspection, packaging, target price…"></textarea>
+                <p class="form-help">Anything else we should know — surface treatment, special inspection, packaging, target price.</p>
+              </div>
+            </div>
+
+            <label class="consent-row" for="f-consent">
+              <input type="checkbox" id="f-consent" name="consent" required />
+              <span>I agree that Borela may store and process my data to handle this request. <a href="/privacy/">See our privacy notice.</a> <span class="req">*</span></span>
+            </label>
+
+            <button type="button" class="btn btn--primary btn--full" id="submit-btn">REQUEST A QUOTE</button>
+            <p class="submit-foot">You'll get an automatic confirmation email, then an engineer's reply within 2 business days.</p>
+          </div>
+
+        </div>
+
+        <!-- Submitted state -->
+        <div class="submitted" role="status" aria-live="polite">
+          <svg class="submitted__icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+            <circle cx="28" cy="28" r="24"/>
+            <path d="M16 28l8 8 16-18"/>
+          </svg>
+          <h3 class="submitted__title">Request received</h3>
+          <p class="submitted__body">Thanks — your request is logged. An engineer from our sales team will reply within <strong>2 business days</strong>. Keep this reference for your records:</p>
+          <div class="submitted__ref">RFQ-1042</div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: DARK PANEL -->
+      <aside class="panel" aria-label="What happens next">
+
+        <div class="panel__section">
+          <div class="label">[ — WHAT HAPPENS NEXT ]</div>
+          <h3 class="panel__title">From upload to first delivery</h3>
+          <ol class="process-list">
+            <li>
+              <span class="process-list__num">01</span>
+              <div>
+                <p class="process-list__title">Receipt confirmed</p>
+                <p class="process-list__desc">An automatic email with your reference number lands immediately.</p>
+              </div>
+            </li>
+            <li>
+              <span class="process-list__num">02</span>
+              <div>
+                <p class="process-list__title">Engineering review</p>
+                <p class="process-list__desc">A real engineer checks feasibility and replies within 2 business days.</p>
+              </div>
+            </li>
+            <li>
+              <span class="process-list__num">03</span>
+              <div>
+                <p class="process-list__title">Quote prepared</p>
+                <p class="process-list__desc">A detailed offer follows; parts needing heat treatment include partner coordination.</p>
+              </div>
+            </li>
+            <li>
+              <span class="process-list__num">04</span>
+              <div>
+                <p class="process-list__title">Sample, then series</p>
+                <p class="process-list__desc">First article inspection, then series production of 500–100,000 pieces.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="panel__section">
+          <div class="label">[ — RESPONSE TIME ]</div>
+          <div class="panel-stat__value">2<span class="unit">business days</span></div>
+          <p class="panel-stat__line">…is our target for <strong>a real engineer's reply</strong> — not an auto-responder.</p>
+        </div>
+
+        <div class="panel__section">
+          <div class="label">[ — YOUR DATA IS SAFE ]</div>
+          <h3 class="panel__title" style="font-size:15px; letter-spacing:0.04em;">Three commitments</h3>
+          <ul class="safety">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><path d="M9 12l2 2 4-5"/></svg>
+              <div>
+                <p class="safety__title">NDA on request.</p>
+                <p class="safety__desc">Tick the NDA box and we send a mutual agreement before you upload anything.</p>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><rect x="5" y="11" width="14" height="10"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+              <div>
+                <p class="safety__title">Encrypted file handling.</p>
+                <p class="safety__desc">Drawings are stored encrypted and shared only with the people working on your quote.</p>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+              <div>
+                <p class="safety__title">GDPR-compliant.</p>
+                <p class="safety__desc">We process your data only to handle this request, with a defined retention period.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel__section alt-contact">
+          <div class="label">[ — PREFER EMAIL OR CALL ]</div>
+          <p>Reach our sales team directly:</p>
+          <div class="alt-contact__details">
+            <a href="mailto:rfq@borela.eu">rfq@borela.eu</a>
+            <a href="tel:+3676569122">+36 76 569 122</a>
+          </div>
+          <div class="alt-contact__lang">Languages — EN · DE · HU</div>
+        </div>
+
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ============ HELPER STRIP ============ -->
+  <section class="prepare-strip" aria-label="What to prepare">
+    <div class="prepare-strip__inner">
+      <span class="prepare-strip__label">[ — WHAT TO PREPARE ]</span>
+      <p class="prepare-strip__text"><strong>For the fastest quote, have these ready:</strong> 2D drawing with tolerances <span class="sep">·</span> material specification <span class="sep">·</span> batch size per release <span class="sep">·</span> estimated annual volume.</p>
+    </div>
+  </section>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="trust">
+    <div class="trust__inner">
+      <div class="label">[ — CERTIFIED &amp; PROVEN ]</div>
+      <div class="trust-cards">
+        <div class="trust-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><path d="M9 12l2 2 4-5"/></svg>
+          <div class="trust-card__name">ISO 9001</div>
+        </div>
+        <div class="trust-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><path d="M8 13c1 0 1 2 4 2s3-2 4-2"/></svg>
+          <div class="trust-card__name">ISO 14001</div>
+        </div>
+        <div class="trust-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><path d="M8 10h8M8 13h8M8 16h5"/></svg>
+          <div class="trust-card__name">VDA 6.3 audit</div>
+        </div>
+        <div class="trust-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><circle cx="12" cy="12" r="4"/></svg>
+          <div class="trust-card__name">Knorr-Bremse PSA</div>
+        </div>
+      </div>
+      <p class="trust__line">Supplier to <strong>Knorr-Bremse, Mercedes-Benz Manufacturing Hungary, Hilti, Freudenberg, Sulzer and Phoenix Mecano.</strong></p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq">
+    <div class="faq__inner">
+      <div class="label">[ 10 — QUESTIONS ABOUT QUOTING ]</div>
+      <h2 class="faq__title">Questions about quoting</h2>
+
+      <ul class="faq-list">
+        <li class="faq-item">
+          <details open>
+            <summary>
+              <span class="faq-num">01</span>
+              <span class="faq-q">How long does it take to get a quote?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>We aim to reply within 2 business days with either a quote, a quote timeline, or specific questions about your drawing. Complex assemblies or parts needing heat treatment may take a few days longer — we'll always tell you upfront.</p>
+            </div>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">02</span>
+              <span class="faq-q">Do I have to upload a drawing to get a quote?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>No. You can submit the request without files and we'll follow up — but a 2D drawing with tolerances and a material spec lets us give you a far more accurate answer, faster.</p>
+            </div>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">03</span>
+              <span class="faq-q">Can I get an NDA before sharing confidential files?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Yes. Tick the NDA box in the form and we'll email you a mutual non-disclosure agreement first. We only ask for your drawings once it's signed.</p>
+            </div>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">04</span>
+              <span class="faq-q">What series sizes do you quote?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Our sweet spot is 500 to 100,000 pieces per order. We also quote prototypes as a preparatory stage before series — select "Prototype / one-off" in the batch size field.</p>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">BORELA BT</div>
+    <div class="footer__links">
+      <a href="../services/index.html">SERVICES</a>
+      <a href="../industries/index.html">INDUSTRIES</a>
+      <a href="../references/index.html">REFERENCES</a>
+      <a href="../about/index.html">ABOUT</a>
+      <a href="#careers">CAREERS</a>
+      <a href="../contact/index.html">CONTACT</a>
+    </div>
+    <div class="footer__legal-links">
+      <a href="#eu-projects">EU Projects</a>
+      <a href="#integrated-policy">Integrated Policy</a>
+      <a href="#privacy">Privacy Notice</a>
+      <a href="#impressum">Impressum</a>
+    </div>
+    <div class="footer__copy">© 2026 BORELA BT. ISO 9001:2015 CERTIFIED. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+<script>
+  // Country "Other" reveal
+  (function () {
+    var sel = document.getElementById('f-country');
+    var row = document.getElementById('country-other-row');
+    if (!sel || !row) return;
+    sel.addEventListener('change', function () {
+      row.style.display = sel.value === 'other' ? 'flex' : 'none';
+    });
+  })();
+
+  // Heat-treatment reveal
+  (function () {
+    var heat = document.getElementById('svc-heat');
+    var reveal = document.getElementById('heat-reveal');
+    if (!heat || !reveal) return;
+    heat.addEventListener('change', function () {
+      reveal.classList.toggle('is-shown', heat.checked);
+    });
+  })();
+
+  // NDA reveal (above the dropzone)
+  (function () {
+    var nda = document.getElementById('f-nda');
+    var reveal = document.getElementById('nda-reveal');
+    if (!nda || !reveal) return;
+    nda.addEventListener('change', function () {
+      reveal.classList.toggle('is-shown', nda.checked);
+    });
+  })();
+
+  // Drag-over visual state on dropzone
+  (function () {
+    var dz = document.getElementById('dropzone');
+    if (!dz) return;
+    ['dragenter','dragover'].forEach(function (ev) {
+      dz.addEventListener(ev, function (e) {
+        e.preventDefault();
+        dz.classList.add('is-dragging');
+      });
+    });
+    ['dragleave','drop'].forEach(function (ev) {
+      dz.addEventListener(ev, function (e) {
+        e.preventDefault();
+        dz.classList.remove('is-dragging');
+      });
+    });
+  })();
+
+  // Demo: submit -> show submitted state
+  (function () {
+    var btn = document.getElementById('submit-btn');
+    var wrap = document.getElementById('form-wrap');
+    if (!btn || !wrap) return;
+    btn.addEventListener('click', function () {
+      wrap.classList.add('is-submitted');
+      window.scrollTo({ top: wrap.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+    });
+  })();
+
+  // Track filled state on inputs
+  (function () {
+    document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(function (el) {
+      var setFilled = function () {
+        if (el.value && el.value.trim() !== '') el.classList.add('is-filled');
+        else el.classList.remove('is-filled');
+      };
+      setFilled();
+      el.addEventListener('input', setFilled);
+      el.addEventListener('change', setFilled);
+    });
+  })();
+</script>
+
+</body>
+</html>

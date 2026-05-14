@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Borela Homepage — V2 (Data-Forward)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Public+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "secondary": "#5c5f5c",
+                        "ink-black": "#141414",
+                        "on-secondary-container": "#606360",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container-high": "#eae8e3",
+                        "on-tertiary": "#ffffff",
+                        "outline-strong": "#8A8780",
+                        "outline": "#747878",
+                        "background": "#fbf9f4",
+                        "on-secondary-fixed": "#191c1a",
+                        "on-secondary-fixed-variant": "#444745",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#862200",
+                        "primary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#444748",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1c19",
+                        "inverse-on-surface": "#f2f1ec",
+                        "outline-variant": "#c4c7c7",
+                        "on-primary-container": "#858383",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-paper-alt": "#EAE7DF",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0eee9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-paper": "#F4F2ED",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#dee0dc",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface-bright": "#fbf9f4",
+                        "on-tertiary-fixed": "#3a0a00",
+                        "surface": "#fbf9f4",
+                        "on-tertiary-container": "#e2562a",
+                        "tertiary-fixed": "#ffdbd1",
+                        "outline-concrete": "#C8C5BE",
+                        "surface-tint": "#5f5e5e",
+                        "steel-gray": "#6E716E",
+                        "primary-container": "#1c1b1b",
+                        "tertiary-fixed-dim": "#ffb59f",
+                        "tertiary-container": "#3a0a00",
+                        "on-primary-fixed": "#1c1b1b",
+                        "safety-orange": "#D14A1F",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-background": "#1b1c19",
+                        "surface-dim": "#dcdad5",
+                        "secondary-fixed": "#e1e3df",
+                        "error-red": "#B3261E",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#c5c7c3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "2px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "base": "8px",
+                        "section-padding-v": "48px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-display": ["Public Sans"],
+                        "headline-h1": ["Public Sans"],
+                        "label-mono": ["JetBrains Mono"],
+                        "body-small": ["Public Sans"],
+                        "body-main": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-display": ["54px", {"lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-h1": ["34px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-mono": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.06em", "fontWeight": "500"}],
+                        "body-small": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-main": ["16px", {"lineHeight": "1.55", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-main selection:bg-safety-orange selection:text-white">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-5 h-16 w-full docked full-width top-0 border-b-[1px] border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 font-public-sans tracking-tighter uppercase font-bold sticky z-50">
+<div class="flex items-center gap-3"><div class="flex flex-col">
+<div class="flex items-baseline">
+<span style="font-family: 'Public Sans', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: -0.05em; color: #0A0A0A;">BORELA</span>
+<span style="font-family: 'Public Sans', sans-serif; font-weight: 900; font-size: 24px; color: #C24F1A;">.</span>
+</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 10px; letter-spacing: 0.15em; color: #4A4A4A; line-height: 1; margin-top: -2px;">PRECISION CNC / EST. 1953</div>
+</div></div>
+<div class="hidden md:flex gap-6">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150" href="#">CAPABILITIES</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150" href="#">INDUSTRIES</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150" href="#">QUALITY</a>
+</div>
+<button class="bg-safety-orange text-white font-label-mono text-label-mono px-4 py-2 rounded uppercase hover:bg-opacity-90 transition-opacity">GET QUOTE</button>
+</header>
+<main class="pb-24 md:pb-0">
+<!-- 1. COMPACT HERO -->
+<section class="px-margin-mobile py-8 md:py-12 border-b border-outline-concrete">
+<div class="max-w-4xl mx-auto">
+<span class="font-label-mono text-label-mono text-secondary block mb-4">§ 01 — INTRODUCTION</span>
+<h1 class="font-headline-display text-headline-display text-primary mb-6">HUNGARIAN PRECISION. GLOBAL SCALE.</h1>
+<p class="font-body-main text-body-main text-on-surface-variant max-w-2xl mb-8 border-l-2 border-outline-concrete pl-4">
+                    Family-owned Hungarian precision machining for automotive and engineering OEMs — Western-European quality at Eastern-European cost, since 1953.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-safety-orange text-white font-label-mono text-label-mono h-12 px-6 rounded uppercase hover:bg-opacity-90 transition-opacity flex items-center justify-center">SUBMIT RFQ</button>
+<button class="bg-transparent border border-ink-black text-ink-black font-label-mono text-label-mono h-12 px-6 rounded uppercase hover:bg-surface-paper-alt transition-colors flex items-center justify-center">VIEW CAPABILITIES</button>
+</div>
+</div>
+</section>
+<!-- 2. KPI TEASER -->
+<section class="bg-surface-paper-alt border-b border-outline-concrete py-8">
+<div class="max-w-4xl mx-auto px-margin-mobile">
+<div class="grid grid-cols-3 divide-x divide-outline-concrete">
+<div class="px-4 text-center">
+<div class="font-headline-h1 text-[36px] font-bold text-primary mb-1">1953</div>
+<div class="font-label-mono text-label-mono text-secondary uppercase">FOUNDED</div>
+</div>
+<div class="px-4 text-center">
+<div class="font-headline-h1 text-[36px] font-bold text-primary mb-1">70+</div>
+<div class="font-label-mono text-label-mono text-secondary uppercase">YEARS</div>
+</div>
+<div class="px-4 text-center">
+<div class="font-headline-h1 text-[36px] font-bold text-primary mb-1">±0.01<span class="text-lg">mm</span></div>
+<div class="font-label-mono text-label-mono text-secondary uppercase">TOLERANCE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. MACHINE PHOTO -->
+<section class="border-b border-outline-concrete">
+<div class="aspect-video w-full bg-surface-variant relative overflow-hidden">
+<img alt="Industrial machinery operating on a factory floor" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="close up of a modern CNC milling machine cutting metal part, high contrast monochrome, documentary style, industrial factory setting, sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHoLYTQI3XZe8fz3YXZXsxbomH6RqYT0pTXRmJhxpnH8q8zlgsToSAyQjpZkUmnsCRkgNZ6n1voEQZAIi1tvbl7v07lKk7hGVtTuLKclUXITwQu1pn3Ahe18Fz3ajzM1xhrqTKyPNzoXO_QCtloeL_03fzQsHCfmIckJVv5RtAzMbTliKT9tB5A_HFSYKfk1I4sDsjdEL_rJvLyhjmGZcKH5OvF-QiIaRPoBMlawNCfTv33PaY5_y8wBhtWU0QO0549paJsB0Jp8I"/>
+</div>
+</section>
+<!-- TRUST STRIP -->
+<section class="py-6 border-b border-outline-concrete bg-white">
+<div class="max-w-4xl mx-auto px-margin-mobile overflow-x-auto whitespace-nowrap scrollbar-hide">
+<div class="flex items-center space-x-8 text-secondary font-label-mono text-label-mono uppercase">
+<span class="text-xs text-outline-strong">TRUSTED BY</span>
+<div class="w-px h-4 bg-outline-concrete"></div>
+<span>MERCEDES-BENZ</span>
+<div class="w-px h-4 bg-outline-concrete"></div>
+<span>BOSCH</span>
+<div class="w-px h-4 bg-outline-concrete"></div>
+<span>KNORR-BREMSE</span>
+<div class="w-px h-4 bg-outline-concrete"></div>
+<span>AUDI</span>
+</div>
+</div>
+</section>
+<!-- SERVICES GRID -->
+<section class="py-section-padding-v px-margin-mobile border-b border-outline-concrete">
+<div class="max-w-4xl mx-auto">
+<span class="font-label-mono text-label-mono text-secondary block mb-8">§ 02 — CAPABILITIES</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="border border-outline-concrete p-6 rounded bg-white">
+<span class="material-symbols-outlined text-3xl mb-4 block" data-weight="fill">precision_manufacturing</span>
+<h3 class="font-headline-h1 text-2xl mb-2">CNC TURNING</h3>
+<p class="font-body-small text-body-small text-secondary mb-4">High-volume precision turning for complex geometries. Diameters from Ø5mm to Ø250mm.</p>
+<div class="space-y-2 font-label-mono text-xs">
+<div class="flex justify-between border-b border-dotted border-outline-concrete pb-1"><span class="text-secondary">MAX LENGTH</span><span class="font-bold">500MM</span></div>
+<div class="flex justify-between border-b border-dotted border-outline-concrete pb-1"><span class="text-secondary">TOLERANCE</span><span class="font-bold">±0.01MM</span></div>
+</div>
+</div>
+<div class="border border-outline-concrete p-6 rounded bg-white">
+<span class="material-symbols-outlined text-3xl mb-4 block" data-weight="fill">manufacturing</span>
+<h3 class="font-headline-h1 text-2xl mb-2">CNC MILLING</h3>
+<p class="font-body-small text-body-small text-secondary mb-4">3, 4, and 5-axis milling for complex parts and rapid prototyping.</p>
+<div class="space-y-2 font-label-mono text-xs">
+<div class="flex justify-between border-b border-dotted border-outline-concrete pb-1"><span class="text-secondary">MAX SIZE</span><span class="font-bold">800x500x500MM</span></div>
+<div class="flex justify-between border-b border-dotted border-outline-concrete pb-1"><span class="text-secondary">TOLERANCE</span><span class="font-bold">±0.01MM</span></div>
+</div>
+</div>
+<div class="border border-outline-concrete p-6 rounded bg-white">
+<span class="material-symbols-outlined text-3xl mb-4 block" data-weight="fill">settings_input_component</span>
+<h3 class="font-headline-h1 text-2xl mb-2">ASSEMBLY</h3>
+<p class="font-body-small text-body-small text-secondary mb-4">Mechanical sub-assembly and full product integration services.</p>
+<div class="space-y-2 font-label-mono text-xs">
+<div class="flex justify-between border-b border-dotted border-outline-concrete pb-1"><span class="text-secondary">ENVIRONMENT</span><span class="font-bold">CLEAN ROOM</span></div>
+<div class="flex justify-between border-b border-dotted border-outline-concrete pb-1"><span class="text-secondary">TESTING</span><span class="font-bold">100% IN-HOUSE</span></div>
+</div>
+</div>
+<div class="border border-outline-concrete p-6 rounded bg-white">
+<span class="material-symbols-outlined text-3xl mb-4 block" data-weight="fill">science</span>
+<h3 class="font-headline-h1 text-2xl mb-2">SURFACE TREATMENT</h3>
+<p class="font-body-small text-body-small text-secondary mb-4">Partner network for anodizing, plating, and hardening processes.</p>
+<div class="space-y-2 font-label-mono text-xs">
+<div class="flex justify-between border-b border-dotted border-outline-concrete pb-1"><span class="text-secondary">CERTIFICATION</span><span class="font-bold">ISO 9001</span></div>
+<div class="flex justify-between border-b border-dotted border-outline-concrete pb-1"><span class="text-secondary">LEAD TIME</span><span class="font-bold">+3-5 DAYS</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FULL BLACK METRICS BLOCK (REPLICATION) -->
+<section class="bg-ink-black text-white py-section-padding-v px-margin-mobile border-b border-ink-black">
+<div class="max-w-4xl mx-auto">
+<span class="font-label-mono text-label-mono text-outline-strong block mb-8">§ 03 — SCALE &amp; CAPACITY</span>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8">
+<div>
+<div class="font-headline-display text-4xl md:text-5xl font-bold mb-2">45+</div>
+<div class="font-label-mono text-xs text-outline-strong uppercase border-t border-secondary pt-2">CNC MACHINES</div>
+</div>
+<div>
+<div class="font-headline-display text-4xl md:text-5xl font-bold mb-2">10M</div>
+<div class="font-label-mono text-xs text-outline-strong uppercase border-t border-secondary pt-2">PARTS ANNUALLY</div>
+</div>
+<div>
+<div class="font-headline-display text-4xl md:text-5xl font-bold mb-2">3</div>
+<div class="font-label-mono text-xs text-outline-strong uppercase border-t border-secondary pt-2">SHIFTS RUNNING</div>
+</div>
+<div>
+<div class="font-headline-display text-4xl md:text-5xl font-bold mb-2">120</div>
+<div class="font-label-mono text-xs text-outline-strong uppercase border-t border-secondary pt-2">SKILLED OPERATORS</div>
+</div>
+<div>
+<div class="font-headline-display text-4xl md:text-5xl font-bold mb-2">3500<span class="text-2xl">M²</span></div>
+<div class="font-label-mono text-xs text-outline-strong uppercase border-t border-secondary pt-2">PRODUCTION AREA</div>
+</div>
+<div>
+<div class="font-headline-display text-4xl md:text-5xl font-bold mb-2">99.8%</div>
+<div class="font-label-mono text-xs text-outline-strong uppercase border-t border-secondary pt-2">QUALITY RATING</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INDUSTRIES -->
+<section class="py-section-padding-v px-margin-mobile border-b border-outline-concrete bg-surface-paper">
+<div class="max-w-4xl mx-auto">
+<span class="font-label-mono text-label-mono text-secondary block mb-8">§ 04 — INDUSTRIES SERVED</span>
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-outline-concrete pb-4 group cursor-pointer hover:bg-white p-2 -mx-2 transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-label-mono text-xs text-secondary w-8">01</span>
+<h3 class="font-headline-h1 text-xl">AUTOMOTIVE</h3>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between border-b border-outline-concrete pb-4 group cursor-pointer hover:bg-white p-2 -mx-2 transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-label-mono text-xs text-secondary w-8">02</span>
+<h3 class="font-headline-h1 text-xl">INDUSTRIAL AUTOMATION</h3>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between border-b border-outline-concrete pb-4 group cursor-pointer hover:bg-white p-2 -mx-2 transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-label-mono text-xs text-secondary w-8">03</span>
+<h3 class="font-headline-h1 text-xl">RAILWAY SYSTEMS</h3>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between border-b border-outline-concrete pb-4 group cursor-pointer hover:bg-white p-2 -mx-2 transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-label-mono text-xs text-secondary w-8">04</span>
+<h3 class="font-headline-h1 text-xl">AGRICULTURAL MACHINERY</h3>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CLOSING CTA -->
+<section class="py-24 px-margin-mobile border-b border-outline-concrete bg-white text-center">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-headline-h1 text-headline-h1 mb-6">READY TO DISCUSS YOUR PROJECT?</h2>
+<p class="font-body-main text-body-main text-secondary mb-8">Send us your technical drawings for a rapid, precise quotation.</p>
+<button class="bg-safety-orange text-white font-label-mono text-label-mono h-12 px-8 rounded uppercase hover:bg-opacity-90 transition-opacity">REQUEST A QUOTE</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-white dark:bg-zinc-950 border-t border-t-[1px] border-zinc-200 dark:border-zinc-800 transition-all duration-150">
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-500 opacity-60 font-mono text-[10px] tracking-widest uppercase hover:text-zinc-900 dark:hover:text-zinc-100" href="#">
+<span class="material-symbols-outlined mb-1">settings_input_component</span>
+<span>CAPABILITIES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-500 opacity-60 font-mono text-[10px] tracking-widest uppercase hover:text-zinc-900 dark:hover:text-zinc-100" href="#">
+<span class="material-symbols-outlined mb-1">factory</span>
+<span>INDUSTRIES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-500 opacity-60 font-mono text-[10px] tracking-widest uppercase hover:text-zinc-900 dark:hover:text-zinc-100" href="#">
+<span class="material-symbols-outlined mb-1">verified</span>
+<span>QUALITY</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="block w-full border-t border-t-[1px] border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 font-mono text-xs uppercase leading-relaxed px-5 py-10 md:px-10 lg:px-20 grid grid-cols-1 gap-8 mb-16 md:mb-0">
+<div class="mb-4">
+<span class="text-lg font-black text-zinc-900 dark:text-zinc-100">BORELA BT.</span>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors" href="#">Capabilities</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors" href="#">Industries</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors" href="#">Quality Control</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors" href="#">Technical Specs</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="text-zinc-600 dark:text-zinc-400 mt-8 pt-8 border-t border-zinc-300 dark:border-zinc-700">
+            © 2026 BORELA BT. ISO 9001:2015 CERTIFIED. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

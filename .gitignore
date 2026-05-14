@@ -1,0 +1,17 @@
+# Next.js
+.next/
+out/
+node_modules/
+npm-debug.log*
+
+# Build
+.env*.local
+.vercel
+
+# OS
+.DS_Store
+*.pem
+
+# Debug
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Industries — Precision machining for automotive, brake systems, power tools, sealing &amp; engineering | Borela</title>
+<meta name="description" content="Borela Bt. — Hungarian precision CNC machining for five core industries: automotive, commercial vehicles &amp; brake systems, power tools, sealing technology and general mechanical engineering." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ============ JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://borela.eu/"},
+    {"@type":"ListItem","position":2,"name":"Industries","item":"https://borela.eu/industries/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Which industries does Borela serve and which are your main expertise?","acceptedAnswer":{"@type":"Answer","text":"Five core industries — automotive (Tier 2, drivetrain and brake-adjacent), commercial vehicles and brake systems (deepest expertise, Knorr-Bremse partner since 2007), power tools (Hilti), sealing technology (Freudenberg), and general mechanical engineering (Sulzer, Phoenix Mecano, Zarges). Automotive and commercial vehicles together represent the majority of our turnover."}},
+    {"@type":"Question","name":"Can you handle new-industry projects outside this list?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the work falls within our machining capabilities — CNC turning, CNC milling, series 500–100,000 pcs, tolerances at ±0.01 mm. We have served medical, aerospace-adjacent and energy projects on a case-by-case basis. RFQ first, we'll be straightforward about fit."}},
+    {"@type":"Question","name":"What's the difference between Tier 1 and Tier 2 supply, and what is Borela's typical role?","acceptedAnswer":{"@type":"Answer","text":"Tier 1 suppliers deliver finished modules directly to the OEM. Tier 2 suppliers deliver components to Tier 1 suppliers. Borela operates predominantly as Tier 2, with full traceability and documentation expected at that level."}},
+    {"@type":"Question","name":"Do industry certifications transfer across customers?","acceptedAnswer":{"@type":"Answer","text":"Our ISO 9001, ISO 14001 and VDA 6.3 status is recognized industry-wide. The Knorr-Bremse PSA is customer-specific. New customers in regulated industries typically still run their own supplier audit — we welcome and are routinely prepared for them."}},
+    {"@type":"Question","name":"Which industry do most of your engineers come from?","acceptedAnswer":{"@type":"Answer","text":"Most of our engineering team is general precision-machining trained, with hands-on automotive and brake-system experience accumulated since the Knorr-Bremse partnership began in 2007. We are a process-deep machining shop with industry-aware quality discipline."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Industries — Borela Bt.",
+  "url": "https://borela.eu/industries/",
+  "about": [
+    {"@type":"Service","name":"Automotive precision machining"},
+    {"@type":"Service","name":"Commercial vehicles & brake systems"},
+    {"@type":"Service","name":"Power tools components"},
+    {"@type":"Service","name":"Sealing technology components"},
+    {"@type":"Service","name":"General mechanical engineering"}
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #f3efe7;
+    --bg-2: #ebe6dc;
+    --ink: #11110f;
+    --ink-2: #2a2926;
+    --muted: #6b6862;
+    --line: #d8d2c5;
+    --line-soft: #e3ddd0;
+    --accent: #1a48c2;
+    --accent-hover: #143a9e;
+    --black: #0e0e0c;
+    --white: #ffffff;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Skip link ---------- */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 8px; }
+
+  /* ---------- Tokens ---------- */
+  .label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn--primary { background: var(--accent); color: #fff; }
+  .btn--primary:hover { background: var(--accent-hover); }
+  .btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn--ghost:hover { background: var(--ink); color: #fff; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 104px;
+    padding: 0 32px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; flex-shrink: 0; }
+  .brand__logo { height: 70px; width: auto; display: block; }
+  .nav {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 2px solid transparent;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .nav-link:hover { border-bottom-color: var(--accent); }
+  .nav-link.is-active { border-bottom-color: var(--accent); color: var(--accent); }
+  .header-cta { flex-shrink: 0; }
+  .hamburger {
+    display: none;
+    background: none; border: none;
+    width: 36px; height: 36px; padding: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 5px;
+  }
+  .hamburger span { width: 22px; height: 1.5px; background: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 80px 0 80px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 36px;
+    display: flex;
+    gap: 10px;
+  }
+  .breadcrumbs a { color: var(--muted); }
+  .breadcrumbs a:hover { color: var(--ink); }
+  .breadcrumbs .sep { color: var(--line); }
+  .breadcrumbs .current { color: var(--ink); }
+
+  .hero h1 {
+    font-size: clamp(38px, 4.8vw, 58px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+    text-wrap: balance;
+    max-width: 22ch;
+  }
+  .hero__sub {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 640px;
+    margin: 0 0 36px;
+  }
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 56px;
+  }
+  .hero__pictograms {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .pictogram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 14px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+    gap: 16px;
+  }
+  .pictogram svg { width: 36px; height: 36px; color: var(--ink); }
+  .pictogram__label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust {
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-2);
+  }
+  .trust__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 22px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .trust__label { color: var(--ink-2); padding-right: 14px; }
+  .trust__items { color: var(--ink-2); }
+  .trust__items .dot { color: var(--accent); margin: 0 10px; }
+
+  /* ---------- Section base ---------- */
+  .section {
+    padding: 88px 0 96px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .section__head {
+    margin-bottom: 40px;
+    max-width: 760px;
+  }
+  .section__title {
+    font-size: clamp(28px, 3.2vw, 38px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+  .section__lead {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  /* ---------- §03 Industry cards (3+2) ---------- */
+  .ind-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .ind-card {
+    grid-column: span 2;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 32px 32px 26px;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+    transition: border-color .15s ease, padding-left .15s ease;
+    position: relative;
+  }
+  .ind-card:nth-child(4),
+  .ind-card:nth-child(5) {
+    grid-column: span 3;
+  }
+  .ind-card::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .18s ease;
+  }
+  .ind-card:hover { border-color: var(--ink); padding-left: 36px; }
+  .ind-card:hover::before { transform: scaleY(1); }
+
+  .ind-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+  .ind-card__icon { width: 36px; height: 36px; color: var(--ink); }
+  .ind-card__num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+  .ind-card__name {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  .ind-card__tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .ind-card__body {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin: 0 0 24px;
+  }
+  .ind-card__meta {
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ind-card__meta-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+  .ind-card__meta-row dt { color: var(--muted); text-transform: uppercase; }
+  .ind-card__meta-row dd { margin: 0; color: var(--ink); }
+  .ind-card__link {
+    margin-top: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 4px;
+    align-self: flex-start;
+    border-bottom: 1px solid var(--ink);
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .ind-card__link svg { width: 14px; height: 14px; }
+  .ind-card:hover .ind-card__link { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ---------- §04 Black panel ---------- */
+  .panel-black {
+    background: var(--black);
+    color: #fff;
+    padding: 88px 0 96px;
+  }
+  .panel-black__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .panel-black .label { color: rgba(255,255,255,0.5); }
+  .panel-black .section__title { color: #fff; }
+  .panel-black .section__lead { color: rgba(255,255,255,0.7); }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 36px;
+    row-gap: 36px;
+    margin-top: 8px;
+  }
+  .stat-cell {
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+  }
+  .stat-cell__value {
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    line-height: 1;
+    color: #fff;
+  }
+  .stat-cell__value .sep { font-weight: 500; margin: 0 2px; color: rgba(255,255,255,0.55); }
+  .stat-cell__value .unit {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    margin-left: 4px;
+    vertical-align: top;
+    position: relative;
+    top: 8px;
+  }
+  .stat-cell__label {
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ---------- §05 Certifications mapping ---------- */
+  .cert-map {
+    border-top: 1px solid var(--line);
+  }
+  .cert-map__row {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 24px;
+    padding: 22px 4px;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .cert-map__name {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .cert-map__name svg {
+    width: 18px; height: 18px; color: var(--accent); flex-shrink: 0;
+  }
+  .cert-map__use {
+    font-size: 14.5px;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .cert-map__foot {
+    margin-top: 28px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--ink);
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .link-arrow svg { width: 14px; height: 14px; }
+  .link-arrow:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ---------- §06 Featured case ---------- */
+  .case-card {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .case-card__photo {
+    position: relative;
+    min-height: 460px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.25)),
+      repeating-linear-gradient(135deg, #4a4a48 0 14px, #58585a 14px 28px);
+  }
+  .case-card__photo-tag {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 0 24px;
+  }
+  .case-card__body {
+    padding: 52px 48px;
+    display: flex;
+    flex-direction: column;
+  }
+  .case-card__kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .case-card__title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    margin: 0 0 22px;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+  .case-card__body p {
+    margin: 0 0 16px;
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .case-card__body p strong { color: var(--ink); }
+  .case-card__link {
+    margin-top: 12px;
+    align-self: flex-start;
+  }
+
+  /* ---------- §07 FAQ ---------- */
+  .faq-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item details summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 24px 4px;
+    display: grid;
+    grid-template-columns: 32px 1fr 24px;
+    align-items: center;
+    gap: 20px;
+  }
+  .faq-item details summary::-webkit-details-marker { display: none; }
+  .faq-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+  .faq-q {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .faq-toggle {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    justify-self: end;
+  }
+  .faq-toggle::before,
+  .faq-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    background: var(--ink);
+    transform: translate(-50%, -50%);
+    transition: transform .2s ease, background-color .2s ease;
+  }
+  .faq-toggle::before { width: 14px; height: 1.5px; }
+  .faq-toggle::after { width: 1.5px; height: 14px; }
+  .faq-item details[open] .faq-toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+  .faq-item details[open] .faq-toggle::before { background: var(--accent); }
+  .faq-item details[open] .faq-q { color: var(--accent); }
+  .faq-a {
+    padding: 0 4px 28px 60px;
+    max-width: 880px;
+  }
+  .faq-a p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ---------- §08 CTA ---------- */
+  .cta-final {
+    background: var(--bg);
+    padding: 112px 0 120px;
+    text-align: center;
+  }
+  .cta-final h2 {
+    font-size: clamp(30px, 3.8vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+  }
+  .cta-final p {
+    color: var(--ink-2);
+    font-size: 16px;
+    margin: 0 0 36px;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer { padding: 60px 0 28px; border-top: 1px solid var(--line); }
+  .footer__inner { padding: 0 32px; max-width: 1320px; margin: 0 auto; }
+  .footer__brand {
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    margin-bottom: 28px;
+  }
+  .footer__brand::after { content: "."; color: var(--accent); }
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+  .footer__links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+  .footer__links a:hover { color: var(--accent); }
+  .footer__legal {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1180px) {
+    .nav { gap: 18px; }
+    .nav-link { font-size: 11px; letter-spacing: 0.1em; }
+  }
+  @media (max-width: 1024px) {
+    .nav, .header-cta { display: none; }
+    .hamburger { display: flex; }
+    .site-header__inner { justify-content: space-between; height: 88px; }
+    .brand__logo { height: 54px; }
+    .ind-grid { grid-template-columns: repeat(2, 1fr); }
+    .ind-card,
+    .ind-card:nth-child(4),
+    .ind-card:nth-child(5) { grid-column: span 1; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-card { grid-template-columns: 1fr; }
+    .case-card__photo { min-height: 280px; }
+    .case-card__body { padding: 36px 28px; }
+    .hero__pictograms { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 720px) {
+    .ind-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .cert-map__row { grid-template-columns: 1fr; gap: 6px; }
+    .hero__pictograms { grid-template-columns: 1fr 1fr; }
+    .hero { padding: 56px 0 56px; }
+    .section { padding: 64px 0 72px; }
+    .panel-black { padding: 64px 0 72px; }
+    .faq-a { padding-left: 4px; }
+    .site-header__inner { padding: 0 18px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../Borela.html" aria-label="Borela home">
+      <img src="../assets/borela-logo.svg" alt="Borela — Precision CNC / Est. 1953" class="brand__logo" />
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="../services/index.html">Services</a>
+      <a class="nav-link is-active" href="#" aria-current="page">Industries</a>
+      <a class="nav-link" href="../Borela.html#capabilities">Capabilities</a>
+      <a class="nav-link" href="../Borela.html#references">References</a>
+      <a class="nav-link" href="../Borela.html#about">About</a>
+      <a class="nav-link" href="../Borela.html#careers">Careers</a>
+      <a class="nav-link" href="../Borela.html#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="../Borela.html#contact" class="btn btn--primary">REQUEST A QUOTE</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ § 01 HERO ============ -->
+  <section class="hero" id="section-01" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <div class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../Borela.html">Home</a>
+        <span class="sep">/</span>
+        <span class="current">Industries</span>
+      </div>
+      <div class="label">§ 01 — INDUSTRIES</div>
+      <h1 id="hero-title">Industries we serve — precision machining for automotive, commercial vehicles, power tools, sealing &amp; general engineering</h1>
+      <p class="hero__sub">Five industries, one engineering discipline. From safety-critical brake components to high-volume power tool parts — we deliver to OEMs and Tier 1 suppliers across Europe.</p>
+      <div class="hero__cta">
+        <a href="/rfq/" class="btn btn--primary">REQUEST RFQ</a>
+        <a href="/capabilities/" class="btn btn--ghost">SEE CAPABILITIES</a>
+      </div>
+
+      <ul class="hero__pictograms" aria-label="Industry pictograms">
+        <li class="pictogram">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+            <path d="M6 24l3-9h22l3 9v6H6z"/>
+            <circle cx="12" cy="30" r="3"/>
+            <circle cx="28" cy="30" r="3"/>
+            <path d="M9 24h22"/>
+          </svg>
+          <span class="pictogram__label">Automotive</span>
+        </li>
+        <li class="pictogram">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+            <rect x="4" y="12" width="22" height="14"/>
+            <path d="M26 16h6l4 5v5H26"/>
+            <circle cx="11" cy="30" r="3"/>
+            <circle cx="30" cy="30" r="3"/>
+          </svg>
+          <span class="pictogram__label">Commercial vehicles &amp; brake systems</span>
+        </li>
+        <li class="pictogram">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+            <path d="M6 14h14v8H6z"/>
+            <path d="M20 16h10l3 3v2H20"/>
+            <path d="M10 22v8h6v-8"/>
+          </svg>
+          <span class="pictogram__label">Power tools</span>
+        </li>
+        <li class="pictogram">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+            <circle cx="20" cy="20" r="12"/>
+            <circle cx="20" cy="20" r="6"/>
+            <path d="M20 8v4M20 28v4M8 20h4M28 20h4"/>
+          </svg>
+          <span class="pictogram__label">Sealing technology</span>
+        </li>
+        <li class="pictogram">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+            <circle cx="14" cy="14" r="6"/>
+            <circle cx="26" cy="26" r="6"/>
+            <path d="M14 8v-2M14 22v-2M8 14h-2M22 14h-2M26 20v-2M32 26h-2"/>
+          </svg>
+          <span class="pictogram__label">General mechanical engineering</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 02 TRUST STRIP ============ -->
+  <section class="trust" id="section-02" aria-label="Trusted by">
+    <div class="trust__inner">
+      <span class="trust__label">Trusted by:</span>
+      <span class="trust__items">
+        Knorr-Bremse<span class="dot">·</span>
+        Mercedes-Benz Manufacturing Hungary<span class="dot">·</span>
+        Hilti<span class="dot">·</span>
+        Freudenberg<span class="dot">·</span>
+        Sulzer<span class="dot">·</span>
+        Phoenix Mecano<span class="dot">·</span>
+        Zarges
+      </span>
+    </div>
+  </section>
+
+  <!-- ============ § 03 INDUSTRY CARDS ============ -->
+  <section class="section" id="section-03" aria-labelledby="ind-title">
+    <div class="section__inner">
+      <div class="label">§ 03 — INDUSTRIES</div>
+      <div class="section__head">
+        <h2 class="section__title" id="ind-title">Five industries, one engineering discipline</h2>
+        <p class="section__lead">Each card is a working entry point — full technical detail and references on the dedicated industry page.</p>
+      </div>
+
+      <div class="ind-grid">
+
+        <article class="ind-card">
+          <div class="ind-card__head">
+            <svg class="ind-card__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M6 24l3-9h22l3 9v6H6z"/>
+              <circle cx="12" cy="30" r="3"/>
+              <circle cx="28" cy="30" r="3"/>
+              <path d="M9 24h22"/>
+            </svg>
+            <span class="ind-card__num">01</span>
+          </div>
+          <h3 class="ind-card__name">Automotive</h3>
+          <div class="ind-card__tag">Tier 2 supplier · 12+ years</div>
+          <p class="ind-card__body">Brake system components, drivetrain parts, cardan components, precision shafts. Heat-treated and ready-to-install via partner.</p>
+          <dl class="ind-card__meta">
+            <div class="ind-card__meta-row"><dt>Customers</dt><dd>Knorr-Bremse · Mercedes-Benz</dd></div>
+            <div class="ind-card__meta-row"><dt>Certif.</dt><dd>VDA 6.3 · PSA</dd></div>
+          </dl>
+          <a class="ind-card__link" href="/industries/automotive/">
+            See details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="ind-card">
+          <div class="ind-card__head">
+            <svg class="ind-card__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+              <rect x="4" y="12" width="22" height="14"/>
+              <path d="M26 16h6l4 5v5H26"/>
+              <circle cx="11" cy="30" r="3"/>
+              <circle cx="30" cy="30" r="3"/>
+            </svg>
+            <span class="ind-card__num">02</span>
+          </div>
+          <h3 class="ind-card__name">Commercial vehicles &amp; brake systems</h3>
+          <div class="ind-card__tag">Safety-critical · 18+ years</div>
+          <p class="ind-card__body">Brake calipers parts, retainers, pistons, valve bodies, linkages. Full traceability and PPAP support.</p>
+          <dl class="ind-card__meta">
+            <div class="ind-card__meta-row"><dt>Customers</dt><dd>Knorr-Bremse</dd></div>
+            <div class="ind-card__meta-row"><dt>Certif.</dt><dd>Knorr-Bremse PSA</dd></div>
+          </dl>
+          <a class="ind-card__link" href="/industries/commercial-vehicles/">
+            See details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="ind-card">
+          <div class="ind-card__head">
+            <svg class="ind-card__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M6 14h14v8H6z"/>
+              <path d="M20 16h10l3 3v2H20"/>
+              <path d="M10 22v8h6v-8"/>
+            </svg>
+            <span class="ind-card__num">03</span>
+          </div>
+          <h3 class="ind-card__name">Power tools</h3>
+          <div class="ind-card__tag">High-volume series</div>
+          <p class="ind-card__body">Drive shafts, gear components, housing inserts, chuck and clamping parts. Series up to 100,000 pcs.</p>
+          <dl class="ind-card__meta">
+            <div class="ind-card__meta-row"><dt>Customers</dt><dd>Hilti</dd></div>
+            <div class="ind-card__meta-row"><dt>Certif.</dt><dd>ISO 9001</dd></div>
+          </dl>
+          <a class="ind-card__link" href="/industries/power-tools/">
+            See details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="ind-card">
+          <div class="ind-card__head">
+            <svg class="ind-card__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+              <circle cx="20" cy="20" r="12"/>
+              <circle cx="20" cy="20" r="6"/>
+              <path d="M20 8v4M20 28v4M8 20h4M28 20h4"/>
+            </svg>
+            <span class="ind-card__num">04</span>
+          </div>
+          <h3 class="ind-card__name">Sealing technology</h3>
+          <div class="ind-card__tag">Tight-tolerance turning</div>
+          <p class="ind-card__body">Sealing rings, sleeves, bushings, housing inserts. Ra 0.8 µm standard, controlled cleanliness on request.</p>
+          <dl class="ind-card__meta">
+            <div class="ind-card__meta-row"><dt>Customers</dt><dd>Freudenberg</dd></div>
+            <div class="ind-card__meta-row"><dt>Certif.</dt><dd>ISO 9001</dd></div>
+          </dl>
+          <a class="ind-card__link" href="/industries/sealing-technology/">
+            See details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="ind-card">
+          <div class="ind-card__head">
+            <svg class="ind-card__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter">
+              <circle cx="14" cy="14" r="6"/>
+              <circle cx="26" cy="26" r="6"/>
+              <path d="M14 8v-2M14 22v-2M8 14h-2M22 14h-2M26 20v-2M32 26h-2"/>
+            </svg>
+            <span class="ind-card__num">05</span>
+          </div>
+          <h3 class="ind-card__name">General mechanical engineering</h3>
+          <div class="ind-card__tag">Pumps · fluid power · machinery</div>
+          <p class="ind-card__body">Pump components, enclosure parts, industrial machinery shafts. Prototype-to-series capability.</p>
+          <dl class="ind-card__meta">
+            <div class="ind-card__meta-row"><dt>Customers</dt><dd>Sulzer · Phoenix Mecano · Zarges</dd></div>
+            <div class="ind-card__meta-row"><dt>Certif.</dt><dd>ISO 9001 / 14001</dd></div>
+          </dl>
+          <a class="ind-card__link" href="/industries/general-engineering/">
+            See details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 04 BLACK CAPABILITIES PANEL ============ -->
+  <section class="panel-black" id="section-04" aria-labelledby="cap-title">
+    <div class="panel-black__inner">
+      <div class="label">§ 04 — CAPABILITIES</div>
+      <div class="section__head">
+        <h2 class="section__title" id="cap-title">How we serve every industry</h2>
+        <p class="section__lead">The same engineering envelope applies across all five sectors — only the part definitions, paperwork and qualification routes change.</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <div class="stat-cell__value">500<span class="sep">–</span>100K</div>
+          <div class="stat-cell__label">Series size (pcs per order)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell__value">±0.01<span class="unit">mm</span></div>
+          <div class="stat-cell__label">Typical tolerance</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell__value">8+</div>
+          <div class="stat-cell__label">Material families</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell__value">3<span class="sep">–</span>4<span class="unit">wks</span></div>
+          <div class="stat-cell__label">Lead time (machined)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell__value">FAI + CMM</div>
+          <div class="stat-cell__label">Quality docs on every new PN</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell__value">VDA 6.3</div>
+          <div class="stat-cell__label">Audited · ISO 9001 since 1996</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 05 CERTIFICATIONS MAPPING ============ -->
+  <section class="section" id="section-05" aria-labelledby="cert-title">
+    <div class="section__inner">
+      <div class="label">§ 05 — CERTIFICATIONS</div>
+      <div class="section__head">
+        <h2 class="section__title" id="cert-title">Certifications mapped to your industry</h2>
+        <p class="section__lead">Which certification is required where — straight to the point.</p>
+      </div>
+
+      <div class="cert-map">
+        <div class="cert-map__row">
+          <div class="cert-map__name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><path d="M9 12l2 2 4-5"/></svg>
+            ISO 9001
+          </div>
+          <div class="cert-map__use">Required by all industries.</div>
+        </div>
+        <div class="cert-map__row">
+          <div class="cert-map__name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><path d="M8 12c1 0 1 2 4 2s3-2 4-2"/></svg>
+            ISO 14001
+          </div>
+          <div class="cert-map__use">Required for Tier 1 automotive.</div>
+        </div>
+        <div class="cert-map__row">
+          <div class="cert-map__name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><path d="M8 10h8M8 13h8M8 16h5"/></svg>
+            VDA 6.3
+          </div>
+          <div class="cert-map__use">Prerequisite for automotive supply.</div>
+        </div>
+        <div class="cert-map__row">
+          <div class="cert-map__name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3 7 8 9 5-2 8-5 8-9V6z"/><circle cx="12" cy="12" r="4"/></svg>
+            Knorr-Bremse PSA
+          </div>
+          <div class="cert-map__use">Brake system supplier qualification.</div>
+        </div>
+      </div>
+
+      <div class="cert-map__foot">
+        <a class="link-arrow" href="/capabilities/certifications/">
+          Full certifications detail
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 06 FEATURED CASE ============ -->
+  <section class="section" id="section-06" aria-labelledby="case-title">
+    <div class="section__inner">
+      <div class="label">§ 06 — FEATURED CASE</div>
+      <div class="case-card">
+        <div class="case-card__photo" role="img" aria-label="Brake component photo placeholder">
+          <span class="case-card__photo-tag">BRAKE COMPONENT — PHOTO</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__kicker">BRAKE SYSTEM COMPONENTS</div>
+          <h3 class="case-card__title" id="case-title">Knorr-Bremse — Supplier of the Year 2009</h3>
+          <p>Precision turned and milled components for commercial vehicle braking systems, delivered in series volumes with zero-defect targets.</p>
+          <p>Full quality documentation, PPAP, and 100% inspection on safety-critical part numbers.</p>
+          <p>Sustained partnership through multiple platform cycles; recognized as <strong>Supplier of the Year in 2009</strong>.</p>
+          <a class="link-arrow case-card__link" href="/references/case-studies/knorr-bremse-supplier-of-the-year/">
+            Read full case study
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 07 FAQ ============ -->
+  <section class="section" id="section-07" aria-labelledby="faq-title">
+    <div class="section__inner">
+      <div class="label">§ 07 — INDUSTRY FAQ</div>
+      <div class="section__head">
+        <h2 class="section__title" id="faq-title">Industry questions</h2>
+      </div>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">01</span>
+              <span class="faq-q">Which industries does Borela serve and which are your main expertise?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Five core industries — automotive (Tier 2, drivetrain and brake-adjacent), commercial vehicles and brake systems (deepest expertise, Knorr-Bremse partner since 2007), power tools (Hilti), sealing technology (Freudenberg), and general mechanical engineering (Sulzer, Phoenix Mecano, Zarges). Automotive and commercial vehicles together represent the majority of our turnover.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">02</span>
+              <span class="faq-q">Can you handle new-industry projects outside this list?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Yes, if the work falls within our machining capabilities — CNC turning, CNC milling, series 500–100,000 pcs, tolerances at ±0.01 mm. We have served medical, aerospace-adjacent and energy projects on a case-by-case basis. RFQ first, we'll be straightforward about fit.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">03</span>
+              <span class="faq-q">What's the difference between Tier 1 and Tier 2 supply, and what is Borela's typical role?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Tier 1 suppliers deliver finished modules directly to the OEM. Tier 2 suppliers deliver components to Tier 1 suppliers. Borela operates predominantly as Tier 2, with full traceability and documentation expected at that level.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">04</span>
+              <span class="faq-q">Do industry certifications transfer across customers?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Our ISO 9001, ISO 14001 and VDA 6.3 status is recognized industry-wide. The Knorr-Bremse PSA is customer-specific. New customers in regulated industries typically still run their own supplier audit — we welcome and are routinely prepared for them.</p>
+            </div>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              <span class="faq-num">05</span>
+              <span class="faq-q">Which industry do most of your engineers come from?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <p>Most of our engineering team is general precision-machining trained, with hands-on automotive and brake-system experience accumulated since the Knorr-Bremse partnership began in 2007. We are a process-deep machining shop with industry-aware quality discipline.</p>
+            </div>
+          </details>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 08 FINAL CTA ============ -->
+  <section class="cta-final" id="section-08" aria-labelledby="cta-title">
+    <div class="section__inner">
+      <div class="label">§ 08 — GET STARTED</div>
+      <h2 id="cta-title">Ready to discuss your project?</h2>
+      <p>Send us your technical drawing for a rapid, precise quotation.</p>
+      <a href="/rfq/" class="btn btn--primary">REQUEST A QUOTE</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">BORELA BT</div>
+    <div class="footer__links">
+      <a href="../services/index.html">SERVICES</a>
+      <a href="#section-03">INDUSTRIES</a>
+      <a href="../Borela.html#certifications">CERTIFICATIONS</a>
+      <a href="../Borela.html#case">CASE STUDIES</a>
+      <a href="#section-07">FAQ</a>
+      <a href="#privacy">PRIVACY POLICY</a>
+    </div>
+    <div class="footer__legal">© 2026 BORELA BT. ISO 9001:2015 CERTIFIED. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+</body>
+</html>

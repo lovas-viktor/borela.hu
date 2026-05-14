@@ -1,0 +1,13 @@
+{
+  "name": "Borela BT.",
+  "short_name": "Borela",
+  "description": "Precision CNC contract machining — Hungary",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf9f4",
+  "theme_color": "#1a48c2",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
