@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/seo/schemas";
@@ -51,15 +52,26 @@ export default function ServicesPage() {
       <Hero
         label="§ 01 — Services"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Services" }]}
-        heading="CNC machining, heat treatment & precision engineering services"
+        heading="CNC machining & precision engineering services"
         lead="Every capability required for series production of precision machined parts — under one roof, with one point of contact."
         actions={[{ label: "Request a Quote", href: "/rfq/" }]}
       />
 
+      {/* Photo band — temporary illustration */}
+      <div className="relative w-full h-[clamp(260px,36vw,440px)] bg-surface-alt border-y border-border overflow-hidden">
+        <Image
+          src="/services.jpg"
+          alt="Borela CNC machining in progress"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+
       {/* Services grid */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 02 — Our services</SectionLabel>
+          <SectionLabel>§ 01 — Our services</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
             {services.map((svc) => (
               <SpecCard
@@ -77,23 +89,34 @@ export default function ServicesPage() {
       {/* How it works */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — How it works</SectionLabel>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step) => (
-              <div key={step.n}>
-                <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary mb-3">{step.n}</div>
+          <SectionLabel>§ 02 — How it works</SectionLabel>
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+            {processSteps.map((step, i) => (
+              <li key={step.n} className="flex flex-col">
+                {/* Step marker + connector line (links the four steps into one process) */}
+                <div className="relative flex items-center mb-5">
+                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center border border-primary bg-surface font-mono text-[13px] font-semibold text-primary">
+                    {step.n}
+                  </span>
+                  {i < processSteps.length - 1 && (
+                    <span
+                      aria-hidden="true"
+                      className="hidden lg:block absolute left-10 top-1/2 -translate-y-1/2 h-px w-[calc(100%-2.5rem)] bg-border-strong"
+                    />
+                  )}
+                </div>
                 <h3 className="font-bold text-[15px] uppercase tracking-[-0.01em] text-ink mb-2">{step.title}</h3>
                 <p className="text-[14px] text-ink-secondary leading-relaxed">{step.desc}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </Container>
       </section>
 
       {/* Materials */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 04 — Materials we machine</SectionLabel>
+          <SectionLabel>§ 03 — Materials we machine</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { name: "Steel", examples: "C45, 42CrMo4, 16MnCr5, case-hardening steels" },
@@ -114,8 +137,8 @@ export default function ServicesPage() {
       {/* Tolerances */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 05 — Tolerances & precision</SectionLabel>
-          <div className="grid sm:grid-cols-2 gap-px bg-border max-w-2xl">
+          <SectionLabel className="text-center">§ 04 — Tolerances & precision</SectionLabel>
+          <div className="grid sm:grid-cols-2 gap-px bg-border max-w-2xl mx-auto">
             {toleranceData.map((row) => (
               <div key={row.label} className="flex items-center justify-between p-4 bg-surface">
                 <span className="font-mono text-[11px] tracking-[0.06em] text-ink-secondary">{row.label}</span>
@@ -138,9 +161,9 @@ export default function ServicesPage() {
       />
 
       {/* Trusted by */}
-      <TrustStrip label="§ 06 — Trusted by" partners={partners.map((p) => p.name)} />
+      <TrustStrip label="§ 05 — Trusted by" partners={partners.map((p) => p.name)} />
 
-      <FAQAccordion label="§ 07 — Frequently asked questions" items={servicesFaqs} />
+      <FAQAccordion label="§ 06 — Frequently asked questions" items={servicesFaqs} />
 
       <CtaBlock
         heading="Ready to discuss your parts?"

@@ -62,7 +62,7 @@ export default function ReferencesPage() {
       {/* Partners */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — Partners</SectionLabel>
+          <SectionLabel>§ 01 — Partners</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {partners.map((p) => (
               <div key={p.name} className="p-5 border border-border bg-surface">
@@ -83,7 +83,7 @@ export default function ReferencesPage() {
       {/* Recognition */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 04 — Recognition & awards</SectionLabel>
+          <SectionLabel>§ 02 — Recognition & awards</SectionLabel>
           <div className="flex flex-wrap gap-0 divide-x divide-border border border-border">
             {awards.map((award) => (
               <div key={award.year} className="p-6 flex-1 min-w-[200px]">
@@ -99,7 +99,7 @@ export default function ReferencesPage() {
       {/* Case studies */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 05 — Case studies</SectionLabel>
+          <SectionLabel>§ 03 — Case studies</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-8">
             {caseStudies.map((cs, i) => (
               <div key={cs.slug} className={`grid sm:grid-cols-2 gap-0 border border-border overflow-hidden ${i % 2 === 1 ? "sm:direction-rtl" : ""}`}>
@@ -126,7 +126,7 @@ export default function ReferencesPage() {
       {/* Why partners stay */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 06 — Why partners stay</SectionLabel>
+          <SectionLabel>§ 04 — Why partners stay</SectionLabel>
           <div className="grid sm:grid-cols-2 gap-8">
             {whyStay.map((item) => (
               <div key={item.title}>
@@ -138,7 +138,7 @@ export default function ReferencesPage() {
         </Container>
       </section>
 
-      <FAQAccordion label="§ 07 — Frequently asked questions" items={referencesFaqs} />
+      <FAQAccordion label="§ 05 — Frequently asked questions" items={referencesFaqs} />
 
       <CtaBlock
         heading="Join our reference list"

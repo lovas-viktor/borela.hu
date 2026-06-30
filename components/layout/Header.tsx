@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Logo from "@/components/primitives/Logo";
+import LanguageSwitcher from "./LanguageSwitcher";
 import clsx from "clsx";
 
 const services = [
@@ -112,14 +113,12 @@ const services = [
 const navLinks = [
   { label: "Industries", href: "/industries/" },
   { label: "Capabilities", href: "/capabilities/" },
-  { label: "References", href: "/references/" },
   { label: "About", href: "/about/" },
   { label: "Careers", href: "/careers/" },
   { label: "Contact", href: "/contact/" },
 ];
 
 export default function Header() {
-  const [megaOpen, setMegaOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [servicesDrawerOpen, setServicesDrawerOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
@@ -127,7 +126,6 @@ export default function Header() {
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setMegaOpen(false);
         setDrawerOpen(false);
       }
     };
@@ -155,23 +153,12 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-6" aria-label="Primary">
-          {/* Services mega trigger */}
-          <button
-            type="button"
-            className="flex items-center gap-1 font-mono text-[11px] tracking-[0.12em] uppercase text-ink-secondary hover:text-primary pb-px border-b border-transparent hover:border-primary transition-colors"
-            aria-expanded={megaOpen}
-            aria-controls="mega-services"
-            onClick={() => setMegaOpen((v) => !v)}
+          <Link
+            href="/services/"
+            className="font-mono text-[11px] tracking-[0.12em] uppercase text-ink-secondary hover:text-primary pb-px border-b border-transparent hover:border-primary transition-colors"
           >
             Services
-            <svg
-              className={clsx("w-2.5 h-1.5 transition-transform", megaOpen && "rotate-180")}
-              viewBox="0 0 10 6"
-              aria-hidden="true"
-            >
-              <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="square" />
-            </svg>
-          </button>
+          </Link>
 
           {navLinks.map((link) => (
             <Link
@@ -184,8 +171,9 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden lg:block">
+        {/* Desktop language + CTA */}
+        <div className="hidden lg:flex items-center gap-5">
+          <LanguageSwitcher />
           <Link
             href="/rfq/"
             className="inline-flex items-center px-[22px] py-3 font-sans font-bold text-[11px] tracking-[0.16em] uppercase bg-primary text-on-primary hover:bg-primary-hover transition-colors"
@@ -207,92 +195,6 @@ export default function Header() {
           <span className={clsx("block w-5 h-px bg-ink transition-transform origin-center", drawerOpen && "-translate-y-[6px] -rotate-45")} />
         </button>
       </div>
-
-      {/* ── Mega menu ── */}
-      {megaOpen && (
-        <>
-          <div
-            className="fixed inset-0 top-[72px] bg-ink/20 z-40"
-            aria-hidden="true"
-            onClick={() => setMegaOpen(false)}
-          />
-          <div
-            id="mega-services"
-            role="region"
-            aria-label="Services menu"
-            className="absolute left-0 right-0 top-full z-50 bg-background border-b border-border shadow-lg"
-          >
-            <div className="max-w-[1180px] mx-auto px-7 py-8">
-              {/* Head */}
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <div className="font-mono text-[10px] tracking-[0.12em] text-ink-tertiary uppercase mb-1">§ Services</div>
-                  <div className="text-sm text-ink-secondary">Precision CNC manufacturing — every operation under one roof.</div>
-                </div>
-                <button
-                  type="button"
-                  className="p-2 border border-border hover:border-ink transition-colors"
-                  aria-label="Close services menu"
-                  onClick={() => setMegaOpen(false)}
-                >
-                  <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" aria-hidden="true">
-                    <path d="M4 4l12 12M16 4L4 16" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* Grid */}
-              <div className="grid grid-cols-4 gap-px bg-border">
-                {services.map((svc) => (
-                  <div key={svc.href} className="bg-background p-5 hover:bg-surface transition-colors group">
-                    <div className="w-8 h-8 text-ink-secondary group-hover:text-primary mb-3 transition-colors">
-                      {svc.icon}
-                    </div>
-                    <Link
-                      href={svc.href}
-                      className="block font-sans font-semibold text-sm text-ink group-hover:text-primary transition-colors mb-1.5"
-                      onClick={() => setMegaOpen(false)}
-                    >
-                      {svc.title}
-                    </Link>
-                    <p className="text-xs text-ink-secondary leading-relaxed mb-2">{svc.desc}</p>
-                    {svc.sub.length > 0 && (
-                      <ul className="space-y-0.5">
-                        {svc.sub.map((s) => (
-                          <li key={s.href}>
-                            <Link
-                              href={s.href}
-                              className="font-mono text-[10px] tracking-[0.06em] text-ink-tertiary hover:text-primary transition-colors"
-                              onClick={() => setMegaOpen(false)}
-                            >
-                              → {s.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Footer */}
-              <Link
-                href="/services/"
-                className="flex items-center justify-between mt-px bg-surface px-5 py-3.5 hover:bg-surface-alt transition-colors group"
-                onClick={() => setMegaOpen(false)}
-              >
-                <span className="font-mono text-[10px] tracking-[0.1em] text-ink-tertiary uppercase">§ Services overview</span>
-                <span className="flex items-center gap-2 font-mono text-[11px] tracking-[0.08em] text-ink-secondary group-hover:text-primary transition-colors">
-                  View all services
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" aria-hidden="true">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg>
-                </span>
-              </Link>
-            </div>
-          </div>
-        </>
-      )}
 
       {/* ── Mobile drawer ── */}
       <div
@@ -344,6 +246,12 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+
+          {/* Language */}
+          <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span className="font-mono text-[11px] tracking-[0.1em] uppercase text-ink-tertiary">Language</span>
+            <LanguageSwitcher className="text-[12px]" />
+          </div>
 
           <div className="mt-6">
             <Link

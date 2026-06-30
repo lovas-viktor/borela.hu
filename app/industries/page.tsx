@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, faqSchema } from "@/components/seo/schemas";
@@ -74,12 +75,10 @@ export default function IndustriesPage() {
         actions={[{ label: "Request a Quote", href: "/rfq/" }]}
       />
 
-      <TrustStrip label="§ 02 — Trusted by" partners={partners.map((p) => p.name)} />
-
       {/* Industry cards */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — Industries</SectionLabel>
+          <SectionLabel>§ 01 — Industries</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {industries.map((ind) => (
               <div key={ind.slug} className="p-6 border border-border bg-surface hover:bg-surface-alt transition-colors group">
@@ -97,6 +96,33 @@ export default function IndustriesPage() {
         </Container>
       </section>
 
+      <TrustStrip label="§ 02 — Trusted by" partners={partners.map((p) => p.name)} />
+
+      {/* Featured case */}
+      <section className="py-16 bg-background border-b border-border">
+        <Container>
+          <SectionLabel>§ 03 — Featured case study</SectionLabel>
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="relative h-56 lg:h-auto min-h-56 bg-surface-alt border border-border overflow-hidden">
+              <Image
+                src="/brake.jpg"
+                alt="High-volume precision turned brake system components"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary uppercase mb-2">Knorr-Bremse · Commercial vehicles</div>
+              <h3 className="font-extrabold text-[22px] tracking-[-0.02em] uppercase text-ink mb-3">High-volume brake components</h3>
+              <p className="text-[14px] text-ink-secondary leading-relaxed mb-3">
+                25,000+ precision turned brake system components per month. Supplier of the Year recognition in 2009. Multi-platform, multi-year partnership maintained through VDA 6.3 audit compliance.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* Key figures dark */}
       <StatGrid
         stats={[
@@ -109,8 +135,20 @@ export default function IndustriesPage() {
         columns={4}
       />
 
-      {/* Certifications matrix */}
+      {/* Certs grid */}
       <section className="py-16 bg-background border-b border-border">
+        <Container>
+          <SectionLabel>§ 04 — Certifications</SectionLabel>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {certifications.map((cert) => (
+              <CertificationCard key={cert.name} name={cert.name} since={cert.since} scope={cert.scope} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Certifications matrix */}
+      <section className="py-16 bg-surface border-b border-border">
         <Container>
           <SectionLabel>§ 05 — Certifications by industry</SectionLabel>
           <div className="overflow-x-auto">
@@ -148,42 +186,7 @@ export default function IndustriesPage() {
         </Container>
       </section>
 
-      {/* Featured case */}
-      <section className="py-16 bg-surface border-b border-border">
-        <Container>
-          <SectionLabel>§ 06 — Featured case study</SectionLabel>
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div
-              className="h-56 bg-surface-alt border border-border flex items-center justify-center"
-              role="img"
-              aria-label="Case study photo placeholder"
-            >
-              <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-tertiary">Case study photo</span>
-            </div>
-            <div>
-              <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary uppercase mb-2">Knorr-Bremse · Commercial vehicles</div>
-              <h3 className="font-extrabold text-[22px] tracking-[-0.02em] uppercase text-ink mb-3">High-volume brake components</h3>
-              <p className="text-[14px] text-ink-secondary leading-relaxed mb-3">
-                25,000+ precision turned brake system components per month. Supplier of the Year recognition in 2009. Multi-platform, multi-year partnership maintained through VDA 6.3 audit compliance.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Certs grid */}
-      <section className="py-16 bg-background border-b border-border">
-        <Container>
-          <SectionLabel>§ 07 — Certifications</SectionLabel>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certifications.map((cert) => (
-              <CertificationCard key={cert.name} name={cert.name} since={cert.since} scope={cert.scope} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <FAQAccordion label="§ 08 — Frequently asked questions" items={industriesFaqs} />
+      <FAQAccordion label="§ 06 — Frequently asked questions" items={industriesFaqs} />
 
       <CtaBlock
         heading="Your industry, our precision"

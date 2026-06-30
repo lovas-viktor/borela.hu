@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, faqSchema } from "@/components/seo/schemas";
@@ -51,17 +52,28 @@ export default function CapabilitiesPage() {
       <Hero
         label="§ 01 — Capabilities"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Capabilities" }]}
-        heading="What we can build for you — machines, materials & measurements"
-        lead="40 CNC lathes, 6 machining centers, in-house CMM, ISO 9001 and VDA 6.3 audited. Everything required for series production of precision machined parts."
+        heading="What we can build for you"
+        lead="Machines, materials and measurement under one roof: 40 CNC lathes, 6 machining centers, in-house CMM, ISO 9001 and VDA 6.3 audited. Everything required for series production of precision machined parts."
         actions={[{ label: "Request a Quote", href: "/rfq/" }]}
       />
 
       <StatGrid stats={heroStats} columns={5} />
 
+      {/* Photo band — temporary illustration */}
+      <div className="relative w-full h-[clamp(260px,36vw,440px)] bg-surface-alt border-y border-border overflow-hidden">
+        <Image
+          src="/cnc-machines.jpg"
+          alt="Borela CNC machine park"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+
       {/* Overview */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 02 — Overview</SectionLabel>
+          <SectionLabel>§ 01 — Overview</SectionLabel>
           <p className="text-[16px] text-ink-secondary leading-relaxed max-w-2xl">
             Borela operates a fully integrated CNC machining facility in central Hungary, producing precision turned and milled components for automotive Tier 1/2, power tool and engineering OEM customers. All operations — from raw material receipt to final inspection and CMM measurement — are performed at our own sites under ISO 9001:2015 quality control.
           </p>
@@ -71,7 +83,7 @@ export default function CapabilitiesPage() {
       {/* Machine park */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — Machine park</SectionLabel>
+          <SectionLabel>§ 02 — Machine park</SectionLabel>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
@@ -98,7 +110,7 @@ export default function CapabilitiesPage() {
       {/* Materials */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 04 — Materials</SectionLabel>
+          <SectionLabel>§ 03 — Materials</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {materials.map((mat) => (
               <div key={mat.name} className="p-5 border border-border">
@@ -113,7 +125,7 @@ export default function CapabilitiesPage() {
       {/* Tolerances */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 05 — Tolerances & precision</SectionLabel>
+          <SectionLabel>§ 04 — Tolerances & precision</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
               <h3 className="font-bold text-[15px] uppercase tracking-[-0.01em] text-ink mb-4">What we hold</h3>
@@ -145,16 +157,19 @@ export default function CapabilitiesPage() {
       {/* Measurement room */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 06 — Measurement room</SectionLabel>
+          <SectionLabel>§ 05 — Measurement room</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div
-              className="h-64 bg-surface-alt border border-border flex items-center justify-center"
-              role="img"
-              aria-label="CMM measurement room photo placeholder"
-            >
-              <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-tertiary">
-                CMM measurement room — photo
-              </span>
+            {/* TEMPORARY: measuring.jpg carries a "Carl Zeiss AG" copyright in its
+                EXIF metadata — likely NOT an original Borela photo. MUST be replaced
+                with an own/licensed CMM photo before launch (legal + credibility). */}
+            <div className="relative h-64 bg-surface-alt border border-border overflow-hidden">
+              <Image
+                src="/measuring.jpg"
+                alt="CMM coordinate measuring machine in Borela's measurement room"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
             <div>
               <p className="text-[16px] text-ink-secondary leading-relaxed mb-4">
@@ -175,7 +190,7 @@ export default function CapabilitiesPage() {
       {/* Certifications */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 07 — Certifications</SectionLabel>
+          <SectionLabel>§ 06 — Certifications</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certifications.map((cert) => (
               <CertificationCard key={cert.name} name={cert.name} since={cert.since} scope={cert.scope} />
@@ -187,7 +202,7 @@ export default function CapabilitiesPage() {
       {/* Numbers */}
       <section className="py-14 bg-surface-dark border-b border-border-dark">
         <Container>
-          <SectionLabel dark>§ 08 — By the numbers</SectionLabel>
+          <SectionLabel dark>§ 07 — By the numbers</SectionLabel>
           <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-8">
             {capNumbers.slice(0, 9).map((s) => (
               <div key={s.label} className="text-center">
@@ -199,7 +214,7 @@ export default function CapabilitiesPage() {
         </Container>
       </section>
 
-      <FAQAccordion label="§ 09 — Frequently asked questions" items={capabilitiesFaqs} />
+      <FAQAccordion label="§ 08 — Frequently asked questions" items={capabilitiesFaqs} />
 
       <CtaBlock
         heading="Ready to test our capabilities?"

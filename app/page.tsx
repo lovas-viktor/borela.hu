@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { faqSchema } from "@/components/seo/schemas";
@@ -129,7 +130,7 @@ export default function HomePage() {
       {/* Hero */}
       <Hero
         label="§ 01 — Introduction"
-        heading="Hungarian precision. Global scale."
+        heading={<>Hungarian precision<span className="text-primary">.</span><br />Global scale<span className="text-primary">.</span></>}
         lead="Family-owned Hungarian precision machining for automotive and engineering OEMs — Western-European quality at Eastern-European cost, since 1953."
         actions={[
           { label: "Submit RFQ", href: "/rfq/" },
@@ -140,15 +141,16 @@ export default function HomePage() {
       {/* Stat strip */}
       <StatGrid stats={homeStats} columns={3} />
 
-      {/* Photo band placeholder */}
-      <div
-        className="w-full h-[clamp(280px,40vw,480px)] bg-surface-alt border-y border-border flex items-center justify-center"
-        role="img"
-        aria-label="Factory floor photo — coming soon"
-      >
-        <span className="font-mono text-[11px] tracking-[0.1em] uppercase text-ink-tertiary">
-          Factory floor photo
-        </span>
+      {/* Photo band — temporary illustration */}
+      <div className="relative w-full h-[clamp(280px,40vw,480px)] bg-surface-alt border-y border-border overflow-hidden">
+        <Image
+          src="/front.jpg"
+          alt="Borela CNC machining factory floor"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
       </div>
 
       {/* Trusted by */}
@@ -220,14 +222,14 @@ export default function HomePage() {
         <Container>
           <SectionLabel>§ 07 — Featured project</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-8">
-            <div
-              className="bg-surface-alt border border-border flex items-center justify-center h-64 lg:h-auto"
-              role="img"
-              aria-label="Brake component photo placeholder"
-            >
-              <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-tertiary">
-                Brake component — photo
-              </span>
+            <div className="relative h-64 lg:h-auto lg:min-h-[256px] bg-surface-alt border border-border overflow-hidden">
+              <Image
+                src="/brake.jpg"
+                alt="Precision turned brake system components"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-col justify-center">
               <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary uppercase mb-2">Knorr-Bremse</div>

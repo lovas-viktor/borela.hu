@@ -8,16 +8,15 @@ import Container from "@/components/layout/Container";
 import FAQAccordion from "@/components/blocks/FAQAccordion";
 import CtaBlock from "@/components/blocks/CtaBlock";
 import ContactForm from "@/components/forms/ContactForm";
-import { locations } from "@/data/locations";
 import { contactFaqs } from "@/data/faqs";
 import { CONTACT } from "@/data/site";
 
 const SITE_URL = "https://borela.eu";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Contact Borela BT. — Three Sites in Central Hungary",
+  title: "Contact Borela BT.",
   description:
-    "Contact Borela BT.: +36 76 569 122, rfq@borela.eu. Three machining sites in Izsák, Jakabszállás and Fülöpszállás, Hungary. English and German spoken.",
+    "Contact Borela BT.: +36 76 569 122, rfq@borela.eu. Precision CNC machining in Hungary, 15 km from Kecskemét and the Mercedes-Benz plant. English and German spoken.",
   path: "/contact/",
 });
 
@@ -40,7 +39,7 @@ export default function ContactPage() {
       <Hero
         label="§ 01 — Contact"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-        heading="Contact Borela — three sites in central Hungary, one point of contact"
+        heading="Contact Borela"
         lead="Reach our sales and engineering team directly. English and German spoken. All enquiries reviewed by an engineer."
         actions={[
           { label: "Request a Quote", href: "/rfq/" },
@@ -48,45 +47,10 @@ export default function ContactPage() {
         ]}
       />
 
-      {/* Locations */}
-      <section className="py-16 bg-background border-b border-border">
-        <Container>
-          <SectionLabel>§ 01 — Locations</SectionLabel>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {locations.map((loc) => (
-              <div key={loc.id} className="p-6 border border-border bg-surface">
-                <h3 className="font-bold text-[14px] uppercase tracking-[-0.01em] text-ink mb-1">{loc.name}</h3>
-                <div className="font-mono text-[11px] tracking-[0.06em] text-primary uppercase mb-3">{loc.role}</div>
-                {loc.area && (
-                  <div className="font-mono text-[11px] text-ink-tertiary mb-2">Floor area: {loc.area}</div>
-                )}
-                <address className="font-mono text-[11px] text-ink-secondary not-italic mb-3 leading-relaxed">
-                  {loc.address}
-                </address>
-                <p className="text-[13px] text-ink-secondary leading-relaxed">{loc.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Map placeholder */}
-      <section className="bg-surface border-b border-border">
-        <div
-          className="w-full h-64 flex items-center justify-center bg-surface-alt"
-          role="img"
-          aria-label="Map placeholder — Izsák, Jakabszállás, Fülöpszállás, Bács-Kiskun, Hungary"
-        >
-          <span className="font-mono text-[11px] tracking-[0.1em] uppercase text-ink-tertiary">
-            Map — Izsák / Jakabszállás / Fülöpszállás, Hungary
-          </span>
-        </div>
-      </section>
-
       {/* Contact form */}
-      <section className="py-16 bg-background border-b border-border">
+      <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — Send a message</SectionLabel>
+          <SectionLabel>§ 01 — Send a message</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <p className="text-[15px] text-ink-secondary leading-relaxed mb-6">
@@ -131,9 +95,9 @@ export default function ContactPage() {
       </section>
 
       {/* Departments */}
-      <section className="py-16 bg-surface border-b border-border">
+      <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 04 — Who to contact</SectionLabel>
+          <SectionLabel>§ 02 — Who to contact</SectionLabel>
           <div className="grid sm:grid-cols-3 gap-4">
             {departments.map((dept) => (
               <div key={dept.role} className="p-5 border border-border bg-background">
@@ -149,29 +113,45 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* Company details */}
-      <section className="py-16 bg-background border-b border-border">
+      {/* Location & access */}
+      <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 05 — Company details</SectionLabel>
-          <dl className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { dt: "Legal name", dd: "BORELA TERMELŐ FORGALMAZÓ ÉS SZOLGÁLTATÓ BT." },
-              { dt: "Short name", dd: "Borela BT." },
-              { dt: "Registered address", dd: "Garai u. 6., 6070 Izsák, Hungary" },
-              { dt: "VAT / Tax number", dd: "Contact us for EU VAT details" },
-              { dt: "Phone", dd: CONTACT.phone },
-              { dt: "Email", dd: CONTACT.email },
-            ].map((item) => (
-              <div key={item.dt}>
-                <dt className="font-mono text-[10px] tracking-[0.08em] uppercase text-ink-tertiary mb-1">{item.dt}</dt>
-                <dd className="font-sans text-[14px] text-ink">{item.dd}</dd>
-              </div>
-            ))}
-          </dl>
+          <SectionLabel>§ 03 — Location & access</SectionLabel>
+          <div className="grid lg:grid-cols-2 gap-12 lg:items-stretch">
+            <div>
+              <h3 className="font-bold text-[18px] uppercase tracking-[-0.01em] text-ink mb-4">
+                In the heart of Hungary&rsquo;s automotive region
+              </h3>
+              <p className="text-[15px] text-ink-secondary leading-relaxed mb-5">
+                Our plant sits in Jakabszállás, in central Hungary — just 15 km from Kecskemét and the Mercedes-Benz factory, and 10 km from the M5 motorway. That means fast, reliable road access for deliveries across the EU.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  "15 km to Kecskemét & the Mercedes-Benz plant",
+                  "10 km to the M5 motorway",
+                  "Direct EU road links — no customs, no tariffs",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2 font-mono text-[12px] text-ink-secondary">
+                    <span className="text-primary">→</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative h-[320px] lg:h-auto lg:min-h-[320px] border border-border overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4799869.282941974!2d9.5!3d51.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743c7c76e67646b%3A0xa2f865818393c976!2sBORELA%20Bt.!5e0!3m2!1shu!2shu!4v1782829752760!5m2!1shu!2shu"
+                title="Borela BT. location — Jakabszállás, Hungary"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
+          </div>
         </Container>
       </section>
 
-      <FAQAccordion label="§ 07 — Frequently asked questions" items={contactFaqs} />
+      <FAQAccordion label="§ 04 — Frequently asked questions" items={contactFaqs} />
 
       <CtaBlock
         heading="Have a drawing ready?"

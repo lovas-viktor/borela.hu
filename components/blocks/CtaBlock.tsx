@@ -14,10 +14,11 @@ interface CtaBlockProps {
   subheading?: string;
   actions: CtaAction[];
   dark?: boolean;
+  centered?: boolean;
   className?: string;
 }
 
-export default function CtaBlock({ label, heading, subheading, actions, dark = false, className }: CtaBlockProps) {
+export default function CtaBlock({ label, heading, subheading, actions, dark = false, centered = true, className }: CtaBlockProps) {
   return (
     <section
       className={clsx(
@@ -26,7 +27,7 @@ export default function CtaBlock({ label, heading, subheading, actions, dark = f
         className
       )}
     >
-      <div className="max-w-[880px] mx-auto px-7">
+      <div className={clsx("max-w-[880px] mx-auto px-7", centered && "text-center")}>
         {label && <SectionLabel dark={dark}>{label}</SectionLabel>}
         <h2
           className={clsx(
@@ -37,11 +38,11 @@ export default function CtaBlock({ label, heading, subheading, actions, dark = f
           {heading}
         </h2>
         {subheading && (
-          <p className={clsx("text-[17px] leading-[1.55] mb-8 max-w-[480px]", dark ? "text-on-surface-dark/70" : "text-ink-secondary")}>
+          <p className={clsx("text-[17px] leading-[1.55] mb-8 max-w-[480px]", centered && "mx-auto", dark ? "text-on-surface-dark/70" : "text-ink-secondary")}>
             {subheading}
           </p>
         )}
-        <div className="flex flex-wrap gap-3.5">
+        <div className={clsx("flex flex-wrap gap-3.5", centered && "justify-center")}>
           {actions.map((action) => (
             <Button
               key={action.href}

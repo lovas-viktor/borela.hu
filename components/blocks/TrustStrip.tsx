@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import clsx from "clsx";
 import SectionLabel from "@/components/primitives/SectionLabel";
 
@@ -19,17 +20,29 @@ export default function TrustStrip({ label, partners, dark = false, className }:
     >
       <div className="max-w-[1180px] mx-auto px-7">
         {label && <SectionLabel dark={dark}>{label}</SectionLabel>}
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
-          {partners.map((name) => (
-            <span
-              key={name}
-              className={clsx(
-                "font-mono text-[11px] tracking-[0.14em] uppercase font-medium",
-                dark ? "text-on-surface-dark/60" : "text-ink-secondary"
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          {partners.map((name, i) => (
+            <Fragment key={name}>
+              <span
+                className={clsx(
+                  "font-mono text-[13px] tracking-[0.1em] uppercase font-medium",
+                  dark ? "text-on-surface-dark/85" : "text-ink"
+                )}
+              >
+                {name}
+              </span>
+              {i < partners.length - 1 && (
+                <span
+                  aria-hidden="true"
+                  className={clsx(
+                    "font-mono text-[13px] select-none",
+                    dark ? "text-on-surface-dark/30" : "text-ink-tertiary"
+                  )}
+                >
+                  ·
+                </span>
               )}
-            >
-              {name}
-            </span>
+            </Fragment>
           ))}
         </div>
       </div>
