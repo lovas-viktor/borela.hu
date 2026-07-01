@@ -61,24 +61,30 @@ export default async function RfqPage({ params }: { params: Promise<{ lang: Loca
       {/* Form */}
       <RfqForm dict={dict["rfq"] ?? {}} />
 
-      {/* Prepare strip */}
+      {/* How it works (process, connector-line style) */}
       <section className="py-14 bg-surface border-y border-border">
         <div className="max-w-[1180px] mx-auto px-7">
           <SectionLabel>{t("prepare.label")}</SectionLabel>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { n: "01", title: t("prepare.cards.0.title"), desc: t("prepare.cards.0.desc") },
-              { n: "02", title: t("prepare.cards.1.title"), desc: t("prepare.cards.1.desc") },
-              { n: "03", title: t("prepare.cards.2.title"), desc: t("prepare.cards.2.desc") },
-              { n: "04", title: t("prepare.cards.3.title"), desc: t("prepare.cards.3.desc") },
-            ].map((item) => (
-              <div key={item.n}>
-                <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary mb-2">{item.n}</div>
-                <h3 className="font-bold text-[14px] uppercase tracking-[-0.01em] text-ink mb-1">{item.title}</h3>
-                <p className="text-[13px] text-ink-secondary leading-relaxed">{item.desc}</p>
-              </div>
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+            {[0, 1, 2, 3].map((i) => (
+              <li key={i} className="flex flex-col">
+                {/* Step marker + connector line */}
+                <div className="relative flex items-center mb-5">
+                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center border border-primary bg-surface font-mono text-[13px] font-semibold text-primary">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {i < 3 && (
+                    <span
+                      aria-hidden="true"
+                      className="hidden lg:block absolute left-10 top-1/2 -translate-y-1/2 h-px w-[calc(100%-2.5rem)] bg-border-strong"
+                    />
+                  )}
+                </div>
+                <h3 className="font-bold text-[15px] uppercase tracking-[-0.01em] text-ink mb-2">{t(`prepare.cards.${i}.title`)}</h3>
+                <p className="text-[14px] text-ink-secondary leading-relaxed">{t(`prepare.cards.${i}.desc`)}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 

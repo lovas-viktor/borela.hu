@@ -26,6 +26,11 @@ export default function Header({ lang, ui }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
   const p = (path: string) => `/${lang}${path}`;
   const t = (key: string) => ui[key] ?? key;
+  // "Pályázatok" (EU grants) is a statutory Hungarian-only menu item, before About.
+  const nav =
+    lang === "hu"
+      ? [...NAV.slice(0, 3), { key: "nav.palyazatok", href: "/palyazatok/" }, ...NAV.slice(3)]
+      : NAV;
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -48,7 +53,7 @@ export default function Header({ lang, ui }: HeaderProps) {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-6" aria-label="Primary">
-          {NAV.map((link) => (
+          {nav.map((link) => (
             <Link
               key={link.href}
               href={p(link.href)}
@@ -93,7 +98,7 @@ export default function Header({ lang, ui }: HeaderProps) {
         aria-hidden={!drawerOpen}
       >
         <nav className="flex flex-col p-6 gap-1" aria-label="Mobile primary">
-          {NAV.map((link) => (
+          {nav.map((link) => (
             <Link
               key={link.href}
               href={p(link.href)}

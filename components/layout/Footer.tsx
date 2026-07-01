@@ -13,11 +13,11 @@ const NAV = [
   { key: "footer.nav.contact", href: "/contact/" },
 ];
 
+// External PDF documents (Hungarian statutory disclosures), opened in a new tab.
 const LEGAL = [
-  { key: "footer.legal.euProjects", href: "/eu-projects/" },
-  { key: "footer.legal.integratedPolicy", href: "/legal/integrated-policy.pdf" },
-  { key: "footer.legal.privacyNotice", href: "/legal/privacy-policy/" },
-  { key: "footer.legal.impressum", href: "/legal/imprint/" },
+  { key: "footer.legal.integratedPolicy", href: "/pdfs/borela_bt_integralt_politika_20230801.pdf" },
+  { key: "footer.legal.privacyNotice", href: "/pdfs/Adatkezelesi_tajekoztato_20230801_weblap.pdf" },
+  { key: "footer.legal.energyReport", href: "/pdfs/E_szakref_2025_%C3%A9ves_kivonat_Borela_sz.pdf" },
 ];
 
 const columnHeading =
@@ -32,6 +32,10 @@ export default function Footer({ lang, ui }: FooterProps) {
   const { street, zip, city, country } = CONTACT.address;
   const p = (path: string) => `/${lang}${path}`;
   const t = (key: string) => ui[key] ?? key;
+  const nav =
+    lang === "hu"
+      ? [...NAV.slice(0, 3), { key: "footer.nav.palyazatok", href: "/palyazatok/" }, ...NAV.slice(3)]
+      : NAV;
 
   return (
     <footer className="bg-background border-t border-border pt-[60px] pb-7">
@@ -68,7 +72,7 @@ export default function Footer({ lang, ui }: FooterProps) {
           <nav aria-label={t("footer.nav.heading")}>
             <div className={columnHeading}>{t("footer.nav.heading")}</div>
             <div className="flex flex-col gap-3">
-              {NAV.map((link) => (
+              {nav.map((link) => (
                 <Link
                   key={link.href}
                   href={p(link.href)}
@@ -105,13 +109,15 @@ export default function Footer({ lang, ui }: FooterProps) {
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-1">
             {LEGAL.map((link) => (
-              <Link
+              <a
                 key={link.href}
-                href={p(link.href)}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-tertiary hover:text-ink transition-colors"
               >
                 {t(link.key)}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
