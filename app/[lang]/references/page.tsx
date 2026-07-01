@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getDictionary } from "@/lib/getDictionary";
+import type { Locale } from "@/lib/i18n";
 import { generatePageMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, faqSchema } from "@/components/seo/schemas";
@@ -42,40 +44,55 @@ const whyStay = [
   { title: "EU supply chain", desc: "No customs, no tariffs, no import paperwork. Delivery direct to your production line." },
 ];
 
-export default function ReferencesPage() {
+export default async function ReferencesPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const t = (k: string) => dict["references"]?.[k] ?? k;
+  const p = (path: string) => `/${lang}${path}`;
+
+  const trustStats = trustNumbers.map((stat, i) => ({
+    value: stat.value,
+    label: t(`trustNumbers.${i}.label`),
+  }));
+
+  const faqItems = referencesFaqs.map((_, i) => ({
+    question: t(`faq.${i}.q`),
+    answer: t(`faq.${i}.a`),
+  }));
+
   return (
     <>
       <JsonLd schema={breadcrumbSchema([{ name: "Home", item: SITE_URL + "/" }, { name: "References", item: SITE_URL + "/references/" }])} />
       <JsonLd schema={faqSchema(referencesFaqs)} />
 
       <Hero
-        label="§ 01 — References"
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "References" }]}
-        heading="Proven where precision is non-negotiable"
-        lead="Seven major OEM partners across automotive, commercial vehicles, power tools and engineering. 70+ years of continuous production and unbroken quality records."
-        actions={[{ label: "Request a Quote", href: "/rfq/" }]}
+        label={`§ 01 — ${t("hero.label")}`}
+        breadcrumb={[{ label: t("hero.breadcrumb.0"), href: p("/") }, { label: t("hero.breadcrumb.1") }]}
+        heading={t("hero.heading")}
+        lead={t("hero.lead")}
+        actions={[{ label: t("hero.action.0"), href: p("/rfq/") }]}
       />
 
       {/* Numbers */}
-      <StatGrid stats={trustNumbers} dark columns={4} />
+      <StatGrid stats={trustStats} dark columns={4} />
 
       {/* Partners */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 01 — Partners</SectionLabel>
+          <SectionLabel>{`§ 01 — ${t("partners.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {partners.map((p) => (
-              <div key={p.name} className="p-5 border border-border bg-surface">
-                <div className="font-bold text-[14px] uppercase tracking-[-0.01em] text-ink mb-1">{p.name}</div>
-                <div className="font-mono text-[11px] text-ink-tertiary mb-1">{p.industry}</div>
-                {p.partnerSince && (
-                  <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-primary">Partner since {p.partnerSince}</div>
+            {partners.map((partner, i) => (
+              <div key={partner.name} className="p-5 border border-border bg-surface">
+                <div className="font-bold text-[14px] uppercase tracking-[-0.01em] text-ink mb-1">{partner.name}</div>
+                <div className="font-mono text-[11px] text-ink-tertiary mb-1">{t(`partners.${i}.industry`)}</div>
+                {partner.partnerSince && (
+                  <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-primary">{t("partners.since.prefix")} {partner.partnerSince}</div>
                 )}
               </div>
             ))}
           </div>
           <p className="mt-6 font-mono text-[11px] text-ink-tertiary">
-            Partner names shown for factual reference. Logo usage requires brand-use permission from each company.
+            {t("partners.disclaimer")}
           </p>
         </Container>
       </section>
@@ -83,13 +100,13 @@ export default function ReferencesPage() {
       {/* Recognition */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 02 — Recognition & awards</SectionLabel>
+          <SectionLabel>{`§ 02 — ${t("recognition.label")}`}</SectionLabel>
           <div className="flex flex-wrap gap-0 divide-x divide-border border border-border">
-            {awards.map((award) => (
+            {awards.map((award, i) => (
               <div key={award.year} className="p-6 flex-1 min-w-[200px]">
                 <div className="font-mono text-[13px] tracking-[0.06em] text-primary font-semibold mb-2">{award.year}</div>
-                <div className="font-bold text-[14px] uppercase tracking-[-0.01em] text-ink mb-1">{award.title}</div>
-                <p className="text-[13px] text-ink-secondary leading-relaxed">{award.desc}</p>
+                <div className="font-bold text-[14px] uppercase tracking-[-0.01em] text-ink mb-1">{t(`awards.${i}.title`)}</div>
+                <p className="text-[13px] text-ink-secondary leading-relaxed">{t(`awards.${i}.desc`)}</p>
               </div>
             ))}
           </div>
@@ -99,23 +116,23 @@ export default function ReferencesPage() {
       {/* Case studies */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — Case studies</SectionLabel>
+          <SectionLabel>{`§ 03 — ${t("caseStudies.label")}`}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-8">
             {caseStudies.map((cs, i) => (
               <div key={cs.slug} className="grid sm:grid-cols-2 gap-0 border border-border overflow-hidden">
                 <div
                   className={`h-48 sm:h-auto bg-surface-alt flex items-center justify-center ${i % 2 === 1 ? "sm:order-2" : ""}`}
                   role="img"
-                  aria-label={`${cs.title} photo placeholder`}
+                  aria-label={`${t(`cases.${i}.title`)} ${t("caseStudies.photoAlt.suffix")}`}
                 >
-                  <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-tertiary">Photo</span>
+                  <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-tertiary">{t("caseStudies.photoPlaceholder")}</span>
                 </div>
                 <div className="p-6 bg-surface">
                   <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary uppercase mb-2">
-                    {cs.client} · {cs.industry}
+                    {cs.client} · {t(`cases.${i}.industry`)}
                   </div>
-                  <h3 className="font-extrabold text-[17px] tracking-[-0.01em] uppercase text-ink mb-3">{cs.title}</h3>
-                  <p className="text-[14px] text-ink-secondary leading-relaxed">{cs.summary}</p>
+                  <h3 className="font-extrabold text-[17px] tracking-[-0.01em] uppercase text-ink mb-3">{t(`cases.${i}.title`)}</h3>
+                  <p className="text-[14px] text-ink-secondary leading-relaxed">{t(`cases.${i}.summary`)}</p>
                 </div>
               </div>
             ))}
@@ -126,24 +143,24 @@ export default function ReferencesPage() {
       {/* Why partners stay */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 04 — Why partners stay</SectionLabel>
+          <SectionLabel>{`§ 04 — ${t("whyStay.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 gap-8">
-            {whyStay.map((item) => (
+            {whyStay.map((item, i) => (
               <div key={item.title}>
-                <h3 className="font-bold text-[14px] uppercase tracking-[-0.01em] text-ink mb-2">{item.title}</h3>
-                <p className="text-[14px] text-ink-secondary leading-relaxed">{item.desc}</p>
+                <h3 className="font-bold text-[14px] uppercase tracking-[-0.01em] text-ink mb-2">{t(`whyStay.${i}.title`)}</h3>
+                <p className="text-[14px] text-ink-secondary leading-relaxed">{t(`whyStay.${i}.desc`)}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <FAQAccordion label="§ 05 — Frequently asked questions" items={referencesFaqs} />
+      <FAQAccordion label={`§ 05 — ${t("faq.label")}`} items={faqItems} />
 
       <CtaBlock
-        heading="Join our reference list"
-        subheading="Submit your drawing for a no-obligation quote. An engineer replies within 2 business days."
-        actions={[{ label: "Request a Quote", href: "/rfq/" }]}
+        heading={t("cta.heading")}
+        subheading={t("cta.subheading")}
+        actions={[{ label: t("cta.action.0"), href: p("/rfq/") }]}
       />
     </>
   );

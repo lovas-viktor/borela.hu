@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo";
+import { getDictionary } from "@/lib/getDictionary";
+import type { Locale } from "@/lib/i18n";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/components/seo/schemas";
 import Hero from "@/components/blocks/Hero";
@@ -19,60 +21,51 @@ export const metadata: Metadata = generatePageMetadata({
 // Position descriptions for the three quality/PM roles are generic placeholders —
 // refine with confirmed requirements when available.
 const positions = [
-  {
-    title: "Sales Representative",
-    meta: "English required · German an advantage",
-    desc: "Reach out to and visit partners, negotiate, and maintain long-term relationships across European markets.",
-  },
-  {
-    title: "HR Manager",
-    desc: "Own the full HR function — recruitment, administration, payroll liaison and employee relations — for our 50-person machining company, single-handedly.",
-  },
-  {
-    title: "Project Manager",
-    desc: "Plan and coordinate customer projects from quote to delivery across our production sites.",
-  },
-  {
-    title: "Quality Engineer",
-    desc: "Ensure machined parts meet customer and ISO 9001 / VDA 6.3 quality requirements.",
-  },
-  {
-    title: "Quality Assistant",
-    desc: "Support quality control, inspection documentation and measurement reporting.",
-  },
+  { meta: true },
+  {},
+  {},
+  {},
+  {},
 ];
 
-const whyJoin = [
-  { title: "Family-owned, second generation", desc: "A 70-year engineering heritage with a modern, quality-driven leadership team." },
-  { title: "Automotive-grade standards", desc: "Work to ISO 9001 and VDA 6.3 for OEMs such as Knorr-Bremse and Mercedes-Benz." },
-  { title: "Stable EU manufacturer", desc: "Long-term customer programmes and predictable, year-round production." },
-];
+const whyJoin = [{}, {}, {}];
 
-export default function CareersPage() {
+export default async function CareersPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const t = (k: string) => dict["careers"]?.[k] ?? k;
+  const p = (path: string) => `/${lang}${path}`;
+
+  const translatedPositions = positions.map((pos, i) => ({
+    title: t(`positions.${i}.title`),
+    ...(pos.meta ? { meta: t(`positions.${i}.meta`) } : {}),
+    desc: t(`positions.${i}.desc`),
+  }));
+
   return (
     <>
       <JsonLd schema={breadcrumbSchema([{ name: "Home", item: SITE_URL + "/" }, { name: "Careers", item: SITE_URL + "/careers/" }])} />
 
       <Hero
-        label="§ 01 — Careers"
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "Careers" }]}
-        heading="Build precision parts with us"
-        lead="Borela BT. is a family-owned Hungarian precision machining company supplying Europe's leading OEMs. We're growing our team — see our open positions below."
+        label={`§ 01 — ${t("hero.label")}`}
+        breadcrumb={[{ label: t("hero.breadcrumb.home"), href: p("/") }, { label: t("hero.breadcrumb.careers") }]}
+        heading={t("hero.heading")}
+        lead={t("hero.lead")}
         actions={[
-          { label: "View open positions", href: "#positions" },
-          { label: "Apply now", href: "#apply", variant: "ghost" },
+          { label: t("hero.actions.0"), href: "#positions" },
+          { label: t("hero.actions.1"), href: "#apply", variant: "ghost" },
         ]}
       />
 
       {/* Why join */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 02 — Why Borela</SectionLabel>
+          <SectionLabel>{`§ 02 — ${t("section.02.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-3 gap-8">
-            {whyJoin.map((item) => (
-              <div key={item.title}>
-                <h3 className="font-bold text-[15px] uppercase tracking-[-0.01em] text-ink mb-2">{item.title}</h3>
-                <p className="text-[14px] text-ink-secondary leading-relaxed">{item.desc}</p>
+            {whyJoin.map((item, i) => (
+              <div key={i}>
+                <h3 className="font-bold text-[15px] uppercase tracking-[-0.01em] text-ink mb-2">{t(`whyJoin.${i}.title`)}</h3>
+                <p className="text-[14px] text-ink-secondary leading-relaxed">{t(`whyJoin.${i}.desc`)}</p>
               </div>
             ))}
           </div>
@@ -80,7 +73,7 @@ export default function CareersPage() {
       </section>
 
       {/* Open positions + application form (shared state so "Apply" preselects the role) */}
-      <CareersApply positions={positions} />
+      <CareersApply positions={translatedPositions} />
     </>
   );
 }

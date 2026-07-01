@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getDictionary } from "@/lib/getDictionary";
+import type { Locale } from "@/lib/i18n";
 import { generatePageMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/seo/schemas";
@@ -25,23 +27,41 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 const processSteps = [
-  { n: "01", title: "Drawing review", desc: "We check manufacturability, tolerances and material spec. We flag issues before quoting." },
-  { n: "02", title: "Quote within 2 days", desc: "A detailed price, lead time and FAI plan — reviewed by an engineer, not an auto-responder." },
-  { n: "03", title: "First article", desc: "Sample production with full FAI report, CMM report and material certificate." },
-  { n: "04", title: "Series production", desc: "500–100,000 pieces, with in-process SPC and delivery to your agreed schedule." },
+  { n: "01" },
+  { n: "02" },
+  { n: "03" },
+  { n: "04" },
 ];
 
 const toleranceData = [
-  { label: "CNC turning (standard)", value: "±0.05 mm" },
-  { label: "CNC turning (precision)", value: "±0.01 mm" },
-  { label: "CNC milling (standard)", value: "±0.05 mm" },
-  { label: "CNC milling (precision)", value: "±0.01 mm" },
-  { label: "Surface roughness", value: "Ra 0.8–3.2 μm" },
-  { label: "Thread tolerance", value: "6H / 6g (ISO)" },
+  { value: "±0.05 mm" },
+  { value: "±0.01 mm" },
+  { value: "±0.05 mm" },
+  { value: "±0.01 mm" },
+  { value: "Ra 0.8–3.2 μm" },
+  { value: "6H / 6g (ISO)" },
 ];
 
-export default function ServicesPage() {
+const materials = [
+  { examples: "C45, 42CrMo4, 16MnCr5, case-hardening steels" },
+  { examples: "EN AW-6082, 7075, AlSi-alloys" },
+  { examples: "1.4301 (304), 1.4404 (316L), duplex grades" },
+  { examples: "CuZn39Pb3, CuSn8, CuCr1Zr" },
+  { examples: "EN-GJL-250, EN-GJS-400, nodular iron" },
+];
+
+export default async function ServicesPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const t = (k: string) => dict["services"]?.[k] ?? k;
+  const p = (path: string) => `/${lang}${path}`;
+
   const serviceList = services.map((s) => ({ name: s.title, url: `${SITE_URL}${s.href}` }));
+
+  const faqItems = servicesFaqs.map((_, i) => ({
+    question: t(`faq.${i}.q`),
+    answer: t(`faq.${i}.a`),
+  }));
 
   return (
     <>
@@ -50,18 +70,18 @@ export default function ServicesPage() {
       <JsonLd schema={faqSchema(servicesFaqs)} />
 
       <Hero
-        label="§ 01 — Services"
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "Services" }]}
-        heading="CNC machining & precision engineering services"
-        lead="Every capability required for series production of precision machined parts — under one roof, with one point of contact."
-        actions={[{ label: "Request a Quote", href: "/rfq/" }]}
+        label={`§ 01 — ${t("hero.label")}`}
+        breadcrumb={[{ label: t("hero.breadcrumb.0"), href: p("/") }, { label: t("hero.breadcrumb.1") }]}
+        heading={t("hero.heading")}
+        lead={t("hero.lead")}
+        actions={[{ label: t("hero.action.0.label"), href: p("/rfq/") }]}
       />
 
       {/* Photo band — temporary illustration */}
       <div className="relative w-full h-[clamp(260px,36vw,440px)] bg-surface-alt border-y border-border overflow-hidden">
         <Image
           src="/services.jpg"
-          alt="Borela CNC machining in progress"
+          alt={t("photoBand.alt")}
           fill
           sizes="100vw"
           className="object-cover"
@@ -71,14 +91,17 @@ export default function ServicesPage() {
       {/* Services grid */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 01 — Our services</SectionLabel>
+          <SectionLabel>{`§ 01 — ${t("servicesGrid.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
-            {services.map((svc) => (
+            {services.map((svc, i) => (
               <SpecCard
                 key={svc.slug}
-                title={svc.title}
-                description={svc.description}
-                specs={svc.specs}
+                title={t(`services.${i}.title`)}
+                description={t(`services.${i}.description`)}
+                specs={svc.specs.map((spec, j) => ({
+                  label: t(`services.${i}.specs.${j}.label`),
+                  value: t(`services.${i}.specs.${j}.value`),
+                }))}
               />
             ))}
           </div>
@@ -88,7 +111,7 @@ export default function ServicesPage() {
       {/* How it works */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 02 — How it works</SectionLabel>
+          <SectionLabel>{`§ 02 — ${t("howItWorks.label")}`}</SectionLabel>
           <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             {processSteps.map((step, i) => (
               <li key={step.n} className="flex flex-col">
@@ -104,8 +127,8 @@ export default function ServicesPage() {
                     />
                   )}
                 </div>
-                <h3 className="font-bold text-[15px] uppercase tracking-[-0.01em] text-ink mb-2">{step.title}</h3>
-                <p className="text-[14px] text-ink-secondary leading-relaxed">{step.desc}</p>
+                <h3 className="font-bold text-[15px] uppercase tracking-[-0.01em] text-ink mb-2">{t(`process.${i}.title`)}</h3>
+                <p className="text-[14px] text-ink-secondary leading-relaxed">{t(`process.${i}.desc`)}</p>
               </li>
             ))}
           </ol>
@@ -115,18 +138,12 @@ export default function ServicesPage() {
       {/* Materials */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — Materials we machine</SectionLabel>
+          <SectionLabel>{`§ 03 — ${t("materials.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { name: "Steel", examples: "C45, 42CrMo4, 16MnCr5, case-hardening steels" },
-              { name: "Aluminium", examples: "EN AW-6082, 7075, AlSi-alloys" },
-              { name: "Stainless steel", examples: "1.4301 (304), 1.4404 (316L), duplex grades" },
-              { name: "Brass & Copper alloys", examples: "CuZn39Pb3, CuSn8, CuCr1Zr" },
-              { name: "Cast iron / GGG", examples: "EN-GJL-250, EN-GJS-400, nodular iron" },
-            ].map((mat) => (
-              <div key={mat.name} className="p-5 border border-border bg-surface">
-                <div className="font-bold text-[14px] text-ink mb-1 uppercase tracking-[-0.01em]">{mat.name}</div>
-                <div className="font-mono text-[11px] text-ink-secondary">{mat.examples}</div>
+            {materials.map((mat, i) => (
+              <div key={i} className="p-5 border border-border bg-surface">
+                <div className="font-bold text-[14px] text-ink mb-1 uppercase tracking-[-0.01em]">{t(`materials.${i}.name`)}</div>
+                <div className="font-mono text-[11px] text-ink-secondary">{t(`materials.${i}.examples`)}</div>
               </div>
             ))}
           </div>
@@ -136,12 +153,12 @@ export default function ServicesPage() {
       {/* Tolerances */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel className="text-center">§ 04 — Tolerances & precision</SectionLabel>
+          <SectionLabel className="text-center">{`§ 04 — ${t("tolerances.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 gap-px bg-border max-w-2xl mx-auto">
-            {toleranceData.map((row) => (
-              <div key={row.label} className="flex items-center justify-between p-4 bg-surface">
-                <span className="font-mono text-[11px] tracking-[0.06em] text-ink-secondary">{row.label}</span>
-                <span className="font-mono text-[12px] font-medium text-ink">{row.value}</span>
+            {toleranceData.map((row, i) => (
+              <div key={i} className="flex items-center justify-between p-4 bg-surface">
+                <span className="font-mono text-[11px] tracking-[0.06em] text-ink-secondary">{t(`tolerances.${i}.label`)}</span>
+                <span className="font-mono text-[12px] font-medium text-ink">{t(`tolerances.${i}.value`)}</span>
               </div>
             ))}
           </div>
@@ -151,23 +168,23 @@ export default function ServicesPage() {
       {/* Quality */}
       <StatGrid
         stats={[
-          { value: "ISO 9001", label: "Certified since 1996" },
-          { value: "VDA 6.3", label: "Automotive process audit" },
-          { value: "CMM", label: "In-house measurement" },
+          { value: t("quality.0.value"), label: t("quality.0.label") },
+          { value: t("quality.1.value"), label: t("quality.1.label") },
+          { value: t("quality.2.value"), label: t("quality.2.label") },
         ]}
         dark
         columns={3}
       />
 
       {/* Trusted by */}
-      <TrustStrip label="§ 05 — Trusted by" partners={partners.map((p) => p.name)} />
+      <TrustStrip label={`§ 05 — ${t("trustStrip.label")}`} partners={partners.map((p) => p.name)} />
 
-      <FAQAccordion label="§ 06 — Frequently asked questions" items={servicesFaqs} />
+      <FAQAccordion label={`§ 06 — ${t("faq.label")}`} items={faqItems} />
 
       <CtaBlock
-        heading="Ready to discuss your parts?"
-        subheading="Upload a drawing and get a quote within 2 business days."
-        actions={[{ label: "Request a Quote", href: "/rfq/" }]}
+        heading={t("cta.heading")}
+        subheading={t("cta.subheading")}
+        actions={[{ label: t("cta.action.0.label"), href: p("/rfq/") }]}
       />
     </>
   );

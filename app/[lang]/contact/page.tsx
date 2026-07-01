@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { generatePageMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, faqSchema, contactPageSchema, localBusinessSchemas } from "@/components/seo/schemas";
@@ -10,6 +11,8 @@ import CtaBlock from "@/components/blocks/CtaBlock";
 import ContactForm from "@/components/forms/ContactForm";
 import { contactFaqs } from "@/data/faqs";
 import { CONTACT } from "@/data/site";
+import { getDictionary } from "@/lib/getDictionary";
+import type { Locale } from "@/lib/i18n";
 
 const SITE_URL = "https://borela.eu";
 
@@ -26,7 +29,17 @@ const departments = [
   { role: "General", name: "Administration", email: "info@borela.eu", lang: "HU" },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const t = (k: string) => dict["contact"]?.[k] ?? k;
+  const p = (path: string) => `/${lang}${path}`;
+
+  const faqItems = contactFaqs.map((_, i) => ({
+    question: t(`faq.${i}.q`),
+    answer: t(`faq.${i}.a`),
+  }));
+
   return (
     <>
       <JsonLd schema={breadcrumbSchema([{ name: "Home", item: SITE_URL + "/" }, { name: "Contact", item: SITE_URL + "/contact/" }])} />
@@ -38,11 +51,11 @@ export default function ContactPage() {
 
       <Hero
         label="§ 01 — Contact"
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-        heading="Contact Borela"
-        lead="Reach our sales and engineering team directly. English and German spoken. All enquiries reviewed by an engineer."
+        breadcrumb={[{ label: "Home", href: p("/") }, { label: "Contact" }]}
+        heading={t("hero.heading")}
+        lead={t("hero.lead")}
         actions={[
-          { label: "Request a Quote", href: "/rfq/" },
+          { label: t("hero.actions.0.label"), href: p("/rfq/") },
           { label: "+36 76 569 122", href: `tel:${CONTACT.phoneTel}`, variant: "ghost" },
         ]}
       />
@@ -50,16 +63,15 @@ export default function ContactPage() {
       {/* Contact form */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 01 — Send a message</SectionLabel>
+          <SectionLabel>{`§ 01 — ${t("sectionLabels.01")}`}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <p className="text-[15px] text-ink-secondary leading-relaxed mb-6">
                 For technical enquiries and RFQ submissions, use the{" "}
-                {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- localised in page-content integration pass */}
-                <a href="/rfq/" className="text-primary underline">Request a Quote form</a> — it routes your message directly to our engineering team and lets you attach drawings.
+                <Link href={p("/rfq/")} className="text-primary underline">{t("form.intro.rfq.link")}</Link> — it routes your message directly to our engineering team and lets you attach drawings.
               </p>
               <p className="text-[15px] text-ink-secondary leading-relaxed mb-8">
-                For general questions, use the details below or fill in this form. We respond in English, German and Hungarian.
+                {t("form.intro.general")}
               </p>
 
               {/* Direct contact */}
@@ -69,7 +81,7 @@ export default function ContactPage() {
                     <path d="M5 4h4l2 5-3 2a16 16 0 0 0 7 7l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2"/>
                   </svg>
                   <div>
-                    <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-ink-tertiary mb-0.5">Phone</div>
+                    <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-ink-tertiary mb-0.5">{t("contact.phone.label")}</div>
                     <a href={`tel:${CONTACT.phoneTel}`} className="font-sans font-semibold text-ink hover:text-primary transition-colors">
                       {CONTACT.phone}
                     </a>
@@ -81,7 +93,7 @@ export default function ContactPage() {
                     <path d="M22 6l-10 7L2 6"/>
                   </svg>
                   <div>
-                    <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-ink-tertiary mb-0.5">Email</div>
+                    <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-ink-tertiary mb-0.5">{t("contact.email.label")}</div>
                     <a href={`mailto:${CONTACT.email}`} className="font-sans font-semibold text-ink hover:text-primary transition-colors">
                       {CONTACT.email}
                     </a>
@@ -98,12 +110,12 @@ export default function ContactPage() {
       {/* Departments */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 02 — Who to contact</SectionLabel>
+          <SectionLabel>{`§ 02 — ${t("sectionLabels.02")}`}</SectionLabel>
           <div className="grid sm:grid-cols-3 gap-4">
-            {departments.map((dept) => (
+            {departments.map((dept, i) => (
               <div key={dept.role} className="p-5 border border-border bg-background">
-                <div className="font-mono text-[11px] tracking-[0.08em] uppercase text-primary mb-2">{dept.role}</div>
-                <div className="font-semibold text-[14px] text-ink mb-1">{dept.name}</div>
+                <div className="font-mono text-[11px] tracking-[0.08em] uppercase text-primary mb-2">{t(`departments.${i}.role`)}</div>
+                <div className="font-semibold text-[14px] text-ink mb-1">{t(`departments.${i}.name`)}</div>
                 <a href={`mailto:${dept.email}`} className="font-mono text-[12px] text-ink-secondary hover:text-primary transition-colors block mb-1">
                   {dept.email}
                 </a>
@@ -117,23 +129,19 @@ export default function ContactPage() {
       {/* Location & access */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — Location & access</SectionLabel>
+          <SectionLabel>{`§ 03 — ${t("sectionLabels.03")}`}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12 lg:items-stretch">
             <div>
               <h3 className="font-bold text-[18px] uppercase tracking-[-0.01em] text-ink mb-4">
-                In the heart of Hungary&rsquo;s automotive region
+                {t("location.heading")}
               </h3>
               <p className="text-[15px] text-ink-secondary leading-relaxed mb-5">
-                Our plant sits in Jakabszállás, in central Hungary — just 15 km from Kecskemét and the Mercedes-Benz factory, and 10 km from the M5 motorway. That means fast, reliable road access for deliveries across the EU.
+                {t("location.lead")}
               </p>
               <ul className="space-y-2">
-                {[
-                  "15 km to Kecskemét & the Mercedes-Benz plant",
-                  "10 km to the M5 motorway",
-                  "Direct EU road links — no customs, no tariffs",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 font-mono text-[12px] text-ink-secondary">
-                    <span className="text-primary">→</span> {item}
+                {["location.bullets.0", "location.bullets.1", "location.bullets.2"].map((key) => (
+                  <li key={key} className="flex items-center gap-2 font-mono text-[12px] text-ink-secondary">
+                    <span className="text-primary">→</span> {t(key)}
                   </li>
                 ))}
               </ul>
@@ -141,7 +149,7 @@ export default function ContactPage() {
             <div className="relative h-[320px] lg:h-auto lg:min-h-[320px] border border-border overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4799869.282941974!2d9.5!3d51.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743c7c76e67646b%3A0xa2f865818393c976!2sBORELA%20Bt.!5e0!3m2!1shu!2shu!4v1782829752760!5m2!1shu!2shu"
-                title="Borela BT. location — Jakabszállás, Hungary"
+                title={t("location.map.title")}
                 className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
                 allowFullScreen
@@ -152,13 +160,13 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <FAQAccordion label="§ 04 — Frequently asked questions" items={contactFaqs} />
+      <FAQAccordion label={`§ 04 — ${t("sectionLabels.04")}`} items={faqItems} />
 
       <CtaBlock
-        heading="Have a drawing ready?"
-        subheading="Skip the contact form — submit it directly via our RFQ page and get a precise quote within 2 business days."
+        heading={t("cta.heading")}
+        subheading={t("cta.subheading")}
         actions={[
-          { label: "Request a Quote", href: "/rfq/" },
+          { label: t("cta.actions.0.label"), href: p("/rfq/") },
         ]}
       />
     </>

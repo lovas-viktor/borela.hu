@@ -16,6 +16,8 @@ import CtaBlock from "@/components/blocks/CtaBlock";
 import { certifications } from "@/data/certifications";
 import { industries } from "@/data/industries";
 import { homeFaqs } from "@/data/faqs";
+import { getDictionary } from "@/lib/getDictionary";
+import type { Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Precision CNC Contract Machining | Hungary",
@@ -122,30 +124,51 @@ const whyItems = [
 
 const partnerNames = ["Mercedes-Benz", "Knorr-Bremse", "Hilti", "Freudenberg", "Sulzer", "Phoenix Mecano", "Zarges"];
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const t = (k: string) => dict["home"]?.[k] ?? k;
+  const p = (path: string) => `/${lang}${path}`;
+
+  const faqItems = homeFaqs.map((_, i) => ({
+    question: t(`faq.${i}.q`),
+    answer: t(`faq.${i}.a`),
+  }));
+
   return (
     <>
       <JsonLd schema={faqSchema(homeFaqs)} />
 
       {/* Hero */}
       <Hero
-        label="§ 01 — Introduction"
-        heading={<>Hungarian precision<span className="text-primary">.</span><br />Global scale<span className="text-primary">.</span></>}
-        lead="Family-owned Hungarian precision machining for automotive and engineering OEMs — Western-European quality at Eastern-European cost, since 1953."
+        label={`§ 01 — ${t("hero.label")}`}
+        heading={
+          <>
+            {t("hero.heading.line1").replace(/\.$/, "")}
+            <span className="text-primary">.</span>
+            <br />
+            {t("hero.heading.line2").replace(/\.$/, "")}
+            <span className="text-primary">.</span>
+          </>
+        }
+        lead={t("hero.lead")}
         actions={[
-          { label: "Submit RFQ", href: "/rfq/" },
-          { label: "View Capabilities", href: "/capabilities/", variant: "ghost" },
+          { label: t("hero.actions.0.label"), href: p("/rfq/") },
+          { label: t("hero.actions.1.label"), href: p("/capabilities/"), variant: "ghost" },
         ]}
       />
 
       {/* Stat strip */}
-      <StatGrid stats={homeStats} columns={3} />
+      <StatGrid
+        stats={homeStats.map((s, i) => ({ ...s, label: t(`stats.home.${i}.label`) }))}
+        columns={3}
+      />
 
       {/* Photo band — temporary illustration */}
       <div className="relative w-full h-[clamp(280px,40vw,480px)] bg-surface-alt border-y border-border overflow-hidden">
         <Image
           src="/front.jpg"
-          alt="Borela CNC machining factory floor"
+          alt={t("image.factory.alt")}
           fill
           sizes="100vw"
           className="object-cover"
@@ -154,30 +177,49 @@ export default function HomePage() {
       </div>
 
       {/* Trusted by */}
-      <TrustStrip label="Trusted by" partners={partnerNames} />
+      <TrustStrip label={t("trust.label")} partners={partnerNames} />
 
       {/* Services */}
       <section className="py-16 bg-background" id="capabilities">
         <Container>
-          <SectionLabel>§ 02 — Services</SectionLabel>
+          <SectionLabel>{`§ 02 — ${t("services.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-            {services.map(({ href, ...svc }) => (
-              <SpecCard key={href} {...svc} />
+            {services.map(({ href, icon, specs }, i) => (
+              <SpecCard
+                key={href}
+                href={p(href)}
+                icon={icon}
+                title={t(`services.${i}.title`)}
+                description={t(`services.${i}.description`)}
+                specs={specs.map((spec, j) => ({
+                  label: t(`services.${i}.specs.${j}.label`),
+                  value: spec.value,
+                }))}
+              />
             ))}
           </div>
         </Container>
       </section>
 
       {/* Key figures (dark) */}
-      <StatGrid stats={keyFigures} dark columns={3} />
+      <StatGrid
+        stats={keyFigures.map((s, i) => ({ ...s, label: t(`keyFigures.${i}.label`) }))}
+        dark
+        columns={3}
+      />
 
       {/* Certifications */}
       <section className="py-16 bg-background border-b border-border" id="certifications">
         <Container>
-          <SectionLabel>§ 04 — Certifications</SectionLabel>
+          <SectionLabel>{`§ 04 — ${t("certifications.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certifications.map((cert) => (
-              <CertificationCard key={cert.name} name={cert.name} since={cert.since} scope={cert.scope} />
+            {certifications.map((cert, i) => (
+              <CertificationCard
+                key={cert.name}
+                name={cert.name}
+                since={cert.since}
+                scope={t(`certifications.${i}.scope`)}
+              />
             ))}
           </div>
         </Container>
@@ -186,13 +228,13 @@ export default function HomePage() {
       {/* Why Borela */}
       <section className="py-16 bg-surface border-b border-border" id="why">
         <Container>
-          <SectionLabel>§ 05 — Why Borela</SectionLabel>
+          <SectionLabel>{`§ 05 — ${t("why.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 gap-8">
-            {whyItems.map((item) => (
+            {whyItems.map((item, i) => (
               <article key={item.n}>
                 <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary mb-3">{item.n}</div>
-                <h3 className="font-bold text-[16px] text-ink mb-2 uppercase tracking-[-0.01em]">{item.title}</h3>
-                <p className="text-[14px] text-ink-secondary leading-relaxed">{item.desc}</p>
+                <h3 className="font-bold text-[16px] text-ink mb-2 uppercase tracking-[-0.01em]">{t(`why.${i}.title`)}</h3>
+                <p className="text-[14px] text-ink-secondary leading-relaxed">{t(`why.${i}.desc`)}</p>
               </article>
             ))}
           </div>
@@ -202,14 +244,14 @@ export default function HomePage() {
       {/* Industries */}
       <section className="py-16 bg-background border-b border-border" id="industries">
         <Container>
-          <SectionLabel>§ 06 — Industries served</SectionLabel>
+          <SectionLabel>{`§ 06 — ${t("industries.label")}`}</SectionLabel>
           <div>
             {industries.map((ind, i) => (
               <IndustryRow
                 key={ind.slug}
                 index={String(i + 1).padStart(2, "0")}
-                title={ind.title}
-                meta={ind.meta}
+                title={t(`industries.${i}.title`)}
+                meta={t(`industries.${i}.meta`)}
               />
             ))}
           </div>
@@ -219,7 +261,7 @@ export default function HomePage() {
       {/* Featured case study */}
       <section className="py-16 bg-surface border-b border-border" id="case">
         <Container>
-          <SectionLabel>§ 07 — Featured project</SectionLabel>
+          <SectionLabel>{`§ 07 — ${t("case.label")}`}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="relative h-64 lg:h-auto lg:min-h-[256px] bg-surface-alt border border-border overflow-hidden">
               <Image
@@ -233,14 +275,13 @@ export default function HomePage() {
             <div className="flex flex-col justify-center">
               <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary uppercase mb-2">Knorr-Bremse</div>
               <h3 className="font-extrabold text-[24px] tracking-[-0.02em] uppercase text-ink mb-4">
-                Brake System Components
+                {t("case.title")}
               </h3>
               <p className="text-[15px] text-ink-secondary leading-relaxed mb-3">
-                Precision-turned and milled components for commercial-vehicle braking systems, delivered in series volumes with zero-defect targets. Full quality chain — from CMM inspection through coordinated heat treatment — managed end-to-end by Borela.
+                {t("case.body1")}
               </p>
               <p className="text-[15px] text-ink-secondary leading-relaxed mb-6">
-                Sustained partnership through multiple platform cycles; recognised as{" "}
-                <strong className="text-ink">Supplier of the Year 2009</strong>.
+                {t("case.body2")}
               </p>
             </div>
           </div>
@@ -249,18 +290,18 @@ export default function HomePage() {
 
       {/* FAQ */}
       <FAQAccordion
-        label="§ 08 — Frequently asked questions"
-        items={homeFaqs}
+        label={`§ 08 — ${t("faq.label")}`}
+        items={faqItems}
       />
 
       {/* CTA */}
       <CtaBlock
-        label="§ 09 — Get in touch"
-        heading="Ready to discuss your project?"
-        subheading="Send us your technical drawings for a rapid, precise quotation."
+        label={`§ 09 — ${t("cta.label")}`}
+        heading={t("cta.heading")}
+        subheading={t("cta.subheading")}
         actions={[
-          { label: "Request a Quote", href: "/rfq/" },
-          { label: "Contact us", href: "/contact/", variant: "ghost" },
+          { label: t("cta.actions.0.label"), href: p("/rfq/") },
+          { label: t("cta.actions.1.label"), href: p("/contact/"), variant: "ghost" },
         ]}
       />
     </>

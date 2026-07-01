@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getDictionary } from "@/lib/getDictionary";
+import type { Locale } from "@/lib/i18n";
 import { generatePageMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, faqSchema } from "@/components/seo/schemas";
@@ -61,62 +63,67 @@ const certMatrix = [
   { cert: "Knorr-Bremse PSA", automotive: true, commercial: true, powerTools: false, sealing: false, general: false },
 ];
 
-export default function IndustriesPage() {
+export default async function IndustriesPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const t = (k: string) => dict["industries"]?.[k] ?? k;
+  const p = (path: string) => `/${lang}${path}`;
+
   return (
     <>
       <JsonLd schema={breadcrumbSchema([{ name: "Home", item: SITE_URL + "/" }, { name: "Industries", item: SITE_URL + "/industries/" }])} />
       <JsonLd schema={faqSchema(industriesFaqs)} />
 
       <Hero
-        label="§ 01 — Industries"
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "Industries" }]}
-        heading="Industries we serve — automotive to general engineering"
-        lead="Borela is a precision contract machining partner for European automotive OEMs and Tier 1/2 suppliers, commercial vehicle manufacturers, power tool companies and general engineering businesses."
-        actions={[{ label: "Request a Quote", href: "/rfq/" }]}
+        label={`§ 01 — ${t("hero.label")}`}
+        breadcrumb={[{ label: t("hero.breadcrumb.0"), href: p("/") }, { label: t("hero.breadcrumb.1") }]}
+        heading={t("hero.heading")}
+        lead={t("hero.lead")}
+        actions={[{ label: t("hero.actions.0.label"), href: p("/rfq/") }]}
       />
 
       {/* Industry cards */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 01 — Industries</SectionLabel>
+          <SectionLabel>{`§ 01 — ${t("section.01.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((ind) => (
+            {industries.map((ind, i) => (
               <div key={ind.slug} className="p-6 border border-border bg-surface hover:bg-surface-alt transition-colors group">
                 <div className="w-8 h-8 text-ink-secondary group-hover:text-primary mb-4 transition-colors">
                   {industryIcons[ind.slug]}
                 </div>
                 <h3 className="font-bold text-[15px] uppercase tracking-[-0.01em] text-ink mb-2 group-hover:text-primary transition-colors">
-                  {ind.title}
+                  {t(`industries.${i}.title`)}
                 </h3>
-                <p className="font-mono text-[11px] tracking-[0.06em] text-ink-tertiary uppercase mb-3">{ind.meta}</p>
-                <p className="text-[14px] text-ink-secondary leading-relaxed">{ind.description}</p>
+                <p className="font-mono text-[11px] tracking-[0.06em] text-ink-tertiary uppercase mb-3">{t(`industries.${i}.meta`)}</p>
+                <p className="text-[14px] text-ink-secondary leading-relaxed">{t(`industries.${i}.description`)}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <TrustStrip label="§ 02 — Trusted by" partners={partners.map((p) => p.name)} />
+      <TrustStrip label={`§ 02 — ${t("section.02.label")}`} partners={partners.map((p) => p.name)} />
 
       {/* Featured case */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 03 — Featured case study</SectionLabel>
+          <SectionLabel>{`§ 03 — ${t("section.03.label")}`}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="relative h-56 lg:h-auto min-h-56 bg-surface-alt border border-border overflow-hidden">
               <Image
                 src="/brake.jpg"
-                alt="High-volume precision turned brake system components"
+                alt={t("case.image.alt")}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
             </div>
             <div>
-              <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary uppercase mb-2">Knorr-Bremse · Commercial vehicles</div>
-              <h3 className="font-extrabold text-[22px] tracking-[-0.02em] uppercase text-ink mb-3">High-volume brake components</h3>
+              <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary uppercase mb-2">Knorr-Bremse · {t("case.meta")}</div>
+              <h3 className="font-extrabold text-[22px] tracking-[-0.02em] uppercase text-ink mb-3">{t("case.heading")}</h3>
               <p className="text-[14px] text-ink-secondary leading-relaxed mb-3">
-                25,000+ precision turned brake system components per month. Supplier of the Year recognition in 2009. Multi-platform, multi-year partnership maintained through VDA 6.3 audit compliance.
+                {t("case.body")}
               </p>
             </div>
           </div>
@@ -126,10 +133,10 @@ export default function IndustriesPage() {
       {/* Key figures dark */}
       <StatGrid
         stats={[
-          { value: "70+", label: "Years serving European OEMs" },
-          { value: "7", label: "Major OEM partners" },
-          { value: "VDA 6.3", label: "Automotive process audit" },
-          { value: "ISO 9001", label: "Since 1996" },
+          { value: t("stats.0.value"), label: t("stats.0.label") },
+          { value: t("stats.1.value"), label: t("stats.1.label") },
+          { value: t("stats.2.value"), label: t("stats.2.label") },
+          { value: t("stats.3.value"), label: t("stats.3.label") },
         ]}
         dark
         columns={4}
@@ -138,10 +145,10 @@ export default function IndustriesPage() {
       {/* Certs grid */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <SectionLabel>§ 04 — Certifications</SectionLabel>
+          <SectionLabel>{`§ 04 — ${t("section.04.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certifications.map((cert) => (
-              <CertificationCard key={cert.name} name={cert.name} since={cert.since} scope={cert.scope} />
+            {certifications.map((cert, i) => (
+              <CertificationCard key={cert.name} name={cert.name} since={cert.since} scope={t(`certifications.${i}.scope`)} />
             ))}
           </div>
         </Container>
@@ -150,15 +157,15 @@ export default function IndustriesPage() {
       {/* Certifications matrix */}
       <section className="py-16 bg-surface border-b border-border">
         <Container>
-          <SectionLabel>§ 05 — Certifications by industry</SectionLabel>
+          <SectionLabel>{`§ 05 — ${t("section.05.label")}`}</SectionLabel>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-[12px]">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="text-left pb-3 font-mono text-[10px] tracking-[0.08em] uppercase text-ink-tertiary pr-8">Certification</th>
-                  {industries.map((ind) => (
+                  <th className="text-left pb-3 font-mono text-[10px] tracking-[0.08em] uppercase text-ink-tertiary pr-8">{t("certMatrix.header.certification")}</th>
+                  {industries.map((ind, i) => (
                     <th key={ind.slug} className="pb-3 font-mono text-[10px] tracking-[0.08em] uppercase text-ink-tertiary px-4 text-center">
-                      {ind.title}
+                      {t(`industries.${i}.title`)}
                     </th>
                   ))}
                 </tr>
@@ -170,7 +177,7 @@ export default function IndustriesPage() {
                     {[row.automotive, row.commercial, row.powerTools, row.sealing, row.general].map((has, i) => (
                       <td key={i} className="py-3 px-4 text-center">
                         {has ? (
-                          <svg className="w-4 h-4 text-primary inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" aria-label="Yes">
+                          <svg className="w-4 h-4 text-primary inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" aria-label={t("certMatrix.yesLabel")}>
                             <path d="M3 8l3 3 7-7" />
                           </svg>
                         ) : (
@@ -186,14 +193,17 @@ export default function IndustriesPage() {
         </Container>
       </section>
 
-      <FAQAccordion label="§ 06 — Frequently asked questions" items={industriesFaqs} />
+      <FAQAccordion
+        label={`§ 06 — ${t("section.06.label")}`}
+        items={industriesFaqs.map((_, i) => ({ question: t(`faq.${i}.q`), answer: t(`faq.${i}.a`) }))}
+      />
 
       <CtaBlock
-        heading="Your industry, our precision"
-        subheading="Tell us about your project and we'll confirm fit within 24 hours."
+        heading={t("cta.heading")}
+        subheading={t("cta.subheading")}
         actions={[
-          { label: "Request a Quote", href: "/rfq/" },
-          { label: "Contact us", href: "/contact/", variant: "ghost" },
+          { label: t("cta.actions.0.label"), href: p("/rfq/") },
+          { label: t("cta.actions.1.label"), href: p("/contact/"), variant: "ghost" },
         ]}
       />
     </>
