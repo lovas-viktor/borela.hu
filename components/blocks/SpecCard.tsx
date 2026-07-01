@@ -46,7 +46,8 @@ export default function SpecCard({ icon, title, href, description, specs, classN
   );
 
   const base = clsx(
-    "group flex flex-col p-7 border border-border bg-background hover:bg-surface transition-colors",
+    "flex flex-col p-7 border border-border bg-background transition-colors",
+    href && "group hover:bg-surface",
     className
   );
 

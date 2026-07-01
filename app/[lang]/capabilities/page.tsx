@@ -28,7 +28,6 @@ const heroStats = [
   { value: "6", label: "Machining centers" },
   { value: "±0.01", label: "Typical tolerance (mm)", unit: "mm" },
   { value: "5,000", label: "m² total floor area", unit: "m²" },
-  { value: "4", label: "ISO/VDA certifications" },
 ];
 
 const capNumbers = [
@@ -57,7 +56,7 @@ export default function CapabilitiesPage() {
         actions={[{ label: "Request a Quote", href: "/rfq/" }]}
       />
 
-      <StatGrid stats={heroStats} columns={5} />
+      <StatGrid stats={heroStats} columns={4} />
 
       {/* Photo band — temporary illustration */}
       <div className="relative w-full h-[clamp(260px,36vw,440px)] bg-surface-alt border-y border-border overflow-hidden">
@@ -203,7 +202,7 @@ export default function CapabilitiesPage() {
       <section className="py-14 bg-surface-dark border-b border-border-dark">
         <Container>
           <SectionLabel dark>§ 07 — By the numbers</SectionLabel>
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-8">
             {capNumbers.slice(0, 9).map((s) => (
               <div key={s.label} className="text-center">
                 <div className="font-extrabold text-[32px] leading-none text-on-surface-dark mb-2">{s.value}</div>

@@ -102,9 +102,9 @@ export default function ReferencesPage() {
           <SectionLabel>§ 03 — Case studies</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-8">
             {caseStudies.map((cs, i) => (
-              <div key={cs.slug} className={`grid sm:grid-cols-2 gap-0 border border-border overflow-hidden ${i % 2 === 1 ? "sm:direction-rtl" : ""}`}>
+              <div key={cs.slug} className="grid sm:grid-cols-2 gap-0 border border-border overflow-hidden">
                 <div
-                  className="h-48 sm:h-auto bg-surface-alt flex items-center justify-center"
+                  className={`h-48 sm:h-auto bg-surface-alt flex items-center justify-center ${i % 2 === 1 ? "sm:order-2" : ""}`}
                   role="img"
                   aria-label={`${cs.title} photo placeholder`}
                 >

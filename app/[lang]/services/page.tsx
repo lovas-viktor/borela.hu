@@ -77,7 +77,6 @@ export default function ServicesPage() {
               <SpecCard
                 key={svc.slug}
                 title={svc.title}
-                href={svc.href}
                 description={svc.description}
                 specs={svc.specs}
               />

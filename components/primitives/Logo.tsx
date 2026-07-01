@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n";
 
 interface LogoProps {
   className?: string;
+  lang?: Locale;
 }
 
-export default function Logo({ className }: LogoProps) {
+export default function Logo({ className, lang }: LogoProps) {
   return (
-    <Link href="/" aria-label="Borela BT. — home" className={className}>
+    <Link href={lang ? `/${lang}/` : "/"} aria-label="Borela BT. — home" className={className}>
       <Image
         src="/borela-logo.svg"
         alt="Borela BT. — Precision CNC / Est. 1953"

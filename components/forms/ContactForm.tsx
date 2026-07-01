@@ -63,7 +63,7 @@ export default function ContactForm() {
         Send message
       </button>
       <p className="text-[12px] text-ink-tertiary">
-        Backend integration pending. For immediate response, email{" "}
+        Prefer email? Write to{" "}
         <a href={`mailto:${CONTACT.email}`} className="underline">{CONTACT.email}</a> directly.
       </p>
     </form>

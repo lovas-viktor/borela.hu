@@ -55,6 +55,7 @@ export default function ContactPage() {
             <div>
               <p className="text-[15px] text-ink-secondary leading-relaxed mb-6">
                 For technical enquiries and RFQ submissions, use the{" "}
+                {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- localised in page-content integration pass */}
                 <a href="/rfq/" className="text-primary underline">Request a Quote form</a> — it routes your message directly to our engineering team and lets you attach drawings.
               </p>
               <p className="text-[15px] text-ink-secondary leading-relaxed mb-8">

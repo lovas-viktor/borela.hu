@@ -2,28 +2,36 @@ import Link from "next/link";
 import Container from "./Container";
 import { CONTACT } from "@/data/site";
 import { locations } from "@/data/locations";
+import type { Locale } from "@/lib/i18n";
 
-const navLinks = [
-  { label: "Services", href: "/services/" },
-  { label: "Industries", href: "/industries/" },
-  { label: "Capabilities", href: "/capabilities/" },
-  { label: "About", href: "/about/" },
-  { label: "Careers", href: "/careers/" },
-  { label: "Contact", href: "/contact/" },
+const NAV = [
+  { key: "footer.nav.services", href: "/services/" },
+  { key: "footer.nav.industries", href: "/industries/" },
+  { key: "footer.nav.capabilities", href: "/capabilities/" },
+  { key: "footer.nav.about", href: "/about/" },
+  { key: "footer.nav.careers", href: "/careers/" },
+  { key: "footer.nav.contact", href: "/contact/" },
 ];
 
-const legalLinks = [
-  { label: "EU Projects", href: "/eu-projects/" },
-  { label: "Integrated Policy", href: "/legal/integrated-policy.pdf" },
-  { label: "Privacy Notice", href: "/legal/privacy-policy/" },
-  { label: "Impressum", href: "/legal/imprint/" },
+const LEGAL = [
+  { key: "footer.legal.euProjects", href: "/eu-projects/" },
+  { key: "footer.legal.integratedPolicy", href: "/legal/integrated-policy.pdf" },
+  { key: "footer.legal.privacyNotice", href: "/legal/privacy-policy/" },
+  { key: "footer.legal.impressum", href: "/legal/imprint/" },
 ];
 
 const columnHeading =
   "font-mono text-[10px] tracking-[0.14em] uppercase text-ink-tertiary mb-5";
 
-export default function Footer() {
+interface FooterProps {
+  lang: Locale;
+  ui: Record<string, string>;
+}
+
+export default function Footer({ lang, ui }: FooterProps) {
   const { street, zip, city, country } = CONTACT.address;
+  const p = (path: string) => `/${lang}${path}`;
+  const t = (key: string) => ui[key] ?? key;
 
   return (
     <footer className="bg-background border-t border-border pt-[60px] pb-7">
@@ -35,8 +43,7 @@ export default function Footer() {
               BORELA BT<span className="text-primary">.</span>
             </div>
             <p className="text-[13px] text-ink-secondary leading-relaxed mb-6">
-              Family-owned Hungarian precision machining — Western-European
-              quality at Eastern-European cost.
+              {t("footer.positioning")}
             </p>
             <div className="flex flex-col gap-1.5">
               <a
@@ -58,16 +65,16 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <nav aria-label="Footer navigation">
-            <div className={columnHeading}>Navigation</div>
+          <nav aria-label={t("footer.nav.heading")}>
+            <div className={columnHeading}>{t("footer.nav.heading")}</div>
             <div className="flex flex-col gap-3">
-              {navLinks.map((link) => (
+              {NAV.map((link) => (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={p(link.href)}
                   className="font-mono text-[11px] tracking-[0.14em] uppercase text-ink-secondary hover:text-primary transition-colors w-fit"
                 >
-                  {link.label}
+                  {t(link.key)}
                 </Link>
               ))}
             </div>
@@ -75,7 +82,7 @@ export default function Footer() {
 
           {/* Locations */}
           <div>
-            <div className={columnHeading}>Locations</div>
+            <div className={columnHeading}>{t("footer.locations.heading")}</div>
             <ul className="flex flex-col gap-4">
               {locations.map((loc) => (
                 <li key={loc.id}>
@@ -94,16 +101,16 @@ export default function Footer() {
         {/* Legal row */}
         <div className="border-t border-border pt-[22px] flex flex-wrap gap-x-6 gap-y-2 items-start justify-between">
           <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-ink-tertiary">
-            © 2026 BORELA BT. ISO&nbsp;9001:2015 CERTIFIED. ALL RIGHTS RESERVED.
+            {t("footer.legal.copyright")}
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-1">
-            {legalLinks.map((link) => (
+            {LEGAL.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={p(link.href)}
                 className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-tertiary hover:text-ink transition-colors"
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
           </div>
