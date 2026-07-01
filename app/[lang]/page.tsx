@@ -125,8 +125,8 @@ const whyItems = [
 
 const partnerNames = ["Mercedes-Benz", "Knorr-Bremse", "Hilti", "Freudenberg", "Sulzer", "Phoenix Mecano", "Zarges"];
 
-export default async function HomePage({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = await params;
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = (await params) as { lang: Locale };
   const dict = await getDictionary(lang);
   const t = (k: string) => dict["home"]?.[k] ?? k;
   const p = (path: string) => `/${lang}${path}`;

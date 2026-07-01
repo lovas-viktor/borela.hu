@@ -44,8 +44,8 @@ const capNumbers = [
   { value: "2", label: "Production shifts" },
 ];
 
-export default async function CapabilitiesPage({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = await params;
+export default async function CapabilitiesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = (await params) as { lang: Locale };
   const dict = await getDictionary(lang);
   const t = (k: string) => dict["capabilities"]?.[k] ?? k;
   const p = (path: string) => `/${lang}${path}`;

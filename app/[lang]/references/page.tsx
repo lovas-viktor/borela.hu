@@ -44,8 +44,8 @@ const whyStay = [
   { title: "EU supply chain", desc: "No customs, no tariffs, no import paperwork. Delivery direct to your production line." },
 ];
 
-export default async function ReferencesPage({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = await params;
+export default async function ReferencesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = (await params) as { lang: Locale };
   const dict = await getDictionary(lang);
   const t = (k: string) => dict["references"]?.[k] ?? k;
   const p = (path: string) => `/${lang}${path}`;

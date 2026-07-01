@@ -22,8 +22,8 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/rfq/",
 });
 
-export default async function RfqPage({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = await params;
+export default async function RfqPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = (await params) as { lang: Locale };
   const dict = await getDictionary(lang);
   const t = (k: string) => dict["rfq"]?.[k] ?? k;
   return (

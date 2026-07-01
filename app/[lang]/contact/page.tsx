@@ -29,8 +29,8 @@ const departments = [
   { role: "General", name: "Administration", email: "info@borela.eu", lang: "HU" },
 ];
 
-export default async function ContactPage({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = await params;
+export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = (await params) as { lang: Locale };
   const dict = await getDictionary(lang);
   const t = (k: string) => dict["contact"]?.[k] ?? k;
   const p = (path: string) => `/${lang}${path}`;

@@ -50,8 +50,8 @@ const materials = [
   { examples: "EN-GJL-250, EN-GJS-400, nodular iron" },
 ];
 
-export default async function ServicesPage({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = await params;
+export default async function ServicesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = (await params) as { lang: Locale };
   const dict = await getDictionary(lang);
   const t = (k: string) => dict["services"]?.[k] ?? k;
   const p = (path: string) => `/${lang}${path}`;

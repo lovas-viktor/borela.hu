@@ -35,9 +35,9 @@ export default async function LangLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }) {
-  const { lang } = await params;
+  const { lang } = (await params) as { lang: Locale };
   const dict = await getDictionary(lang);
   const ui = dict.shared ?? {};
 

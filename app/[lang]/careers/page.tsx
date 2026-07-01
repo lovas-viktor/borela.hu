@@ -30,8 +30,8 @@ const positions = [
 
 const whyJoin = [{}, {}, {}];
 
-export default async function CareersPage({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = await params;
+export default async function CareersPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = (await params) as { lang: Locale };
   const dict = await getDictionary(lang);
   const t = (k: string) => dict["careers"]?.[k] ?? k;
   const p = (path: string) => `/${lang}${path}`;
