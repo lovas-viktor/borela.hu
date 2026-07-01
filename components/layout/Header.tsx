@@ -75,7 +75,12 @@ export default function Header({ lang, ui }: HeaderProps) {
           </Link>
         </div>
 
-        {/* Hamburger */}
+        {/* Mobile: language switcher — centered between logo and hamburger */}
+        <div className="lg:hidden">
+          <LanguageSwitcher lang={lang} ui={ui} />
+        </div>
+
+        {/* Mobile: hamburger */}
         <button
           type="button"
           className="lg:hidden flex flex-col gap-[5px] p-2"
@@ -108,12 +113,6 @@ export default function Header({ lang, ui }: HeaderProps) {
               {t(link.key)}
             </Link>
           ))}
-
-          {/* Language */}
-          <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
-            <span className="font-mono text-[11px] tracking-[0.1em] uppercase text-ink-tertiary">{t("header.mobile.language")}</span>
-            <LanguageSwitcher lang={lang} ui={ui} className="text-[12px]" />
-          </div>
 
           <div className="mt-6">
             <Link
