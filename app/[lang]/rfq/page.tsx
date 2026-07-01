@@ -59,7 +59,7 @@ export default async function RfqPage({ params }: { params: Promise<{ lang: Loca
       </div>
 
       {/* Form */}
-      <RfqForm />
+      <RfqForm dict={dict["rfq"] ?? {}} />
 
       {/* Prepare strip */}
       <section className="py-14 bg-surface border-y border-border">

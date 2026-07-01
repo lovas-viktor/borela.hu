@@ -11,6 +11,7 @@ interface CareersFormProps {
   presetPosition?: string;
   /** Bumped on every "Apply" click so re-selecting the same role still applies. */
   presetKey?: number;
+  dict: Record<string, string>;
 }
 
 interface FormData {
@@ -24,7 +25,9 @@ interface FormData {
 
 type FieldErrors = Partial<Record<keyof FormData | "cv", string>>;
 
-export default function CareersForm({ positions, presetPosition, presetKey }: CareersFormProps) {
+export default function CareersForm({ positions, presetPosition, presetKey, dict }: CareersFormProps) {
+  const t = (k: string) => dict[k] ?? k;
+
   const [form, setForm] = useState<FormData>({
     name: "", email: "", phone: "", position: "", message: "", consent: false,
   });
@@ -69,12 +72,12 @@ export default function CareersForm({ positions, presetPosition, presetKey }: Ca
 
   const validate = (): boolean => {
     const errs: FieldErrors = {};
-    if (!form.name.trim()) errs.name = "Please enter your full name.";
+    if (!form.name.trim()) errs.name = t("form.name.error");
     if (!form.email.trim() || !/^[^@]+@[^@]+\.[^@]+$/.test(form.email))
-      errs.email = "Please enter a valid email address.";
-    if (!form.position) errs.position = "Please choose a position.";
-    if (!cv) errs.cv = "Please attach your CV.";
-    if (!form.consent) errs.consent = "Please accept the privacy notice to continue.";
+      errs.email = t("form.email.error");
+    if (!form.position) errs.position = t("form.position.error");
+    if (!cv) errs.cv = t("form.cv.error");
+    if (!form.consent) errs.consent = t("form.consent.error");
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -94,9 +97,9 @@ export default function CareersForm({ positions, presetPosition, presetKey }: Ca
           <circle cx="28" cy="28" r="24" />
           <path d="M16 28l8 8 16-18" />
         </svg>
-        <h3 className="font-extrabold text-2xl tracking-[-0.02em] uppercase text-ink mb-3">Application received</h3>
+        <h3 className="font-extrabold text-2xl tracking-[-0.02em] uppercase text-ink mb-3">{t("form.success.heading")}</h3>
         <p className="text-ink-secondary text-[15px] leading-relaxed max-w-md">
-          Thanks for applying. We review every application personally and will be in touch if your profile fits.
+          {t("form.success.body")}
         </p>
       </div>
     );
@@ -124,32 +127,32 @@ export default function CareersForm({ positions, presetPosition, presetKey }: Ca
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="c-name" className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-            Full name <span className="text-red-500" aria-label="required">*</span>
+            {t("form.name.label")} <span className="text-red-500" aria-label={t("form.required.aria")}>*</span>
           </label>
           <input id="c-name" type="text" name="name" required autoComplete="name" className={inputCls("name")} value={form.name} onChange={set("name")} />
           {errors.name && <p className="mt-1 text-[11px] text-red-500">{errors.name}</p>}
         </div>
         <div>
           <label htmlFor="c-email" className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-            Email <span className="text-red-500" aria-label="required">*</span>
+            {t("form.email.label")} <span className="text-red-500" aria-label={t("form.required.aria")}>*</span>
           </label>
           <input id="c-email" type="email" name="email" required autoComplete="email" className={inputCls("email")} value={form.email} onChange={set("email")} />
           {errors.email && <p className="mt-1 text-[11px] text-red-500">{errors.email}</p>}
         </div>
         <div>
           <label htmlFor="c-phone" className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-            Phone number
+            {t("form.phone.label")}
           </label>
           <input id="c-phone" type="tel" name="phone" autoComplete="tel" className={inputCls("phone")} value={form.phone} onChange={set("phone")} />
         </div>
         <div>
           <label htmlFor="c-position" className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-            Position <span className="text-red-500" aria-label="required">*</span>
+            {t("form.position.label")} <span className="text-red-500" aria-label={t("form.required.aria")}>*</span>
           </label>
           <select id="c-position" name="position" required className={clsx(inputCls("position"), "appearance-none")} value={form.position} onChange={set("position")}>
-            <option value="">Select…</option>
+            <option value="">{t("form.position.placeholder")}</option>
             {positions.map((p) => <option key={p} value={p}>{p}</option>)}
-            <option value="General / spontaneous application">General / spontaneous application</option>
+            <option value="General / spontaneous application">{t("form.position.generalOption")}</option>
           </select>
           {errors.position && <p className="mt-1 text-[11px] text-red-500">{errors.position}</p>}
         </div>
@@ -158,7 +161,7 @@ export default function CareersForm({ positions, presetPosition, presetKey }: Ca
       {/* CV upload */}
       <div className="mt-5">
         <span className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-          CV / Résumé <span className="text-red-500" aria-label="required">*</span>
+          {t("form.cv.label")} <span className="text-red-500" aria-label={t("form.required.aria")}>*</span>
         </span>
         {cv ? (
           <div className="flex items-center gap-3 p-3 border border-border bg-background text-[13px]">
@@ -170,7 +173,7 @@ export default function CareersForm({ positions, presetPosition, presetKey }: Ca
             <button
               type="button"
               className="p-1 text-ink-tertiary hover:text-ink transition-colors"
-              aria-label={`Remove ${cv.name}`}
+              aria-label={`${t("form.cv.removeAria")} ${cv.name}`}
               onClick={() => { setCv(null); if (fileInputRef.current) fileInputRef.current.value = ""; }}
             >
               <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" aria-hidden="true">
@@ -193,9 +196,9 @@ export default function CareersForm({ positions, presetPosition, presetKey }: Ca
               <path d="M6 26v4h24v-4" /><path d="M18 6v18" /><path d="M10 14l8-8 8 8" />
             </svg>
             <div className="text-[14px] text-ink">
-              <strong>Drag & drop your CV</strong>, or <span className="text-primary border-b border-primary">browse</span>
+              <strong>{t("form.cv.dropzone.strong")}</strong>, or <span className="text-primary border-b border-primary">{t("form.cv.dropzone.browse")}</span>
             </div>
-            <div className="font-mono text-[11px] tracking-[0.06em] text-ink-tertiary uppercase">PDF · DOC · DOCX — up to 10 MB</div>
+            <div className="font-mono text-[11px] tracking-[0.06em] text-ink-tertiary uppercase">{t("form.cv.hint")}</div>
             <input
               ref={fileInputRef}
               id="c-cv"
@@ -213,13 +216,13 @@ export default function CareersForm({ positions, presetPosition, presetKey }: Ca
       {/* Message */}
       <div className="mt-5">
         <label htmlFor="c-msg" className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-          Message
+          {t("form.message.label")}
         </label>
         <textarea
           id="c-msg"
           name="message"
           rows={4}
-          placeholder="Tell us briefly why you'd be a good fit."
+          placeholder={t("form.message.placeholder")}
           className={clsx(inputCls("message"), "resize-y")}
           value={form.message}
           onChange={set("message")}
@@ -238,17 +241,17 @@ export default function CareersForm({ positions, presetPosition, presetKey }: Ca
           className="mt-0.5 w-4 h-4 border border-border accent-ink shrink-0"
         />
         <span className="text-[13px] text-ink-secondary leading-relaxed">
-          I agree that Borela BT. may store and process my data for this application.{" "}
+          {t("form.consent.label")}{" "}
           <Link href="/legal/privacy-policy/" className="underline text-ink hover:text-primary transition-colors">
-            See our privacy notice.
+            {t("form.consent.link")}
           </Link>{" "}
-          <span className="text-red-500" aria-label="required">*</span>
+          <span className="text-red-500" aria-label={t("form.required.aria")}>*</span>
         </span>
       </label>
       {errors.consent && <p className="mt-1 text-[11px] text-red-500">{errors.consent}</p>}
 
       <Button type="button" onClick={handleSubmit} className="w-full justify-center py-4 mt-7">
-        Submit application
+        {t("form.submit")}
       </Button>
     </div>
   );

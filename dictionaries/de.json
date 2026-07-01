@@ -93,7 +93,9 @@
     "cta.heading": "Bereit, Ihr Projekt zu besprechen?",
     "cta.subheading": "Senden Sie uns Ihre technischen Zeichnungen für ein schnelles, präzises Angebot.",
     "cta.actions.0.label": "Angebot anfordern",
-    "cta.actions.1.label": "Kontaktieren Sie uns"
+    "cta.actions.1.label": "Kontaktieren Sie uns",
+    "worldmap.heading": "Weltweite Lieferpräsenz",
+    "worldmap.lead": "Von einem einzigen Werk in Ungarn aus beliefert Borela BT. führende Hersteller in Europa, Asien und Südamerika mit präzisionsgefertigten Bauteilen."
   },
   "services": {
     "hero.label": "Leistungen",
@@ -749,7 +751,9 @@
     "panel.data.2.title": "DSGVO-konform.",
     "panel.data.2.desc": "Ihre Daten werden nach EU-Recht verarbeitet. Sie können jederzeit die Löschung verlangen.",
     "panel.contact.prefix": "Bevorzugen Sie den direkten Kontakt?",
-    "panel.contact.or": "oder"
+    "panel.contact.or": "oder",
+    "form.languages.label": "Sprachen, die Sie sprechen",
+    "form.languages.error": "Bitte wählen Sie mindestens eine Sprache."
   },
   "shared": {
     "nav.services": "Leistungen",

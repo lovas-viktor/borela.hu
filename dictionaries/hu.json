@@ -93,7 +93,9 @@
     "cta.heading": "Készen áll megbeszélni a projektjét?",
     "cta.subheading": "Küldje el műszaki rajzait gyors, pontos árajánlatért.",
     "cta.actions.0.label": "Ajánlatkérés",
-    "cta.actions.1.label": "Kapcsolatfelvétel"
+    "cta.actions.1.label": "Kapcsolatfelvétel",
+    "worldmap.heading": "Globális jelenlét",
+    "worldmap.lead": "Egyetlen magyarországi üzemünkből a Borela BT. Európa, Ázsia és Dél-Amerika vezető gyártóit látja el precíziós forgácsolt alkatrészekkel."
   },
   "services": {
     "hero.label": "Szolgáltatások",
@@ -749,7 +751,9 @@
     "panel.data.2.title": "GDPR-megfelelő.",
     "panel.data.2.desc": "Adatait az uniós jog szerint kezeljük. Bármikor kérheti azok törlését.",
     "panel.contact.prefix": "Inkább közvetlen kapcsolatot szeretne?",
-    "panel.contact.or": "vagy"
+    "panel.contact.or": "vagy",
+    "form.languages.label": "Ön mely nyelveken beszél",
+    "form.languages.error": "Válasszon legalább egy nyelvet."
   },
   "shared": {
     "nav.services": "Szolgáltatások",

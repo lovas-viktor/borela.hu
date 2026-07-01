@@ -73,7 +73,7 @@ export default async function CareersPage({ params }: { params: Promise<{ lang: 
       </section>
 
       {/* Open positions + application form (shared state so "Apply" preselects the role) */}
-      <CareersApply positions={translatedPositions} />
+      <CareersApply positions={translatedPositions} dict={dict["careers"] ?? {}} />
     </>
   );
 }

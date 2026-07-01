@@ -48,3 +48,16 @@ details > summary {
 details > summary::-webkit-details-marker {
   display: none;
 }
+
+/* World-map shipping-flow pulse: a short dash runs from Hungary to the arrowhead */
+@keyframes wm-flow {
+  to { stroke-dashoffset: -150; }
+}
+.wm-flow {
+  stroke-dasharray: 9 150;
+  animation: wm-flow 3.2s linear infinite;
+  opacity: 0.4;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wm-flow { animation: none; opacity: 0; }
+}

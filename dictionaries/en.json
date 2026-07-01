@@ -93,7 +93,9 @@
     "cta.heading": "Ready to discuss your project?",
     "cta.subheading": "Send us your technical drawings for a rapid, precise quotation.",
     "cta.actions.0.label": "Request a Quote",
-    "cta.actions.1.label": "Contact us"
+    "cta.actions.1.label": "Contact us",
+    "worldmap.heading": "A global supply footprint",
+    "worldmap.lead": "From a single plant in Hungary, Borela BT. supplies precision-machined components to leading manufacturers across Europe, Asia and South America."
   },
   "services": {
     "hero.label": "Services",
@@ -749,7 +751,9 @@
     "panel.data.2.title": "GDPR compliant.",
     "panel.data.2.desc": "Your data is processed under EU law. Request deletion at any time.",
     "panel.contact.prefix": "Prefer direct contact?",
-    "panel.contact.or": "or"
+    "panel.contact.or": "or",
+    "form.languages.label": "Languages you speak",
+    "form.languages.error": "Please select at least one language."
   },
   "shared": {
     "nav.services": "Services",

@@ -31,15 +31,14 @@ export default function StatGrid({ stats, dark = false, columns = 3, className }
       )}
     >
       <div className="max-w-[880px] mx-auto px-7 py-9">
-        <div className={clsx("grid divide-x divide-border", colClass[columns])}>
+        <div className={clsx("grid", colClass[columns])}>
           {stats.map((s, i) => (
             <div
               key={i}
               className={clsx(
                 "py-1",
-                i > 0 && "sm:border-l",
-                dark ? "sm:border-border-dark" : "sm:border-border",
-                i === 0 && "border-0"
+                i % columns !== 0 && "sm:border-l",
+                dark ? "sm:border-border-dark" : "sm:border-border"
               )}
             >
               <Stat value={s.value} label={s.label} unit={s.unit} dark={dark} />

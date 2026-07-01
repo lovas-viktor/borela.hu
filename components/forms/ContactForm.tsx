@@ -3,7 +3,12 @@
 import { useState } from "react";
 import { CONTACT } from "@/data/site";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  dict: Record<string, string>;
+}
+
+export default function ContactForm({ dict }: ContactFormProps) {
+  const t = (k: string) => dict[k] ?? k;
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -15,17 +20,17 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="p-8 border border-border bg-surface text-center">
-        <p className="font-semibold text-ink mb-2">Message received</p>
-        <p className="text-[14px] text-ink-secondary">We&apos;ll reply within 2 business days.</p>
+        <p className="font-semibold text-ink mb-2">{t("contactForm.success.heading")}</p>
+        <p className="text-[14px] text-ink-secondary">{t("contactForm.success.body")}</p>
       </div>
     );
   }
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit} aria-label="Contact form">
+    <form className="space-y-4" onSubmit={handleSubmit} aria-label={t("contactForm.aria.label")}>
       <div>
         <label htmlFor="c-name" className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-          Name <span className="text-red-500">*</span>
+          {t("contactForm.name.label")} <span className="text-red-500">*</span>
         </label>
         <input
           id="c-name"
@@ -36,7 +41,7 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="c-email" className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-          Email <span className="text-red-500">*</span>
+          {t("contactForm.email.label")} <span className="text-red-500">*</span>
         </label>
         <input
           id="c-email"
@@ -47,7 +52,7 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="c-msg" className="block font-mono text-[11px] tracking-[0.08em] uppercase text-ink-secondary mb-1.5">
-          Message <span className="text-red-500">*</span>
+          {t("contactForm.message.label")} <span className="text-red-500">*</span>
         </label>
         <textarea
           id="c-msg"
@@ -60,11 +65,11 @@ export default function ContactForm() {
         type="submit"
         className="w-full inline-flex items-center justify-center px-[22px] py-3 font-sans font-bold text-[11px] tracking-[0.16em] uppercase bg-primary text-on-primary hover:bg-primary-hover transition-colors"
       >
-        Send message
+        {t("contactForm.submit")}
       </button>
       <p className="text-[12px] text-ink-tertiary">
-        Prefer email? Write to{" "}
-        <a href={`mailto:${CONTACT.email}`} className="underline">{CONTACT.email}</a> directly.
+        {t("contactForm.emailFallback")}{" "}
+        <a href={`mailto:${CONTACT.email}`} className="underline">{CONTACT.email}</a> {t("contactForm.emailFallback.suffix")}
       </p>
     </form>
   );

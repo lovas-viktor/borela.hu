@@ -13,9 +13,11 @@ export interface Position {
 
 interface CareersApplyProps {
   positions: Position[];
+  dict: Record<string, string>;
 }
 
-export default function CareersApply({ positions }: CareersApplyProps) {
+export default function CareersApply({ positions, dict }: CareersApplyProps) {
+  const t = (k: string) => dict[k] ?? k;
   const [preset, setPreset] = useState("");
   const [presetKey, setPresetKey] = useState(0);
 
@@ -30,7 +32,7 @@ export default function CareersApply({ positions }: CareersApplyProps) {
       {/* Open positions */}
       <section id="positions" className="py-16 bg-background border-b border-border scroll-mt-[88px]">
         <Container>
-          <SectionLabel>§ 03 — Open positions</SectionLabel>
+          <SectionLabel>{`§ 03 — ${t("section.03.label")}`}</SectionLabel>
           <ul className="border-t border-border">
             {positions.map((pos) => (
               <li key={pos.title} className="border-b border-border py-6 flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-8">
@@ -44,7 +46,7 @@ export default function CareersApply({ positions }: CareersApplyProps) {
                   onClick={() => apply(pos.title)}
                   className="font-mono text-[11px] tracking-[0.1em] uppercase text-primary hover:text-primary-hover transition-colors shrink-0 text-left sm:text-right"
                 >
-                  Apply →
+                  {t("positions.applyLink")}
                 </button>
               </li>
             ))}
@@ -55,15 +57,16 @@ export default function CareersApply({ positions }: CareersApplyProps) {
       {/* Application form */}
       <section id="apply" className="py-16 bg-surface border-b border-border scroll-mt-[88px]">
         <Container>
-          <SectionLabel className="text-center">§ 04 — Apply</SectionLabel>
+          <SectionLabel className="text-center">{`§ 04 — ${t("section.04.label")}`}</SectionLabel>
           <div className="max-w-2xl mx-auto">
             <p className="text-[16px] text-ink-secondary leading-relaxed mb-10 text-center">
-              Choose a position, tell us a little about yourself, and attach your CV. We review every application personally.
+              {t("apply.lead")}
             </p>
             <CareersForm
               positions={positions.map((p) => p.title)}
               presetPosition={preset}
               presetKey={presetKey}
+              dict={dict}
             />
           </div>
         </Container>

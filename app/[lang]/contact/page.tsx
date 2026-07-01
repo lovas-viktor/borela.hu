@@ -102,7 +102,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               </div>
             </div>
 
-            <ContactForm />
+            <ContactForm dict={dict["shared"] ?? {}} />
           </div>
         </Container>
       </section>

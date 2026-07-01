@@ -11,6 +11,7 @@ import SpecCard from "@/components/blocks/SpecCard";
 import CertificationCard from "@/components/blocks/CertificationCard";
 import IndustryRow from "@/components/blocks/IndustryRow";
 import TrustStrip from "@/components/blocks/TrustStrip";
+import WorldMap from "@/components/blocks/WorldMap";
 import FAQAccordion from "@/components/blocks/FAQAccordion";
 import CtaBlock from "@/components/blocks/CtaBlock";
 import { certifications } from "@/data/certifications";
@@ -178,6 +179,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
 
       {/* Trusted by */}
       <TrustStrip label={t("trust.label")} partners={partnerNames} />
+
+      {/* Global footprint */}
+      <section className="py-16 bg-background border-b border-border">
+        <Container>
+          <WorldMap heading={t("worldmap.heading")} lead={t("worldmap.lead")} />
+        </Container>
+      </section>
 
       {/* Services */}
       <section className="py-16 bg-background" id="capabilities">
