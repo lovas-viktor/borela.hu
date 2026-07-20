@@ -9,14 +9,14 @@ interface LogoProps {
 
 export default function Logo({ className, lang }: LogoProps) {
   return (
-    <Link href={lang ? `/${lang}/` : "/"} aria-label="Borela BT. — home" className={className}>
+    <Link href={lang ? `/${lang}/` : "/"} aria-label="Borela — home" className={className}>
       <Image
-        src="/borela-logo.svg"
-        alt="Borela BT. — Precision CNC / Est. 1953"
-        width={160}
-        height={53}
+        src="/borela-logo.png"
+        alt="Borela — Precision CNC"
+        width={592}
+        height={105}
         priority
-        className="h-[44px] w-auto"
+        className="h-[18px] w-auto"
       />
     </Link>
   );

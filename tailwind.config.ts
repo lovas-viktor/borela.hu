@@ -34,7 +34,9 @@ const config: Config = {
         "border-dark": "#2A2A2A",
       },
       fontFamily: {
-        sans: ["var(--font-public-sans)", "Public Sans", "system-ui", "sans-serif"],
+        // Global switch: JetBrains Mono everywhere (client request 2026-07). Both
+        // families point to it so any existing `font-sans` usage is mono too.
+        sans: ["var(--font-jetbrains-mono)", "JetBrains Mono", "ui-monospace", "monospace"],
         mono: ["var(--font-jetbrains-mono)", "JetBrains Mono", "ui-monospace", "monospace"],
       },
       letterSpacing: {

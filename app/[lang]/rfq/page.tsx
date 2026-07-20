@@ -94,7 +94,7 @@ export default async function RfqPage({ params }: { params: Promise<{ lang: stri
           <SectionLabel>{t("certifications.label")}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {certifications.map((cert) => (
-              <CertificationCard key={cert.name} name={cert.name} since={cert.since} />
+              <CertificationCard key={cert.name} name={cert.name} since={cert.since} logo={cert.logo} />
             ))}
           </div>
           <TrustStrip partners={partners.map((p) => p.name)} />

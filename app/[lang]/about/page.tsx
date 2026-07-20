@@ -220,7 +220,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <SectionLabel>{`§ 06 — ${t("certifications.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certifications.map((cert, i) => (
-              <CertificationCard key={cert.name} name={cert.name} since={cert.since} scope={t(`certifications.${i}.scope`)} />
+              <CertificationCard key={cert.name} name={cert.name} since={cert.since} logo={cert.logo} scope={t(`certifications.${i}.scope`)} />
             ))}
           </div>
         </Container>

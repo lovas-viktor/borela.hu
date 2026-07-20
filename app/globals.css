@@ -58,6 +58,20 @@ details > summary::-webkit-details-marker {
   animation: wm-flow 3.2s linear infinite;
   opacity: 0.4;
 }
+
+/* Reference-logo marquee: the duplicated logo row scrolls right→left, looping
+   seamlessly (translateX -50% == exactly one set width thanks to per-logo margin). */
+@keyframes logo-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.logo-marquee {
+  animation: logo-marquee 40s linear infinite;
+}
+.logo-marquee:hover {
+  animation-play-state: paused;
+}
 @media (prefers-reduced-motion: reduce) {
   .wm-flow { animation: none; opacity: 0; }
+  .logo-marquee { animation: none; }
 }

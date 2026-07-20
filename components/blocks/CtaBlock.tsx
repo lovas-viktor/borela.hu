@@ -31,7 +31,7 @@ export default function CtaBlock({ label, heading, subheading, actions, dark = f
         {label && <SectionLabel dark={dark}>{label}</SectionLabel>}
         <h2
           className={clsx(
-            "text-[clamp(28px,4vw,48px)] font-extrabold leading-[1.08] tracking-[-0.02em] uppercase mb-4",
+            "text-[clamp(28px,4vw,48px)] font-extrabold leading-[1.08] tracking-[-0.02em] uppercase mb-4 whitespace-pre-line",
             dark ? "text-on-surface-dark" : "text-ink"
           )}
         >

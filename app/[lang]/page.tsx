@@ -7,7 +7,7 @@ import Hero from "@/components/blocks/Hero";
 import StatGrid from "@/components/blocks/StatGrid";
 import SectionLabel from "@/components/primitives/SectionLabel";
 import Container from "@/components/layout/Container";
-import SpecCard from "@/components/blocks/SpecCard";
+import Link from "next/link";
 import CertificationCard from "@/components/blocks/CertificationCard";
 import IndustryRow from "@/components/blocks/IndustryRow";
 import TrustStrip from "@/components/blocks/TrustStrip";
@@ -28,102 +28,138 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 const homeStats = [
-  { value: "1953", label: "Founded" },
-  { value: "70+", label: "Years" },
-  { value: "±0.01", label: "Tolerance (mm)", unit: "mm" },
+  { value: "1990", label: "Founded" },
+  { value: "36", label: "Years" },
+  { value: "±0.002", label: "Tolerance (mm)", unit: "mm" },
 ];
 
 const keyFigures = [
-  { value: "1953", label: "Founded" },
-  { value: "70+", label: "Years of engineering heritage" },
+  { value: "1990", label: "Founded" },
+  { value: "36", label: "Years of engineering heritage" },
   { value: "40", label: "CNC lathes" },
   { value: "6", label: "Machining centers" },
-  { value: "500–100K", label: "Pieces per order" },
-  { value: "±0.01", label: "Typical tolerance (mm)", unit: "mm" },
+  { value: "1 – 400 000", label: "Pieces per order" },
+  { value: "±0.002", label: "Typical tolerance (mm)", unit: "mm" },
 ];
 
+// Homepage service tiles: icon + name only (details live on /services/). 12 items
+// per brief F-19; every tile links to the services page (sub-pages don't exist).
 const services = [
   {
-    title: "CNC Turning",
-    href: "/services/cnc-turning/",
-    description: "High-volume precision turning across 40 lathes for complex geometries.",
-    specs: [{ label: "Diameter", value: "Ø1–90 mm" }, { label: "Tolerance", value: "±0.01 mm" }],
+    key: "turning",
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" aria-hidden="true">
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="3" y="20" width="20" height="6"/><path d="M9 20v-4h6l3-4h6"/><circle cx="26" cy="12" r="2.5"/>
       </svg>
     ),
   },
   {
-    title: "CNC Milling",
-    href: "/services/cnc-milling/",
-    description: "6 machining centers — 3 horizontal, 3 vertical — for complex parts.",
-    specs: [{ label: "Working area", value: "800 × 450 mm" }, { label: "Tolerance", value: "±0.01 mm" }],
+    key: "milling",
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-        <circle cx="10" cy="10" r="3.2"/><circle cx="22" cy="10" r="3.2"/>
-        <circle cx="10" cy="22" r="3.2"/><circle cx="22" cy="22" r="3.2"/>
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="3.2"/><circle cx="22" cy="10" r="3.2"/><circle cx="10" cy="22" r="3.2"/><circle cx="22" cy="22" r="3.2"/>
         <path d="M10 5.5V3M10 19.5V17M22 5.5V3M22 19.5V17M5.5 10H3M19.5 10H17"/>
       </svg>
     ),
   },
   {
-    title: "Heat Treatment",
-    href: "/services/heat-treatment/",
-    description: "Coordinated through a vetted partner — full workflow managed by Borela.",
-    specs: [{ label: "Processes", value: "Hardening · Tempering" }, { label: "Coordination", value: "End-to-end" }],
+    key: "heat",
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M16 4c-2 4 2 6 0 10s-4 6-2 10c1.5 3 4 4 6 4"/>
         <path d="M22 8c-1.5 3 1.5 4.5 0 7.5s-3 4.5-1.5 7.5"/><path d="M10 10c-1 2 1 3 0 5s-2 3-1 5"/>
       </svg>
     ),
   },
   {
-    title: "Press Work",
-    href: "/services/press-work/",
-    description: "Mechanical pressing operations integrated into the production line.",
-    specs: [{ label: "Operations", value: "Forming · Stamping" }, { label: "Integration", value: "In-line" }],
+    key: "press",
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" aria-hidden="true">
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="6" y="3" width="20" height="5"/><path d="M11 8v8M21 8v8"/>
         <rect x="8" y="16" width="16" height="4"/><rect x="4" y="24" width="24" height="5"/>
       </svg>
     ),
   },
   {
-    title: "3D Measurement",
-    href: "/services/measurement/",
-    description: "In-house CMM, contour measurement, and micro-hardness testing.",
-    specs: [{ label: "Equipment", value: "CMM · Contour" }, { label: "Testing", value: "100% in-house" }],
+    key: "grinding",
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" aria-hidden="true">
-        <path d="M4 26V6h24v20M16 6v20M4 14h12M4 20h12M16 12h12M16 18h12"/>
-        <circle cx="22" cy="24" r="2"/>
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="13" cy="13" r="8"/><circle cx="13" cy="13" r="1.6"/><path d="M3 26h26"/><path d="M20 19l3 3M24 17l3 2"/>
       </svg>
     ),
   },
   {
-    title: "Prototyping",
-    href: "/services/prototyping/",
-    description: "Sample production and validation before committing to series.",
-    specs: [{ label: "Lead time", value: "2–4 weeks" }, { label: "Output", value: "Sample parts" }],
+    key: "metalwork",
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter" aria-hidden="true">
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="12" width="9" height="9"/><rect x="20" y="12" width="9" height="9"/><path d="M12 16.5h8"/><path d="M6 21v5M26 21v5M3 26h9M20 26h9"/>
+      </svg>
+    ),
+  },
+  {
+    key: "welding",
+    icon: (
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M5 27l11-11"/><path d="M16 16l3.5-3.5 3.5 3.5-3.5 3.5z"/><path d="M23 9l4-4M20.5 6.5l1.5-3.5M26.5 12.5l3.5-1.5"/>
+      </svg>
+    ),
+  },
+  {
+    key: "abrasive",
+    icon: (
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="16" cy="16" r="11"/><circle cx="12" cy="13" r="1.2"/><circle cx="19" cy="12" r="1.2"/><circle cx="14" cy="19" r="1.2"/><circle cx="20" cy="19" r="1.2"/><circle cx="16" cy="15.5" r="1.2"/>
+      </svg>
+    ),
+  },
+  {
+    key: "bending",
+    icon: (
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M4 20h12l10-10"/><path d="M4 25h24"/><path d="M16 20v-4"/>
+      </svg>
+    ),
+  },
+  {
+    key: "laser",
+    icon: (
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="12" y="3" width="8" height="6"/><path d="M16 9v8"/><path d="M13 17h6l-3 4z"/><path d="M4 27h24"/>
+      </svg>
+    ),
+  },
+  {
+    key: "surface",
+    icon: (
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="4" y="19" width="24" height="6"/><path d="M9 15v-3M15 15v-5M21 15v-3M27 15v-5"/>
+      </svg>
+    ),
+  },
+  {
+    key: "prototyping",
+    icon: (
+      <svg className="w-full h-full" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M6 28V10l10-6 10 6v18"/><path d="M6 10l10 6 10-6M16 16v12"/>
       </svg>
     ),
   },
 ];
 
-const whyItems = [
-  { n: "01", title: "70+ years family heritage", desc: "Three generations of precision engineering, uninterrupted since 1953." },
-  { n: "02", title: "EU manufacturing, Eastern-European cost", desc: "Western-European quality standards at significantly lower cost — no customs, no trade barriers." },
-  { n: "03", title: "Blue-chip references", desc: "Pre-audited by Knorr-Bremse, Mercedes-Benz, Hilti, Freudenberg — your audit effort is already half done." },
-  { n: "04", title: "Single point of contact", desc: "We manage the full chain including coordinated heat treatment. One contract, one supplier, ready-to-install parts." },
+// Reference logos (transparent PNG/SVG in public/partners/). Ceka fűrész logo still
+// pending from client — see task list F-09.
+const partnerLogos = [
+  { name: "Knorr-Bremse", src: "/partners/knorr-bremse.png" },
+  { name: "Mercedes-Benz", src: "/partners/mercedes.png" },
+  { name: "Hilti", src: "/partners/hilti.png", height: 32 },
+  { name: "Freudenberg", src: "/partners/freudenberg.png", height: 32 },
+  { name: "Sulzer", src: "/partners/sulzer.png", width: 100 },
+  { name: "Phoenix Mecano", src: "/partners/phoenix-mecano.png", height: 45 },
+  { name: "DewertOkin", src: "/partners/dewertokin.png", height: 45 },
+  { name: "Zarges", src: "/partners/zarges.png", height: 32 },
+  { name: "Keller", src: "/partners/keller.png" },
+  { name: "Robel", src: "/partners/robel.png", height: 32 },
 ];
-
-const partnerNames = ["Mercedes-Benz", "Knorr-Bremse", "Hilti", "Freudenberg", "Sulzer", "Phoenix Mecano", "Zarges"];
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = (await params) as { lang: Locale };
@@ -142,20 +178,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       {/* Hero */}
       <Hero
+        bgImage="/hero-home.jpg"
         label={`§ 01 — ${t("hero.label")}`}
         heading={
           <>
             {t("hero.heading.line1").replace(/\.$/, "")}
-            <span className="text-primary">.</span>
             <br />
             {t("hero.heading.line2").replace(/\.$/, "")}
-            <span className="text-primary">.</span>
           </>
         }
         lead={t("hero.lead")}
         actions={[
           { label: t("hero.actions.0.label"), href: p("/rfq/") },
-          { label: t("hero.actions.1.label"), href: p("/capabilities/"), variant: "ghost" },
+          { label: t("hero.actions.1.label"), href: p("/contact/"), variant: "ghost" },
         ]}
       />
 
@@ -178,12 +213,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </div>
 
       {/* Trusted by */}
-      <TrustStrip label={t("trust.label")} partners={partnerNames} />
+      <TrustStrip label={t("trust.label")} logos={partnerLogos} />
 
       {/* Global footprint */}
       <section className="py-16 bg-background border-b border-border">
         <Container>
-          <WorldMap heading={t("worldmap.heading")} lead={t("worldmap.lead")} />
+          <WorldMap heading={t("worldmap.heading")} />
         </Container>
       </section>
 
@@ -191,19 +226,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section className="py-16 bg-background" id="capabilities">
         <Container>
           <SectionLabel>{`§ 02 — ${t("services.label")}`}</SectionLabel>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-            {services.map(({ href, icon, specs }, i) => (
-              <SpecCard
-                key={href}
-                href={p(href)}
-                icon={icon}
-                title={t(`services.${i}.title`)}
-                description={t(`services.${i}.description`)}
-                specs={specs.map((spec, j) => ({
-                  label: t(`services.${i}.specs.${j}.label`),
-                  value: spec.value,
-                }))}
-              />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border">
+            {services.map(({ key, icon }, i) => (
+              <Link
+                key={key}
+                href={p("/services/")}
+                className="group flex flex-col items-start gap-4 bg-background p-7 transition-colors hover:bg-surface"
+              >
+                <span className="h-11 w-11 text-ink-secondary transition-colors group-hover:text-primary">
+                  {icon}
+                </span>
+                <span className="text-[17px] font-bold uppercase leading-tight tracking-[-0.01em] text-ink transition-colors group-hover:text-primary">
+                  {t(`services.${i}.title`)}
+                </span>
+              </Link>
             ))}
           </div>
         </Container>
@@ -226,24 +262,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 key={cert.name}
                 name={cert.name}
                 since={cert.since}
+                logo={cert.logo}
                 scope={t(`certifications.${i}.scope`)}
               />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Why Borela */}
-      <section className="py-16 bg-surface border-b border-border" id="why">
-        <Container>
-          <SectionLabel>{`§ 05 — ${t("why.label")}`}</SectionLabel>
-          <div className="grid sm:grid-cols-2 gap-8">
-            {whyItems.map((item, i) => (
-              <article key={item.n}>
-                <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary mb-3">{item.n}</div>
-                <h3 className="font-bold text-[16px] text-ink mb-2 uppercase tracking-[-0.01em]">{t(`why.${i}.title`)}</h3>
-                <p className="text-[14px] text-ink-secondary leading-relaxed">{t(`why.${i}.desc`)}</p>
-              </article>
             ))}
           </div>
         </Container>
@@ -266,36 +287,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </Container>
       </section>
 
-      {/* Featured case study */}
-      <section className="py-16 bg-surface border-b border-border" id="case">
-        <Container>
-          <SectionLabel>{`§ 07 — ${t("case.label")}`}</SectionLabel>
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="relative h-64 lg:h-auto lg:min-h-[256px] bg-surface-alt border border-border overflow-hidden">
-              <Image
-                src="/brake.jpg"
-                alt="Precision turned brake system components"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <div className="font-mono text-[11px] tracking-[0.1em] text-ink-tertiary uppercase mb-2">Knorr-Bremse</div>
-              <h3 className="font-extrabold text-[24px] tracking-[-0.02em] uppercase text-ink mb-4">
-                {t("case.title")}
-              </h3>
-              <p className="text-[15px] text-ink-secondary leading-relaxed mb-3">
-                {t("case.body1")}
-              </p>
-              <p className="text-[15px] text-ink-secondary leading-relaxed mb-6">
-                {t("case.body2")}
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* FAQ */}
       <FAQAccordion
         label={`§ 08 — ${t("faq.label")}`}
@@ -306,7 +297,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <CtaBlock
         label={`§ 09 — ${t("cta.label")}`}
         heading={t("cta.heading")}
-        subheading={t("cta.subheading")}
         actions={[
           { label: t("cta.actions.0.label"), href: p("/rfq/") },
           { label: t("cta.actions.1.label"), href: p("/contact/"), variant: "ghost" },

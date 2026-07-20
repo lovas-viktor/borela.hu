@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Image from "next/image";
 import clsx from "clsx";
 import SectionLabel from "@/components/primitives/SectionLabel";
 import Breadcrumb, { BreadcrumbItem } from "@/components/primitives/Breadcrumb";
@@ -18,12 +19,21 @@ interface HeroProps {
   actions?: HeroAction[];
   className?: string;
   children?: ReactNode;
+  /** Optional background image (e.g. the home hero). A warm paper veil keeps text legible. */
+  bgImage?: string;
 }
 
-export default function Hero({ label, breadcrumb, heading, lead, actions, className, children }: HeroProps) {
+export default function Hero({ label, breadcrumb, heading, lead, actions, className, children, bgImage }: HeroProps) {
   return (
-    <section className={clsx("py-20 bg-background", className)}>
-      <div className="max-w-[880px] mx-auto px-7">
+    <section className={clsx("relative overflow-hidden py-20", !bgImage && "bg-background", className)}>
+      {bgImage && (
+        <div aria-hidden className="absolute inset-0">
+          <Image src={bgImage} alt="" fill priority sizes="100vw" className="object-cover object-center" />
+          {/* Warm-paper veil so the dark headline stays readable over the photo */}
+          <div className="absolute inset-0 bg-background/80" />
+        </div>
+      )}
+      <div className="relative z-10 max-w-[880px] mx-auto px-7">
         {/* On inner pages the breadcrumb stands in for the hero label, so we
             suppress the section label when a breadcrumb is present (avoids two
             near-identical mono/uppercase lines). The home page has no
@@ -33,11 +43,11 @@ export default function Hero({ label, breadcrumb, heading, lead, actions, classN
         ) : (
           label && <SectionLabel>{label}</SectionLabel>
         )}
-        <h1 className="text-[clamp(30px,4.4vw,50px)] font-extrabold leading-[1.06] tracking-[-0.02em] uppercase text-ink mb-7 text-wrap-balance">
+        <h1 className="font-mono text-[clamp(30px,4.4vw,50px)] font-extrabold leading-[1.06] tracking-[-0.02em] uppercase text-ink mb-7 text-wrap-balance">
           {heading}
         </h1>
         {lead && (
-          <p className="text-[17px] leading-[1.55] text-ink-secondary max-w-[560px] mb-9">
+          <p className="font-mono text-[17px] leading-[1.55] text-ink-secondary max-w-[560px] mb-9">
             {lead}
           </p>
         )}

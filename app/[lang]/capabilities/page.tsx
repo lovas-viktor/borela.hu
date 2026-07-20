@@ -207,7 +207,7 @@ export default async function CapabilitiesPage({ params }: { params: Promise<{ l
           <SectionLabel>{`§ 06 — ${t("certifications.label")}`}</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certifications.map((cert, i) => (
-              <CertificationCard key={cert.name} name={cert.name} since={cert.since} scope={t(`cert.${i}.scope`)} />
+              <CertificationCard key={cert.name} name={cert.name} since={cert.since} logo={cert.logo} scope={t(`cert.${i}.scope`)} />
             ))}
           </div>
         </Container>
